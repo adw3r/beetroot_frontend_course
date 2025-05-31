@@ -1,0 +1,331 @@
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
+}
+
+body {
+    place-items: center;
+    font: 12px "Helvetica", Arial;
+}
+
+h1 {
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-style: normal;
+    font-size: 30px;
+    margin: 0;
+    padding: 30px 0 0 0;
+    font-weight: 600;
+}
+
+h1 span {
+    position: relative;
+    font-style: normal;
+    display: inline;
+    margin-right: 3px;
+    padding: 0;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-size: 17px;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+}
+
+h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    color: #4c4c4c;
+    line-height: 18px;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background: #d2d2d2;
+}
+
+.sections {
+    /*left: 20px;*/
+    /*right: 20px;*/
+    margin-left: 50px;
+    padding-right: 50px;
+    position: relative;
+    width: 50rem;
+
+}
+
+.section {
+    position: relative;
+    width: 100%;
+    padding: 0;
+}
+
+.section p {
+    display: block;
+    font-style: normal;
+}
+
+.section:last-child {
+    border: none;
+}
+
+.section.section--summary {
+    top: -10px;
+    margin-bottom: 10px;
+}
+
+.section--title {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    z-index: 99;
+    margin: 0 0 0 0;
+    font-weight: 600;
+    background: #fff;
+    padding: 19px 0 10px 10px;
+    border-top: 1px solid #d2d2d2;
+    page-break-inside: avoid;
+}
+
+.section--title span {
+    display: inline-block;
+    margin-right: 2px;
+}
+
+.section--title-icon {
+    position: relative;
+    top: 0px;
+    display: inline-block;
+    height: 32px;
+    width: 32px;
+    margin-left: -15px;
+    margin-right: 10px;
+    border-radius: 50%;
+    border: 1px solid #2b2b38;
+}
+
+.section--title-icon svg {
+    position: relative;
+    top: 3px;
+    left: 4px;
+    height: 20px;
+    width: 20px;
+    fill: lightslategrey;
+}
+
+.section--title-icon.education svg {
+    top: 4px;
+    left: 4px;
+}
+
+.section--title-icon.course svg {
+    top: 5px;
+    left: 5px;
+}
+
+.section--title-icon.work svg {
+    top: 4px;
+    left: 5px;
+}
+
+.section--title-icon.internships svg {
+    top: 4px;
+    left: 5px;
+}
+
+.section--title-icon.certificate svg {
+    top: 4px;
+    left: 5px;
+}
+
+.section--title-icon.single-textarea svg {
+    top: 4px;
+    left: 5px;
+}
+
+.section--title-icon.extra-curricular svg {
+    top: 4px;
+    left: 5px;
+}
+
+.section--title-icon.characteristic svg {
+    top: 4px;
+    left: 5px;
+}
+
+.section--title-icon.skill svg {
+    top: 4px;
+    left: 5px;
+}
+
+.section--title-icon.hobby svg {
+    top: 5px;
+    left: 5px;
+}
+
+.section--title-icon.language svg {
+    top: 5px;
+    left: 5px;
+}
+
+.section--title-icon.reference svg {
+    top: 5px;
+    left: 5px;
+}
+
+.section--time-line-overlay {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    height: 100%;
+    width: 1px;
+    background: #2b2b38;
+}
+
+.section--time-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 1px;
+    background: #8d8d8d;
+}
+
+.section--time-line-hide-overlay {
+    display: none;
+    position: absolute;
+    left: -5px;
+    top: 25px;
+    width: 10px;
+    height: 100%;
+    background: #fff;
+    z-index: 9;
+}
+
+.section.references .section--time-line-dot {
+    top: 15px;
+}
+
+.section.references .section--date {
+    top: 10px;
+}
+
+.section.references .section--time-line-hide-overlay {
+    height: 95%;
+}
+
+.section--item:last-child {
+    background: #fff;
+    padding-bottom: 15px;
+}
+
+.section--item:last-child .section--time-line {
+    height: 30px;
+}
+
+.section--item:last-child .section--time-line-hide-overlay {
+    display: inline;
+}
+
+.section:last-child .section--item:last-child {
+    padding-bottom: 0;
+}
+
+.section--time-line-dot {
+    position: absolute;
+    left: -3px;
+    top: 18px;
+    height: 12px;
+    width: 10px;
+    z-index: 999;
+    /* fill: red; */
+    /* height: 9px;
+    width: 9px; */
+    /* border-radius: 50%; */
+    /* background: #fff; */
+    /* border: 1px solid #2b2b38; */
+    /* border: 0.1em solid #2b2b38; */
+}
+
+.section--heading-group {
+    display: block;
+    margin: 0;
+    padding: 0 0 6px 0;
+    page-break-inside: avoid !important;
+}
+
+.section--list {
+    display: block;
+    list-style: none;
+    padding: 0 0 0 10px;
+    margin: 0;
+}
+
+
+.section--list.no-indent .section--item {
+    padding-left: 20px;
+}
+
+.section--item {
+    display: block;
+    position: relative;
+    list-style: none;
+    padding: 0 0 0 170px;
+    margin: 0;
+}
+
+
+.section--item.skills h3 {
+    font-size: 13px;
+}
+
+.section--item.skills:last-child {
+    padding-bottom: 0;
+}
+
+
+.skills--stars svg {
+    fill: #b1b1b1;
+}
+
+.skills--stars svg.active {
+    fill: #2b2b38;
+}
+
+.section--date {
+    position: absolute;
+    left: 20px;
+    top: 12px;
+    width: 140px;
+    font-size: 13px;
+    padding: 0;
+    margin: 0;
+}
+
+.section--heading {
+    display: block;
+    padding: 10px 0 0 0;
+    margin: 0;
+}
+
+.section--sub-heading {
+    display: block;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+}
