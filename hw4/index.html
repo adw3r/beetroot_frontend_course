@@ -2,77 +2,64 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style.css">
+    <title>Home Work 4 Form</title>
 </head>
 <body>
 <main>
-    <section>
-        <div class="container">
-            <h1>Form</h1>
-            <form action="https://httpbin.org/post" method="POST" >
-                <label >
-                    First name:
-                    <input type="text" name="name[first]" required>
-                </label>
-                <br>
-                <label >
-                    Last name:
-                    <input type="text" name="name[last]" required>
-                </label>
-                <br>
-                <label >
-                    Email:
-                    <input type="email" name="user[email]" required>
-                </label>
-                <br>
-                <label >
-                    Password:
-                    <input type="password" name="user[password]" required>
-                </label>
-                <br>
-                <label >
-                    Password check:
-                    <input type="password" name="user[check_password]" required>
-                </label>
-                <br>
-                <label>
-                    Gender:
-                    <input type="radio" name="gender" value="male" checked> Male
-                </label>
-                <label>
-                    <input type="radio" name="gender" value="male">Female
-                </label>
-                <br>
-                <label>
-                    Age:
-                    <input type="number" name="age" style="width: 40px" max="100" min="14" required>
-                </label>
-                <br>
-                <label>
-                    Course:
-                    <select name="course">
-                        <option value="choose" selected disabled hidden="hidden">Choose</option>
-                        <option value="frontend">Front end</option>
-                        <option value="backend">Back end</option>
-                        <option value="project_management">Project Management</option>
-                        <option value="qa_manual">QA Manual</option>
-                    </select>
-                </label>
-                <br>
-                <label >
-                    Full Address:
-                    <textarea name="address" cols="30" rows="4"></textarea>
-                </label>
-                <br>
-                <label>
-                    <input type="checkbox" name="agreement" value="ok">I accept the <a href="#">Terms and Conditions</a>
-                </label>
-                <br>
-                <button type="reset">reset</button>
-                <button type="submit">submit</button>
-            </form>
-        </div>
-    </section>
+    <div class="form-container">
+        <p>Приклад вигляду форми:</p>
+        <form action="https://httpbin.org/post" method="POST">
+            <div class="form-group">
+                <label>Повне ім'я</label>
+                <input type="text" name="fullname" required>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" name="user[email]" required>
+            </div>
+            <div class="form-group">
+                <label>Пароль</label>
+                <input type="password" name="user[password]" required>
+            </div>
+            <div class="form-group">
+                <label>Пароль ще раз</label>
+                <input type="password" name="user[confirm_password]" required>
+            </div>
+            <div class="form-group">
+                <label>Стать</label>
+                <input type="radio" name="gender" value="чоловіча" checked> чоловіча
+                <input type="radio" name="gender" value="жіноча"> жіноча
+            </div>
+            <div class="form-group">
+                <label>Вік</label>
+                <input type="number" name="age" min="18" max="100" value="18" required>
+            </div>
+            <div class="form-group">
+                <label>Курс</label>
+                <select name="course">
+                    <option value="choose" selected disabled hidden="hidden">Choose</option>
+                    <option value="frontend">Front end</option>
+                    <option value="backend">Back end</option>
+                    <option value="project_management">Project Management</option>
+                    <option value="qa_manual">QA Manual</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Повна адреса</label>
+                <textarea name="address" required placeholder="Країна, регіон, місто/селище, вулиця"></textarea>
+            </div>
+            <div class="form-group">
+                <input type="checkbox" name="agreement" id="agreement" value="ok">
+                <label for="agreement" style="display: inline">Я погоджуюсь з обробкою персональних даних</label>
+            </div>
+            <div class="form-group buttons">
+                <button type="reset">Очистити форму</button>
+                <button type="submit">Зареєструватися</button>
+            </div>
+        </form>
+    </div>
 </main>
 </body>
 </html>

@@ -1,9 +1,35 @@
-* {
-    padding: 0;
-    margin: 0;
+body {
+    background-color: #e7f9f0;
+    font-family: Arial, sans-serif;
+}
+.form-container {
+    background-color: #f0f0f0;
+    padding: 20px;
+    width: 400px;
+    margin: 40px auto;
+    border-radius: 5px;
+}
+.form-group {
+    margin-bottom: 10px;
 }
 
-.container {
-    width: min(90%, 970px);
-    margin-inline: auto;
+label {
+    display: inline-block;
+    width: 120px;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+textarea {
+    width: 220px;
+}
+select {
+    width: 230px;
+}
+textarea {
+    height: 60px;
+}
+.buttons {
+    margin-top: 10px;
 }
