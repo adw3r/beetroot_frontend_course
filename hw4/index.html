@@ -11,35 +11,39 @@
     <div class="form-container">
         <form action="https://httpbin.org/post" method="POST">
             <div class="form-group">
-                <label>Повне ім'я</label>
-                <input type="text" name="fullname" required placeholder="Name Surname">
+                <label for="full_name">Повне ім'я</label>
+                <input type="text" id="full_name" name="fullname" required placeholder="Name Surname">
             </div>
             <div class="form-group">
-                <label>Email</label>
-                <input type="email" name="user[email]" required placeholder="user@mail.com">
+                <label for="email">Email</label>
+                <input id="email" type="email" name="user[email]" required placeholder="user@mail.com">
             </div>
             <div class="form-group">
-                <label>Пароль</label>
-                <input type="password" name="user[password]" required>
+                <label for="password">Пароль</label>
+                <input type="password" name="user[password]" required id="password">
             </div>
             <div class="form-group">
-                <label>Пароль ще раз</label>
-                <input type="password" name="user[confirm_password]" required>
+                <label for="password_check">Пароль ще раз</label>
+                <input type="password" name="user[confirm_password]" id="password_check" required>
             </div>
             <div class="form-group">
-                <label>Стать</label>
-                <input type="radio" name="gender" value="чоловіча" checked>
-                чоловіча
-                <input type="radio" name="gender" value="жіноча">
-                жіноча
+                <p>Стать</p>
+                <label>
+                    <input type="radio" name="gender" value="чоловіча" checked>
+                    чоловіча
+                </label>
+                <label>
+                    <input type="radio" name="gender" value="жіноча">
+                    жіноча
+                </label>
             </div>
             <div class="form-group">
-                <label>Вік</label>
-                <input type="number" name="age" min="18" max="100" value="18" required>
+                <label for="age">Вік</label>
+                <input id="age" type="number" name="age" min="18" max="100" value="18" required>
             </div>
             <div class="form-group">
-                <label>Курс</label>
-                <select name="course">
+                <label for="course_selector">Курс</label>
+                <select id="course_selector" name="course">
                     <option value="choose" selected disabled hidden="hidden">Choose</option>
                     <option value="frontend">Front end</option>
                     <option value="backend">Back end</option>
@@ -48,8 +52,8 @@
                 </select>
             </div>
             <div class="form-group">
-                <label>Повна адреса</label>
-                <textarea name="address" required placeholder="Країна, регіон, місто/селище, вулиця"></textarea>
+                <label for="address">Повна адреса</label>
+                <textarea id="address" name="address" required placeholder="Країна, регіон, місто/селище, вулиця"></textarea>
             </div>
             <div class="form-group">
                 <input type="checkbox" name="agreement" id="agreement" value="ok">
