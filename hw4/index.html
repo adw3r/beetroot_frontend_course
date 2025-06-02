@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<main>
+    <section>
+        <div class="container">
+            <h1>Form</h1>
+            <form action="/register" method="POST" target="_blank">
+                <label >
+                    First name:
+                    <input type="text" name="fname" required>
+                </label>
+                <br>
+                <label >
+                    Last name:
+                    <input type="text" name="lname" required>
+                </label>
+                <br>
+                <label >
+                    Email:
+                    <input type="email" name="email" required>
+                </label>
+                <br>
+                <label >
+                    Password:
+                    <input type="password" name="password" required>
+                </label>
+                <br>
+                <label >
+                    Password check:
+                    <input type="password" name="password_check" required>
+                </label>
+                <br>
+                <label>
+                    Gender:
+                    <input type="radio" name="gender" value="male" checked> Male
+                </label>
+                <label>
+                    <input type="radio" name="gender" value="male">Female
+                </label>
+                <br>
+                <label>
+                    Age:
+                    <input type="number" name="age" style="width: 40px" max="100" min="14" required>
+                </label>
+                <br>
+                <label>
+                    Course:
+                    <select name="course">
+                        <option value="choose" hidden="hidden">Choose</option>
+                        <option value="frontend">Front end</option>
+                        <option value="backend">Back end</option>
+                        <option value="project_management">Project Management</option>
+                        <option value="qa_manual">QA Manual</option>
+                    </select>
+                </label>
+                <br>
+                <label >
+                    Full Address:
+                    <textarea name="" id="" cols="30" rows="4"></textarea>
+                </label>
+                <br>
+                <label>
+                    <input type="checkbox" name="agreement" value="ok">I accept the <a href="#">Terms and Conditions</a>
+                </label>
+                <br>
+                <button type="reset">reset</button>
+                <button type="submit">submit</button>
+            </form>
+        </div>
+    </section>
+</main>
+</body>
+</html>
