@@ -9,30 +9,30 @@
     <section>
         <div class="container">
             <h1>Form</h1>
-            <form action="/register" method="POST" target="_blank">
+            <form action="/register" method="POST" >
                 <label >
                     First name:
-                    <input type="text" name="fname" required>
+                    <input type="text" name="name[first]" required>
                 </label>
                 <br>
                 <label >
                     Last name:
-                    <input type="text" name="lname" required>
+                    <input type="text" name="name[last]" required>
                 </label>
                 <br>
                 <label >
                     Email:
-                    <input type="email" name="email" required>
+                    <input type="email" name="user[email]" required>
                 </label>
                 <br>
                 <label >
                     Password:
-                    <input type="password" name="password" required>
+                    <input type="password" name="user[password]" required>
                 </label>
                 <br>
                 <label >
                     Password check:
-                    <input type="password" name="password_check" required>
+                    <input type="password" name="user[check_password]" required>
                 </label>
                 <br>
                 <label>
@@ -51,7 +51,7 @@
                 <label>
                     Course:
                     <select name="course">
-                        <option value="choose" hidden="hidden">Choose</option>
+                        <option value="choose" selected disabled hidden="hidden">Choose</option>
                         <option value="frontend">Front end</option>
                         <option value="backend">Back end</option>
                         <option value="project_management">Project Management</option>
@@ -61,7 +61,7 @@
                 <br>
                 <label >
                     Full Address:
-                    <textarea name="" id="" cols="30" rows="4"></textarea>
+                    <textarea name="address" cols="30" rows="4"></textarea>
                 </label>
                 <br>
                 <label>
