@@ -1,16 +1,116 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    color: #828282;
+    font-family: Open Sans, sans-serif;
+    font-size: 1.125rem;
+    background-color: #FFF;
+}
 .container {
-    /*width: calc(100% - 30px);*/
     width: min(90%, 970px);
     margin-inline: auto;
 }
-grey {
+.grey {
     background-color: #f5f5f5;
 }
-a.button {
+
+/* header */
+header {
+    height: 80px;
+    align-items: center;
+    display: flex;
+    letter-spacing: 0.36px;
+}
+header nav {
+    text-align: center;
+}
+header li {
+    justify-content: center;
+    display: inline-block;
+    margin: 0px 20px;
+}
+header li a {
+    text-decoration: inherit;
+    color: inherit;
+}
+header li:first-child a {
+    color: #000;
+}
+/* intro */
+#intro {
+    height: 505px;
+    color: #070707;
+    font-size: 2rem;
+    padding: 0;
+}
+#intro h1 {
+    border-top: 1px solid black;
+
+    padding-top: 12px;
+    margin-bottom: 50px;
+}
+#intro img {
+    justify-content: center;
+}
+
+/* about_me */
+#about_me {
+    height: 465px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+#about_me h2 {
+    margin-bottom: 50px;
+}
+#about_me .container {
+    padding-left: 245px;
+    padding-right: 245px;
+    flex-direction: column;
+    align-items: center;
+}
+
+#about_me .content {
+    width: 470px;
+}
+
+#about_me .content p {
+    margin-bottom: 30px;
+    max-width: 470px;
+    margin-inline: auto;
+}
+#about_me .content p:last-child {
+    margin: 0 80px;
+}
+
+#about_me h2 {
+    color: #070707;
+    text-align: center;
+    font-size: 2.125rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+#about_me p {
+    /*width: 480px;*/
+    text-align: center;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: #070707;
+}
+
+
+/* footer */
+.send_message_button {
+    background-color: black;
     padding: 1px 6px;
     border: 1px outset buttonborder;
     border-radius: 3px;
-    color: buttontext;
-    background-color: buttonface;
+    color: white;
     text-decoration: none;
 }
