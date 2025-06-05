@@ -28,7 +28,6 @@ header nav {
     text-align: center;
 }
 header li {
-    justify-content: center;
     display: inline-block;
     margin: 0px 20px;
 }
@@ -39,6 +38,13 @@ header li a {
 header li:first-child a {
     color: #000;
 }
+
+header li:hover {
+    color: #000;
+    font-weight: bold;
+    transition: all .1s ease-in
+}
+
 /* intro */
 #intro {
     height: 505px;
@@ -95,7 +101,6 @@ header li:first-child a {
 }
 
 #about_me p {
-    /*width: 480px;*/
     text-align: center;
     font-size: 1.125rem;
     font-style: normal;
