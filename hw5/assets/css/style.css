@@ -73,6 +73,12 @@ header {
     font-size: 0.6875rem;
     padding-bottom: 3px;
 }
+.list-item .small::before {
+    content: '(';
+}
+.list-item .small::after {
+    content: ')';
+}
 
 .list-item:hover {
     background-color: #625E77;
