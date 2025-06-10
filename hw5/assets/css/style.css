@@ -6,8 +6,11 @@
 }
 ul, ol {
     list-style: none;
+    text-align: left;
 }
-
+hr {
+    display: none;
+}
 body {
     font-family: Roboto, sans-serif;
     line-height: normal;
@@ -18,36 +21,38 @@ body {
     text-align: center;
 
 }
+header, main {
+    margin-bottom: 45px;
+}
+footer {
+    max-height: 45px;
+}
 .container {
-    max-width: 573px;
+    max-width: 34em;
     margin: 0 auto;
 }
 header section h1 {
     line-height: normal;
-    font-weight: 700;
     font-size: 1.5rem;
+    font-weight: 700;
     margin-bottom: 4px;
 }
 header section p {
     font-size: 1rem;
 }
 header {
-    padding: 19px 0 12px 0;
+    padding: 1.2em 0 0.9em 0;
     flex-shrink: 0;
     background-color: #4A4F56;
-    margin-bottom: 20px;
 }
 .list {
-    text-align: left;
     color: #FFFFFF;
-    font-size: 1.125rem;
-}
-.small {
-    font-size: 0.6875rem;
+
 }
 .list-item {
-    max-height: 45px;
     background: #88839E;
+    font-size: 1.125rem;
+    max-height: 44px;
 }
 .list-item:nth-child(2n) {
     background: #7A7593;
@@ -57,21 +62,55 @@ header {
     display: list-item;
     cursor: pointer;
 }
-.list-item:hover, .list-item:hover:after, .list-item:hover:before {
-    border-bottom: white 3px solid;
-    border-top: white 3px solid;
-    background-color: #625E77;
+.list-item input {
+    margin-right: .7em;
 }
-.list-item label span {
-    min-height: 21px;
-    vertical-align: middle;
+.list-item .text {
+    position: relative;
+}
+.list-item .small {
+    vertical-align: 3px;
+    font-size: 0.6875rem;
+    padding-bottom: 3px;
+}
+
+.list-item:hover {
+    background-color: #625E77;
+    position: relative;
+}
+.list-item:hover:before, .list-item:hover:after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background-color: white;
 }
 
 .list-item:has(input:checked) + .list-item {
-    box-shadow: inset  0  10px 10px -10px black;
-
+    box-shadow: inset 0 10px 10px -10px black;
 }
-.list-item:has(input:checked) span {
+.list-item:has(input:checked) .text {
+
     opacity: 50%;
-    text-decoration: line-through;
+    outline-color: white;
+    outline-width:  thin;
+}
+.list-item:has(input:checked) span.text::before {
+    content: "";
+    position: absolute;
+    bottom: 10px;
+    left: -1px;
+    height: 1px;
+    width: 101%;
+    background-color: white;
+}
+footer h2 {
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+footer div {
+    padding: 12px 0;
+    background: #4A4F56;
 }
