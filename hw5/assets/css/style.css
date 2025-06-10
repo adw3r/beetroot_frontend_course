@@ -20,6 +20,8 @@ body {
     background: #3B3F45;
     text-align: center;
 
+    transition: all .1s ease-in;
+
 }
 header, main {
     margin-bottom: 45px;

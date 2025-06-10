@@ -1,0 +1,196 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Bebas Neue", sans-serif;
+    font-style: normal;
+    background-color: #111111;
+    color: #FFFFFF;
+    letter-spacing: 1px;
+}
+ul, li {
+    list-style: none;
+}
+a  {
+    text-decoration: none;
+    color: white;
+}
+main {
+    margin: 86px auto;
+    border: white solid 1px;
+    max-width: 990px;
+
+}
+.container {
+    padding: 44px 102px 75px 102px;
+}
+.first-container {
+    display: flex;
+    padding: 44px 0 75px 102px;
+    border-bottom: 1px solid white;
+}
+.header {
+    margin-right: 20px;
+}
+.header h1 {
+    position: relative;
+    font-size: 95px;
+    font-weight: 100;
+    height: 95px;
+    top: -22px;
+}
+.header p {
+    letter-spacing: 9px;
+    transform: scale(0.8, 1.6);
+    font-size: 35px;
+    font-family: sans-serif;
+    position: relative;
+    text-transform: uppercase;
+    /*top: -6px;*/
+    left: -51px
+    /*height: 80px;*/
+}
+.social {
+    justify-self: right;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: normal;
+}
+.social li:not(:last-child) {
+    margin-bottom: 21px;
+}
+.social ul {
+    height: 114px;
+}
+.social li {
+    height: 24px;
+}
+.social a svg {
+    vertical-align: -10px;
+    opacity: 60%;
+}
+.social a span {
+    text-decoration: underline;
+    text-align: left;
+    vertical-align: -3px;
+    margin-left: 10px;
+    /*vertical-align: 10px;*/
+}
+.social a:hover span, .social a:hover svg {
+    opacity: 1;
+    text-decoration: none;
+}
+.about-container {
+    color: #E5E5E5;
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 20px;
+    padding-right: 101px;
+    justify-content: center;
+    align-items: center;
+    border-bottom:  white solid 1px;
+}
+.about-container span {
+    display: inline-block;
+    margin-bottom: 16px;
+}
+.about-container a {
+    text-decoration: underline;
+}
+.about-container a:hover {
+    text-decoration: none;
+}
+.title {
+    margin-right: 30px;
+    min-width: 284px;
+}
+.title span {
+    top: -9px;
+    position: relative;
+}
+.skills-container {
+    display: flex;
+    padding-right: 102px;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    padding-bottom: 46px;
+    border-bottom: 1px solid white;
+}
+.skill-name {
+    display: block;
+    font-size: 24px;
+    font-weight: 100;
+    line-height: 0;
+    margin-bottom: 10px;
+}
+.skill-description {
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+}
+.skills-list ul li {
+    line-height: 1;
+    position: relative;
+    max-width: 400px;
+    top: 11px;
+    margin-bottom: 32px;
+    text-transform: capitalize;
+}
+.skills-list ul li:last-child {
+    margin-bottom: 0;
+}
+.work-experience-container {
+    display: flex;
+    grid-template-columns: repeat(2, 1fr);
+    padding-right: 102px;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    padding-bottom: 46px;
+    border-bottom: 1px solid white;
+}
+.work-experience-container ul li span {
+    display: block;
+}
+.work-experience-container ul li:not(:last-child) {
+    margin-bottom: 32px;
+}
+.work-title {
+    position: relative;
+    top: -5px;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    /*margin-bottom: 4px;*/
+}
+.work-period {
+    font-family: Inter, sans-serif;
+    font-size: 13px;
+    opacity: 70%;
+    font-weight: 100;
+    line-height: 20px; /* 125% */
+    margin-bottom: 8px;
+}
+.work-description {
+    font-family: Inter, sans-serif;
+    /*transform: scaley(90%);*/
+    /*scale: scaleY(200%);*/
+    display: inline;
+    font-size: 13px;
+    font-weight: 100;
+    line-height: 22px;
+}
+.work-description b {
+    /*background-color: red;*/
+    font-weight: 750;
+}
