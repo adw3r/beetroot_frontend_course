@@ -27,34 +27,30 @@ html {
             font-size: 1.125rem;
         }
         header {
-            height: 80px;
             margin-bottom: 12px;
+            height: 80px;
             .container {
                 padding: 28px 0;
                 border-bottom: black solid 1px;
             }
             .main-nav {
                 ul {
-                    /*font-size: 0;*/
+                    display: flex;
+                    justify-content: center;
+                    gap: 40px;
+                    align-items: center;
+
                     li {
                         display: inline-block;
-                        & + & {
-                            margin-left: 40px;
-                        }
                         a {
                             color: #828282;
                             font-size: 1.125rem;
                             text-decoration: none;
-
-                            &:hover, &:active {
+                            &:hover,
+                            &.active {
                                 color: #070707;
                                 text-shadow: 1px 0 0 0 black, 0 1px 0 0 black, 0 0 1px 0 black, 0 0 0 1px black;
                             }
-                        }
-                        & a:hover,
-                        & a.active {
-                            color: #070707;
-                            text-shadow: 1px 0 0 0 black, 0 1px 0 0 black, 0 0 1px 0 black, 0 0 0 1px black;
                         }
                     }
                 }
