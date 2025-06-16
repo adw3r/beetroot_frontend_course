@@ -64,7 +64,7 @@ main .data-table .data-row .data-cell {
   flex-basis: 25%;
 }
 main .data-table .data-row .data-cell:hover {
-  cursor: url("https://github.com/adw3r/beetroot_frontend_course/hw9/assets/images/cursor.svg"), pointer;
+  cursor: url("https://adw3r.github.io/beetroot_frontend_course/hw9/assets/images/cursor.svg"), pointer;
   opacity: 100%;
   transition: all 0.2s ease-out;
 }
