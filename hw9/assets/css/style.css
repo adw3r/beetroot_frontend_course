@@ -4,17 +4,14 @@
   box-sizing: border-box;
 }
 
-html {
-  box-shadow: inset #2B81AC 0 0 0 1.5625rem;
-  height: 100%;
-}
-
 body {
+  height: 100vh;
+  box-shadow: inset #2B81AC 0 0 0 1.5625rem;
+  padding: 4.125rem;
   font-size: 16px;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   background: #3399CC;
   color: white;
-  padding: 4.125rem 0;
 }
 
 .container {
@@ -50,7 +47,6 @@ main .data-table {
   border: 2px solid white;
 }
 main .data-table .data-row {
-  height: 9.1875rem;
   width: 100%;
   text-align: left;
   display: inline-flex;
@@ -58,10 +54,9 @@ main .data-table .data-row {
 main .data-table .data-row .data-cell {
   opacity: 70%;
   padding: 1.625rem 0;
-  height: 100%;
   text-align: center;
   border: 2px solid white;
-  flex-basis: 25%;
+  width: 25%;
 }
 main .data-table .data-row .data-cell:hover {
   cursor: url("https://adw3r.github.io/beetroot_frontend_course/hw9/assets/images/cursor.svg"), pointer;
