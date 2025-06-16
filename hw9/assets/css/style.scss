@@ -1,0 +1,160 @@
+$border-color: 2px solid white;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  box-shadow: inset #2B81AC 0 0 0 1.5625rem;
+  height: 100%;
+}
+
+body {
+  font-size: 16px;
+  font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+  background: #3399CC;
+  color: white;
+  padding: 4.125rem 0;
+
+}
+
+.container {
+  max-width: 72.875rem;
+  margin: auto;
+}
+
+img {
+  vertical-align: top;
+  max-height: 50px;
+  max-width: 60px;
+}
+
+main {
+  .header {
+    h1 {
+      font-size: 1.3125rem;
+      display: inline;
+      font-weight: 400;
+
+      margin-right: 4px;
+    }
+
+    img {
+      display: inline;
+    }
+
+    margin-bottom: 2.5rem;
+  }
+
+  .data-table {
+    background: white;
+    text-align: center;
+    margin-bottom: 2.3125rem;
+    border: $border-color;
+
+    .data-row {
+
+      height: 9.1875rem;
+      width: 100%;
+      text-align: left;
+      display: inline-flex;
+
+      .data-cell {
+        opacity: 70%;
+        padding: 1.625rem 0;
+
+        &:hover {
+          cursor: url("https://github.com/adw3r/beetroot_frontend_course/hw9/assets/images/cursor.svg"), pointer;
+          opacity: 100%;
+          transition: all .2s ease-out;
+        }
+
+        height: 100%;
+        text-align: center;
+        border: $border-color;
+        flex-basis: 25%;
+
+        span {
+          width: 100%;
+          font-size: 1.375rem;
+          opacity: 70%;
+          //margin-bottom: 4px;
+          display: block;
+
+        }
+
+        .temp {
+          position: relative;
+          width: 100%;
+          bottom: -10px;
+
+          span {
+            margin-right: 10px;
+            display: inline;
+            position: relative;
+            vertical-align: sub;
+          }
+
+          img {
+            position: relative;
+            vertical-align: middle;
+          }
+        }
+
+      }
+    }
+  }
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.color {
+
+  &-1 {
+    background-color: #3399CC;
+  }
+
+  &-2 {
+    background-color: #33CCCC;
+  }
+
+  &-3 {
+    background-color: #996699;
+  }
+
+  &-4 {
+    background-color: #C24747;
+  }
+
+  &-5 {
+    background-color: #E2674A;
+  }
+
+  &-6 {
+    background-color: #FFCC66;
+  }
+
+  &-7 {
+    background-color: #99CC99;
+  }
+
+  &-8 {
+    background-color: #669999;
+  }
+
+  &-9 {
+    background-color: #CC6699;
+  }
+
+  &-10 {
+    background-color: #339966;
+  }
+
+  &-11 {
+    background-color: #666699;
+  }
+}
