@@ -15,13 +15,10 @@ img {
   vertical-align: top;
 }
 
-header, footer, main {
-  padding: 0 40px;
-}
-
 .container {
   max-width: 1230px;
   margin: 0 auto;
+  display: flex;
 }
 
 ul, li {
@@ -100,7 +97,6 @@ header {
   margin-bottom: 90px;
 }
 header .container {
-  display: flex;
   justify-content: space-between;
 }
 header .container .menu {
@@ -120,7 +116,6 @@ section {
 }
 
 main .super-powers .container {
-  display: flex;
   gap: 60px;
 }
 main .super-powers .container .content {
@@ -141,8 +136,13 @@ main .super-powers .container .content h1 {
   display: inline-block;
   margin-bottom: 20px;
 }
+main .features {
+  margin: 0;
+  padding-bottom: 90px;
+  background: url("http://localhost:63342/beetroot_frontend_course/productly/assets/images/bg.svg") no-repeat center center;
+  background-size: cover;
+}
 main .features .container {
-  display: flex;
   flex-direction: column;
 }
 main .features .container h2 {
@@ -152,9 +152,9 @@ main .features .container h2 {
   margin-bottom: 50px;
 }
 main .features .container ul {
-  display: flex;
   margin-bottom: 60px;
   justify-content: space-between;
+  display: flex;
 }
 main .features .container ul li {
   width: 270px;
@@ -169,7 +169,6 @@ main .features button {
   align-self: center;
 }
 main .benefits .container {
-  display: flex;
   align-items: center;
   gap: 165px;
 }
@@ -205,12 +204,10 @@ main .benefits .container .content .list li h5 {
   line-height: 1.625rem;
 }
 main .managers .container {
-  display: flex;
   align-items: center;
   gap: 165px;
 }
 main .managers .container .content {
-  display: flex;
   width: 495px;
   height: 424px;
   flex-direction: column;
@@ -223,10 +220,7 @@ main .managers .container .content .image {
   flex-shrink: 0;
 }
 main .managers .container .content .heading {
-  display: flex;
   height: 168px;
-  flex-direction: column;
-  align-items: flex-start;
   gap: 20px;
   flex-shrink: 0;
   align-self: stretch;

@@ -24,13 +24,11 @@ img {
   vertical-align: top;
 }
 
-header, footer, main {
-  padding: 0 40px;
-}
-
 .container {
   max-width: 1230px;
   margin: 0 auto;
+  display: flex;
+
 }
 
 ul, li {
@@ -120,7 +118,6 @@ header {
   margin-bottom: 90px;
 
   .container {
-    display: flex;
     justify-content: space-between;
 
     .menu {
@@ -148,7 +145,6 @@ section {
 main {
   .super-powers {
     .container {
-      display: flex;
       gap: 60px;
 
       .content {
@@ -172,12 +168,20 @@ main {
           margin-bottom: 20px;
         }
       }
+
     }
   }
 
   .features {
+    margin: 0;
+    padding-bottom: 90px;
+    background:
+            url("http://localhost:63342/beetroot_frontend_course/productly/assets/images/bg.svg")
+            no-repeat
+            center
+            center;
+    background-size: cover;
     .container {
-      display: flex;
       flex-direction: column;
 
       h2 {
@@ -188,9 +192,9 @@ main {
       }
 
       ul {
-        display: flex;
         margin-bottom: 60px;
         justify-content: space-between;
+        display: flex;
 
         li {
           width: 270px;
@@ -213,7 +217,6 @@ main {
 
   .benefits {
     .container {
-      display: flex;
       align-items: center;
       gap: 165px;
 
@@ -258,12 +261,10 @@ main {
 
   .managers {
     .container {
-      display: flex;
       align-items: center;
       gap: 165px;
 
       .content {
-        display: flex;
         width: 495px;
         height: 424px;
         flex-direction: column;
@@ -277,10 +278,7 @@ main {
         }
 
         .heading {
-          display: flex;
           height: 168px;
-          flex-direction: column;
-          align-items: flex-start;
           gap: 20px;
           flex-shrink: 0;
           align-self: stretch;
