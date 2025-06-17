@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 * {
   padding: 0;
@@ -6,15 +5,10 @@
   box-sizing: border-box;
 }
 
-/* Убираем стрелки для Chrome, Safari, Edge */
 .no-arrows::-webkit-outer-spin-button,
 .no-arrows::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
-}
-
-.no-arrows {
-  -moz-appearance: textfield;
 }
 
 img {
@@ -305,8 +299,8 @@ main .marketers .container .content .list li h5 {
 }
 
 footer {
-  border-top: 1px solid black;
   padding-block: 70px;
+  border-top: 1px solid #D6E0EB;
 }
 footer h4 {
   color: #2F281E;

@@ -6,26 +6,28 @@ $--primary-colors-brown-dark: #2F281E;
 $--primary-colors-coral: #F03E3D;
 $--primary-colors-red: #D80B0A;
 $--secondary-colors-brown-light: #544837;
+$--secondary-colors-gray-light: #D6E0EB;
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
-/* Убираем стрелки для Chrome, Safari, Edge */
+
 .no-arrows::-webkit-outer-spin-button,
 .no-arrows::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-.no-arrows {
-  -moz-appearance: textfield;
-}
+
 img {
   vertical-align: top;
 }
+
 header, footer, main {
   padding: 0 40px;
 }
+
 .container {
   max-width: 1230px;
   margin: 0 auto;
@@ -34,11 +36,13 @@ header, footer, main {
 ul, li {
   list-style: none;
 }
+
 h2 {
   color: $--primary-colors-brown-dark;
   font-size: 2.25rem;
   line-height: normal;
 }
+
 a {
   text-decoration: none;
   color: $--primary-colors-brown-dark;
@@ -47,6 +51,7 @@ a {
   font-weight: 400;
   line-height: 1.75rem; /* 155.556% */
 }
+
 .btn {
   color: $--primary-colors-white;
   font-size: 1.125rem;
@@ -205,6 +210,7 @@ main {
       align-self: center;
     }
   }
+
   .benefits {
     .container {
       display: flex;
@@ -249,11 +255,13 @@ main {
       }
     }
   }
+
   .managers {
     .container {
       display: flex;
       align-items: center;
       gap: 165px;
+
       .content {
         display: flex;
         width: 495px;
@@ -261,11 +269,13 @@ main {
         flex-direction: column;
         align-items: flex-start;
         gap: 40px;
+
         .image {
           width: 570px;
           height: 519.6px;
           flex-shrink: 0;
         }
+
         .heading {
           display: flex;
           height: 168px;
@@ -275,12 +285,14 @@ main {
           flex-shrink: 0;
           align-self: stretch;
         }
+
         .list {
           display: flex;
           flex-direction: column;
           align-items: flex-start;
           gap: 30px;
           align-self: stretch;
+
           li {
             display: flex;
             align-items: center;
@@ -291,12 +303,14 @@ main {
       }
     }
   }
+
   .marketers {
     .container {
       display: flex;
       align-items: center;
       gap: 165px;
       flex: 1 0 0;
+
       .content {
         display: flex;
         width: 495px;
@@ -304,6 +318,7 @@ main {
         flex-direction: column;
         align-items: center;
         gap: 40px;
+
         .heading {
           display: flex;
           height: 160px;
@@ -311,10 +326,12 @@ main {
           align-items: flex-start;
           gap: 20px;
           flex-shrink: 0;
+
           .top {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
+
             h2 {
               color: $--primary-colors-brown-dark;
               font-size: 2.25rem;
@@ -324,16 +341,19 @@ main {
             }
           }
         }
+
         .list {
           display: flex;
           flex-direction: column;
           align-items: flex-start;
           gap: 30px;
+
           li {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
             gap: 4px;
+
             h5 {
               color: $--primary-colors-brown-dark;
               font-size: 1rem;
@@ -347,9 +367,10 @@ main {
     }
   }
 }
+
 footer {
-  border-top: 1px solid black;
   padding-block: 70px;
+  border-top: 1px solid $--secondary-colors-gray-light;
 
   h4 {
     color: $--primary-colors-brown-dark;
@@ -367,6 +388,7 @@ footer {
     gap: 140px;
     align-self: stretch;
   }
+
   .quick-links {
     display: flex;
     flex-direction: column;
@@ -381,11 +403,13 @@ footer {
 
     }
   }
+
   .legal-stuff {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 30px;
+
     ul {
       display: flex;
       flex-direction: column;
@@ -393,14 +417,17 @@ footer {
       gap: 12px;
     }
   }
+
   .form {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 25px;
+
     h4 {
       width: 280px;
     }
+
     input {
       line-height: normal;
       font-size: 1rem;
@@ -409,6 +436,7 @@ footer {
       width: 340px;
       height: 50px;
       padding-inline: 10px;
+
       &::placeholder {
         color: #BCD0E5;
         font-feature-settings: 'liga' off, 'clig' off;
@@ -416,5 +444,3 @@ footer {
     }
   }
 }
-
-
