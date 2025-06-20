@@ -1,5 +1,6 @@
 @import "fonts.min.css";
 
+$container-width: 65%;
 * {
   padding: 0;
   margin: 0;
@@ -19,7 +20,7 @@ a {
   color: inherit;
 }
 .container {
-  max-width: 66%;
+  max-width: $container-width;
   padding: 0 20px;
   margin-inline: auto;
 }
@@ -44,10 +45,13 @@ body {
   font-style: normal;
   font-weight: 400;
   line-height: 3rem; /* 171.429% */
+
+  //max-height: 1rem;
+
 }
 
 header {
-  margin-bottom: 70px;
+  margin-bottom: 83px;
 
   .container {
     display: flex;
@@ -59,53 +63,68 @@ header {
 
       .lang {
         margin-right: 50px;
-        font-family: "Tourney";
+        font-family: "Tourney", sans-serif;
         font-size: 1.375rem;
         font-style: normal;
         font-weight: 600;
         letter-spacing: 0.0825rem;
+        position: relative;
+        top: 1px;
+        left: 1px;
+        //max-height: 1.5rem;
       }
       nav {
+        margin-right: 20px;
         color: #000;
-        font-family: "Staatliches";
+        position: relative;
+        top: 4px;
+        left: 2px;
+        font-family: "Staatliches", sans-serif;
         font-size: 1.375rem;
         font-style: normal;
         font-weight: 400;
-        //line-height: normal;
         letter-spacing: 0.04125rem;
+
+        flex-wrap: inherit;
+        gap: 10px;
+        display: flex;
+        span {
+          max-height: 1rem;
+        }
+
       }
     }
   }
 }
-
 .chapter {
   .container {
-    margin-bottom: 70px;
+    vertical-align: top;
+    margin-bottom: 64px;
     flex-flow: column wrap;
     display: flex;
-    gap: 40px;
+    gap: 33px;
     hgroup {
       display: flex;
       gap: 10px;
+      margin-bottom: 2px;
       h2 {
-        font-family: "Francois One";
+        position: relative;
+        font-family: "Francois One", sans-serif;
         font-size: 2.25rem;
         font-style: normal;
         font-weight: 400;
-        line-height: 3rem; /* 133.333% */
+        line-height: 3rem;
         letter-spacing: 0.09rem;
         text-transform: uppercase;
       }
       p {
         font-size: 1.10rem;
-        font-feature-settings: 'sups' on;
-        font-family: "Farro";
+        font-family: "Farro", sans-serif;
         line-height: 1;
         position: relative;
         top: -2px;
-        left: -1px;
+        left: -2px;
         letter-spacing: 0.065rem;
-
       }
     }
   }
