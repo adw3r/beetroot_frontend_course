@@ -139,7 +139,7 @@ main .super-powers .container .content h1 {
 main .features {
   margin: 0;
   padding-bottom: 90px;
-  background: url("http://localhost:63342/beetroot_frontend_course/productly/assets/images/bg.svg") no-repeat center center;
+  background: url("../images/bg.svg") no-repeat center center;
   background-size: cover;
 }
 main .features .container {
