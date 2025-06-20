@@ -98,6 +98,10 @@ header .container div nav span {
   display: flex;
   gap: 33px;
 }
+.chapter .container p {
+  position: relative;
+  top: 5px;
+}
 .chapter .container hgroup {
   display: flex;
   gap: 10px;
@@ -116,10 +120,9 @@ header .container div nav span {
 .chapter .container hgroup p {
   font-size: 1.1rem;
   font-family: "Farro", sans-serif;
+  top: 1px;
+  left: -1px;
   line-height: 1;
-  position: relative;
-  top: -2px;
-  left: -2px;
   letter-spacing: 0.065rem;
 }
 
