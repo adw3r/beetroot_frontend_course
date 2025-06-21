@@ -2,18 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <link rel="stylesheet" href="assets/style.css">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <link href="assets/style.css" rel="stylesheet">
     <title>Main</title>
 </head>
 <body>
+<header>
+    <div class="container">
+        <details class="dropdown">
+            <summary class="secondary" role="button">Theme</summary>
+            <ul>
+                <li><a data-theme-switcher="auto" href="#">Auto</a></li>
+                <li><a data-theme-switcher="light" href="#">Light</a></li>
+                <li><a data-theme-switcher="dark" href="#">Dark</a></li>
+            </ul>
+        </details>
+    </div>
+</header>
 <main>
     <section>
         <div class="container">
             <h1>
                 Home works
             </h1>
+
             <ul>
                 <li>
                     <a href="cv/index.html">cv</a>
