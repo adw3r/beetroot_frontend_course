@@ -13,3 +13,45 @@ body {
 section div {
   background: #FFF;
 }
+
+.file-import {
+  //min-width: 175px;
+  &:hover, &:focus, &:active {
+    cursor: pointer;
+    color: var(--bs-body-color);
+    background-color: var(--bs-body-bg);
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: 0 0 0 .25rem rgba(13, 110, 253, .25);
+  }
+
+  &:after {
+    content: url("../icons/camera.svg");
+    position: relative;
+    top: 3px;
+  }
+}
+
+.btn-delete {
+  margin-left: 10px;
+  border: 1px solid var(--bs-border-color);
+  border-radius: var(--bs-border-radius);
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  justify-content: center;
+  display: flex;
+  background: none;
+  align-items: center;
+  flex-shrink: 0;
+
+  &:hover {
+    cursor: pointer;
+    color: var(--bs-body-color);
+    background-color: var(--bs-body-bg);
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: 0 0 0 .25rem rgba(13, 110, 253, .25);
+  }
+
+}
