@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forms</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/index.min.css">
+    <script src="assets/js/index.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+<main>
+    <section class="py-3">
+        <div class="container col-xl-5 col-lg-6 col-md-8 col-sm-10 col-12 p-4">
+            <h4 class="mb-3">
+                Create an Account
+            </h4>
+            <form class="needs-validation row g-2" novalidate action="/form" method="post">
+                <div class="col-l-6 col-xl-6">
+                    <label for="firstName" class="form-label">
+                        First name
+                    </label>
+                    <input type="text" class="form-control" name="firstName" id="firstName" value required>
+                    <div class="invalid-feedback">Valid first name is required.</div>
+                </div>
+                <div class="col-l-6 col-xl-6">
+                    <label for="lastName" class="form-label">
+                        Last Name
+                    </label>
+                    <input type="text" class="form-control" name="lastName" id="lastName" value required>
+                    <div class="invalid-feedback">Valid Last Name is required.</div>
+                </div>
+                <div class="col-12 mb-4">
+                    <label for="email" class="form-label">
+                        Email
+                    </label>
+                    <input type="email" class="form-control" name="email" id="email" value required>
+                    <small class="text-body-secondary">
+                        We'll never share your email with anyone else.
+                    </small>
+                    <div class="invalid-feedback">Valid Email is required.</div>
+                </div>
+                <div class="mb-4 d-flex gap-4">
+                    <div>
+                        <input id="male" name="sex" type="radio" class="form-check-input" value="male" checked>
+                        <label class="form-check-label d-inline-block" for="male">
+                            Male
+                        </label>
+                    </div>
+                    <div>
+                        <input id="female" name="sex" type="radio" class="form-check-input" value="female">
+                        <label class="form-check-label" for="female">
+                            Female
+                        </label>
+                        <div class="invalid-feedback">Please select your sex.</div>
+                    </div>
+                </div>
+                <div class="col-xl-6">
+                    <label for="country" class="form-label">
+                        Country
+                    </label>
+                    <select class="form-select text-muted" id="country" required name="country">
+                        <option value="" disabled selected>
+                            Select
+                        </option>
+                        <option value="nigeria">Nigeria</option>
+                        <option value="uas">Usa</option>
+                        <option value="ukraine">Ukraine</option>
+                        <option value="poland">Poland</option>
+                        <option value="german">German</option>
+                        <option value="france">France</option>
+                    </select>
+                    <div class="invalid-feedback">Valid Country is required.</div>
+                </div>
+                <div class="col-xl-6 mb-3">
+                    <label for="city" class="form-label">
+                        City
+                    </label>
+                    <input type="text" class="form-control" id="city" name="city" required>
+                    <div class="invalid-feedback">Valid City is required.</div>
+                </div>
+                <div class="col d-flex justify-content-center mb-4">
+                    <button class="btn btn-primary btn-lg flex-fill" type="submit">Submit</button>
+                </div>
+                <div class="d-flex justify-content-center mb-4">
+                    <small class="w-75 align-content-center text-center text-body-secondary ">
+                        By clicking the 'Sign Up' button, you confirm that you accept our
+                        <a href="#" class="link-underline-light">Terms of Use</a>
+                        and <a href="#" class="link-underline-light">Privacy Policy</a>.
+                    </small>
+                </div>
+                <hr class="mb-4">
+                <div class="col text-center">
+                    <span class="mx-3">
+
+                        Have an account?
+                    </span>
+                    <a href="#" class="link-underline-light fw-medium">Log in</a>
+                </div>
+            </form>
+        </div>
+    </section>
+</main>
+</body>
+</html>
