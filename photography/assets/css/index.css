@@ -11,15 +11,14 @@ ul, li {
 }
 
 img {
-  vertical-align: top;
   width: 100%;
-  object-fit: contain;
-  object-position: bottom;
+  object-fit: cover;
+  object-position: top;
+  aspect-ratio: 1;
 }
 
 body {
   font-family: "Roboto", sans-serif;
-  padding-block: 120px;
 }
 
 .container {
@@ -33,7 +32,6 @@ h2 {
   margin-bottom: 80px;
   text-align: center;
   color: #000;
-  /* Heading */
   font-size: 36px;
   font-style: normal;
   font-weight: 400;
@@ -50,23 +48,34 @@ h2 {
 .wide {
   grid-column: span 2;
 }
+.wide .img-wrap img {
+  aspect-ratio: 2/1;
+  object-fit: inherit;
+}
 
 .tall {
   grid-row: span 2;
 }
 
+section {
+  padding: 100px 0;
+}
+
 .item {
   min-height: 370px;
-  border-radius: 10px;
+  border-radius: 20px;
   position: relative;
   color: white;
   overflow: clip;
 }
-.item:hover {
-  scale: 110%;
+.item:hover .img-wrap img {
+  transform: scale(1.1);
+}
+.item .img-wrap {
+  vertical-align: bottom;
+  position: absolute;
 }
 .item .img-wrap img {
-  position: absolute;
   z-index: -1;
 }
 .item .content {
@@ -119,7 +128,6 @@ h2 {
 }
 .item .content .text span {
   color: #FFF;
-  font-family: Roboto, sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
@@ -129,7 +137,6 @@ h2 {
 }
 .item .content .text span:last-child {
   color: var(--Gray-5, #E0E0E0);
-  font-family: Roboto, sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
