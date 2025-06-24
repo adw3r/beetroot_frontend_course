@@ -12,9 +12,6 @@ ul, li {
 
 img {
   width: 100%;
-  object-fit: cover;
-  object-position: top;
-  aspect-ratio: 1;
 }
 
 body {
@@ -42,23 +39,26 @@ h2 {
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+  grid-template-rows: 1fr 1fr 1fr;
   gap: 20px;
+}
+
+section {
+  margin: 100px 0 120px 0;
 }
 
 .wide {
   grid-column: span 2;
 }
 .wide .img-wrap img {
-  aspect-ratio: 2/1;
-  object-fit: inherit;
+  aspect-ratio: 1.7/1;
 }
 
 .tall {
   grid-row: span 2;
 }
-
-section {
-  padding: 100px 0;
+.tall .img-wrap img {
+  aspect-ratio: unset;
 }
 
 .item {
