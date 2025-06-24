@@ -75,6 +75,7 @@ h2 {
   justify-content: space-between;
   display: flex;
   flex-direction: column;
+  box-shadow: inset 0 -50px 50px -10px rgba(0, 0, 0, 0.7);
 }
 .item .content:hover .buttons button {
   opacity: 60%;
