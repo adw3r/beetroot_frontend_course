@@ -76,6 +76,9 @@ h2 {
   display: flex;
   flex-direction: column;
 }
+.item .content:hover .buttons button {
+  opacity: 60%;
+}
 .item .content .buttons {
   display: flex;
   justify-content: space-between;
@@ -83,7 +86,7 @@ h2 {
 .item .content .buttons button {
   border-radius: 10px;
   border: none;
-  opacity: 50%;
+  opacity: 0%;
   font-size: 1.2rem;
   display: flex;
   width: 40px;
