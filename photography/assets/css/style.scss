@@ -63,31 +63,78 @@ h2 {
   min-height: 370px;
   border-radius: 10px;
   position: relative;
+  color: white;
   overflow: clip;
 
-  .img-wrap {
-    //aspect-ratio: 1;
+  &:hover {
+    scale: 110%;
+  }
 
+  .img-wrap {
     img {
       position: absolute;
       z-index: -1;
-      //top: -20px;
-      //object-position: right;
+
+
     }
   }
 
   .content {
-    display: grid;
-    grid-template: 1fr 1fr / 1fr 1fr;
-    color: white;
+    padding: 20px;
+    height: 100%;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
 
-    button {
-      display: block;
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+
+      button {
+        &:hover {
+          cursor: pointer;
+          opacity: 100%;
+        }
+
+        border-radius: 10px;
+        border: none;
+        opacity: 50%;
+        font-size: 1.2rem;
+        display: flex;
+        width: 40px;
+        height: 40px;
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+      }
     }
 
-    span {
-      display: block;
+    .text {
+      display: flex;
+      justify-content: space-between;
+      top: 13px;
+      position: relative;
+
+      span {
+        &:last-child {
+          color: var(--Gray-5, #E0E0E0);
+          font-family: Roboto, sans-serif;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
+
+        color: #FFF;
+        font-family: Roboto, sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        display: block;
+        height: 30px;
+      }
     }
   }
-
 }
