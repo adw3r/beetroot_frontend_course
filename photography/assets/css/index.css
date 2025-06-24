@@ -77,6 +77,16 @@ h2 {
   flex-direction: column;
   box-shadow: inset 0 -50px 50px -10px rgba(0, 0, 0, 0.7);
 }
+.item .content::before {
+  transition: opacity 0.3s ease-in-out;
+  content: "";
+  background: linear-gradient(0deg, #241F24 0%, rgba(91, 91, 91, 0.45) 34.11%, rgba(187, 186, 192, 0.26) 62.5%);
+  position: absolute;
+  inset: 0;
+}
+.item .content:hover:before {
+  opacity: 0;
+}
 .item .content:hover .buttons button {
   opacity: 60%;
 }
