@@ -3,182 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <title>Forms</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/index.min.css">
-    <script src="assets/js/index.js"></script>
-    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="assets/css/index.min.css" rel="stylesheet">
+
 </head>
 <body>
 <main>
-    <section class="py-3">
-        <div class="container col-xl-5 col-lg-6 col-md-8 col-sm-10 col-12 p-4">
-            <h4 class="mb-3">
+    <section>
+        <div class="container">
+            <h2>
                 Create an Account
-            </h4>
-            <form class="needs-validation row g-2" novalidate action="/form" method="post">
-                <div class="col-l-6 col-xl-6">
-                    <label for="firstName" class="form-label">
-                        First name
-                    </label>
-                    <input type="text" class="form-control" name="firstName" id="firstName" value required>
-                    <div class="invalid-feedback">Valid first name is required.</div>
+            </h2>
+            <form action="/form" class="" method="post">
+                <div class="row mb">
+                    <div class="col">
+                        <label for="firstName">
+                            First name
+                        </label>
+                        <input id="firstName" name="firstName" required type="text" value>
+                    </div>
+                    <div class="col">
+                        <label for="lastName">
+                            Last Name
+                        </label>
+                        <input id="lastName" name="lastName" required type="text" value>
+                    </div>
                 </div>
-                <div class="col-l-6 col-xl-6">
-                    <label for="lastName" class="form-label">
-                        Last Name
-                    </label>
-                    <input type="text" class="form-control" name="lastName" id="lastName" value required>
-                    <div class="invalid-feedback">Valid Last Name is required.</div>
-                </div>
-                <div class="col-12 mb-4">
-                    <label for="email" class="form-label">
+                <div class="col mb">
+                    <label for="email">
                         Email
                     </label>
-                    <input type="email" class="form-control" name="email" id="email" value required>
-                    <small class="text-body-secondary">
+                    <input id="email" name="email" required type="email" value>
+                    <small class="small">
                         We'll never share your email with anyone else.
                     </small>
-                    <div class="invalid-feedback">Valid Email is required.</div>
                 </div>
-                <div class="mb-4 d-flex gap-4">
-                    <div>
-                        <input id="male" name="sex" type="radio" class="form-check-input" value="male" checked>
-                        <label class="form-check-label d-inline-block" for="male">
+                <div class="row mb radio">
+                    <label for="male">
+                        <input checked id="male" name="sex" type="radio" value="0">
+                        <span>
                             Male
-                        </label>
-                    </div>
-                    <div>
-                        <input id="female" name="sex" type="radio" class="form-check-input" value="female">
-                        <label class="form-check-label" for="female">
-                            Female
-                        </label>
-                        <div class="invalid-feedback">Please select your sex.</div>
-                    </div>
-                </div>
-                <div class="col-xl-6">
-                    <label for="country" class="form-label">
-                        Country
-                    </label>
-                    <select class="form-select text-muted" id="country" required name="country">
-                        <option value="" disabled selected>
-                            Select
-                        </option>
-                        <option value="nigeria">Nigeria</option>
-                        <option value="uas">Usa</option>
-                        <option value="ukraine">Ukraine</option>
-                        <option value="poland">Poland</option>
-                        <option value="german">German</option>
-                        <option value="france">France</option>
-                    </select>
-                    <div class="invalid-feedback">Valid Country is required.</div>
-                </div>
-                <div class="col-xl-6 mb-3">
-                    <label for="city" class="form-label">
-                        City
-                    </label>
-                    <input type="text" class="form-control" id="city" name="city" required>
-                    <div class="invalid-feedback">Valid City is required.</div>
-                </div>
-                <div class="col d-flex justify-content-center mb-4">
-                    <button class="btn btn-primary btn-lg flex-fill" type="submit">Submit</button>
-                </div>
-                <div class="d-flex justify-content-center mb-4">
-                    <small class="w-75 align-content-center text-center text-body-secondary ">
-                        By clicking the 'Sign Up' button, you confirm that you accept our
-                        <a href="#" class="link-underline-light">Terms of Use</a>
-                        and <a href="#" class="link-underline-light">Privacy Policy</a>.
-                    </small>
-                </div>
-                <hr class="mb-4">
-                <div class="col text-center">
-                    <span class="mx-3">
 
+                        </span>
+                    </label>
+                    <label class="form-check-label" for="female">
+                        <input id="female" name="sex" type="radio" value="1">
+                        <span>
+                            Female
+                        </span>
+                    </label>
+                </div>
+                <div class="row mb">
+                    <div class="col">
+                        <label for="country">
+                            Country
+                        </label>
+                        <select class="js-example-disabled-results" id="country" name="country">
+                            <option disabled hidden selected value>
+                            </option>
+                            <option value="ukraine">Ukraine</option>
+                            <option value="france">France</option>
+                            <option value="usa">USA</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label class="" for="city">
+                            City
+                        </label>
+                        <input class="" id="city" name="city" required type="text">
+                    </div>
+                </div>
+                <div class="col mb">
+                    <button class="" type="submit">Sign Up</button>
+                </div>
+
+                <div class="col max-w-410 text-align-center mb privacy-policy">
+                    <span class="small">
+                        By clicking the 'Sign Up' button, you confirm that you accept our
+                    </span>
+                    <span class="small">
+                        <a class="link-underline-light" href="#">Terms of Use</a>
+                        and
+                        <a class="link-underline-light" href="#">Privacy Policy</a>.
+                    </span>
+                </div>
+                <div class="hr mb"></div>
+
+                <div class="align-items-center">
+                    <span>
                         Have an account?
                     </span>
-                    <a href="#" class="link-underline-light fw-medium">Log in</a>
+                    <a href="#">Log in</a>
                 </div>
             </form>
         </div>
     </section>
-    <section class="py-3">
-        <div class="container col-xl-5 col-lg-6 col-md-8 col-sm-10 col-12 p-4">
-            <h4 class="mb-5">
+    <section>
+        <div class="container">
+            <h2>
                 Profile
-            </h4>
-            <form class="needs-validation row g-2" novalidate action="/profile" method="post">
-                <div class="col-12 d-flex gap-4 mb-4">
-                    <div class="col-auto">
-                        <img src="assets/images/profile_picture.png" alt="Profile picture"
-                             class="rounded-circle col" width="80" height="80">
+            </h2>
+            <form action="/profile" method="post" novalidate>
+                <div class="photo-group mb">
+                    <img alt="Profile picture" class="rounded-circle"
+                         src="assets/images/profile_picture.png">
+                    <div class="photo-upload">
+                        <div class="btn-group">
+                            <label class="file-import" for="file">
+                                <input id="file" name="file" style="display: none" type="file">
+                            </label>
+                            <button class="btn-delete">
+                                <img alt="trash" src="assets/icons/trash.svg">
+                            </button>
+                        </div>
+                        <small class="small">Up to 1 MB (300x300 px)</small>
                     </div>
-                    <div class="d-flex align-self-start flex-wrap">
-                        <label for="file"
-                               class="col-sm-12 form-control form-control-sm file-import w-50 d-flex justify-content-between">
-                            <span class="text-muted">
-                                Upload a photo
-                            </span>
-                            <input type="file" id="file" name="file" style="display: none">
+                </div>
+                <div class="row mb">
+
+                    <div class="col">
+                        <label class="form-label" for="name">
+                            Name
                         </label>
-                        <button class="col-sm-1 btn-delete">
-                            <img src="assets/icons/trash.svg" alt="">
-                        </button>
-                        <small class="text-muted d-block col-12">Up to 1 MB (300x300 px)</small>
+                        <input class="" id="name" name="firstName" required type="text" value>
+                    </div>
+                    <div class="col">
+                        <label class="form-label" for="email_2">
+                            Email
+                        </label>
+                        <input class="" id="email_2" name="email_2" required type="email" value>
                     </div>
                 </div>
-                <div class="col-l-6 col-xl-6">
-                    <label for="name" class="form-label">
-                        Name
-                    </label>
-                    <input type="text" class="form-control" name="firstName" id="name" value required>
-                    <div class="invalid-feedback">Valid first name is required.</div>
+                <div class="row mb">
+                    <div class="col">
+                        <label class="" for="country_2">
+                            Country
+                        </label>
+                        <select class="js-example-basic-single" id="country_2" name="country" required>
+                            <option disabled selected value="">
+                                Select
+                            </option>
+                            <option value="nigeria">Nigeria</option>
+                            <option value="uas">Usa</option>
+                            <option value="ukraine">Ukraine</option>
+                            <option value="poland">Poland</option>
+                            <option value="german">German</option>
+                            <option value="france">France</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label class="" for="city_2">
+                            City
+                        </label>
+                        <input class="" id="city_2" name="city" required type="text">
+                    </div>
                 </div>
-                <div class="col-l-6 col-xl-6">
-                    <label for="email_2" class="form-label">
-                        Email
-                    </label>
-                    <input type="email" class="form-control" name="email_2" id="email_2" value required>
-                    <div class="invalid-feedback">Valid Email is required.</div>
+                <div class="row mb">
+
+                    <div class="col">
+                        <label for="zip">
+                            Zip code
+                        </label>
+                        <input id="zip" name="zip" required type="number">
+                    </div>
+                    <div class="col">
+                        <label for="number">
+                            Phone number
+                        </label>
+                        <input id="number" name="number" required type="number">
+                    </div>
                 </div>
-                <div class="col-l-6 col-xl-6">
-                    <label for="country_2" class="form-label">
-                        Country
-                    </label>
-                    <select class="form-select text-muted" id="country_2" required name="country">
-                        <option value="" disabled selected>
-                            Select
-                        </option>
-                        <option value="nigeria">Nigeria</option>
-                        <option value="uas">Usa</option>
-                        <option value="ukraine">Ukraine</option>
-                        <option value="poland">Poland</option>
-                        <option value="german">German</option>
-                        <option value="france">France</option>
-                    </select>
-                    <div class="invalid-feedback">Valid Country is required.</div>
-                </div>
-                <div class="col-l-6 col-xl-6 ">
-                    <label for="city_2" class="form-label">
-                        City
-                    </label>
-                    <input type="text" class="form-control" id="city_2" name="city" required>
-                    <div class="invalid-feedback">Valid City is required.</div>
-                </div>
-                <div class="col-l-6 col-xl-6 ">
-                    <label for="zip" class="form-label">
-                        Zip code
-                    </label>
-                    <input type="number" class="form-control" id="zip" name="zip" required>
-                    <div class="invalid-feedback">Valid City is required.</div>
-                </div>
-                <div class="col-l-6 col-xl-6 mb-3">
-                    <label for="number" class="form-label">
-                        Phone number
-                    </label>
-                    <input type="number" class="form-control" id="number" name="number" required>
-                    <div class="invalid-feedback">Valid City is required.</div>
-                </div>
-                <div class="col d-flex mb-4">
-                    <button class="btn btn-primary px-5" type="submit">
+                <div class="col">
+                    <button class="max-w-150" type="submit">
                         Update
                     </button>
                 </div>
@@ -187,6 +183,9 @@
 
         </div>
     </section>
+
 </main>
+<script src="dist/main.js" type="module"></script>
+
 </body>
 </html>

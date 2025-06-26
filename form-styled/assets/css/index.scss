@@ -1,57 +1,289 @@
-@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "select.min.css";
+@import "fonts.min.css";
 
+$--grey-border: #E4E4E4;
+$--action-item-color: #007BFF;
+$--action-item-height: 38px;
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 body {
   background: #F7F7F7;
+  color: #545454;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.9375rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.375rem; /* 146.667% */
+  letter-spacing: -0.0125rem;
 }
 
-section div {
+.container {
+  max-width: 570px;
+  margin: 0 auto;
+  padding: 30px 34px;
   background: #FFF;
+  border-radius: 10px;
 }
 
-.file-import {
-  //min-width: 175px;
+a {
+  text-decoration: none;
+  color: $--action-item-color;
+}
+
+// select2 reset styles
+.select2-container {
+  width: auto !important;
+}
+
+.select2-container--default .select2-selection--single {
+  background: url('../icons/arrows.svg') right 5px top 10px/18px no-repeat;
+  height: $--action-item-height;
+  border: $--grey-border solid 1px;
+
+  &:focus {
+    border: $--action-item-color solid 1px;
+  }
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  line-height: $--action-item-height;
+}
+
+.select2-container .select2-selection--single .select2-selection__rendered {
+  padding-left: 10px
+}
+
+.select2-selection__arrow {
+  display: none
+}
+
+section {
+  margin-block: 50px;
+}
+
+h2 {
+  padding-left: 2px;
+  color: #1C1C1C;
+  font-size: 1.5rem;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  line-height: 2rem; /* 133.333% */
+  margin-bottom: 20px;
+}
+
+.privacy-policy.privacy-policy {
+  gap: 0;
+  margin-inline: auto;
+}
+
+.hr {
+  border-top: 1px solid $--grey-border;
+}
+
+.small {
+  color: #969696;
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.125rem; /* 138.462% */
+  letter-spacing: -0.00625rem;
+}
+
+.max-w-410 {
+  max-width: 410px;
+}
+
+.max-w-150 {
+  max-width: 150px;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.text-align-left {
+  text-align: left;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.radio {
+  display: inline-flex;
+  gap: 21px;
+
+  input {
+    display: none;
+  }
+
+  label {
+    span {
+      vertical-align: top;
+      padding-inline: 5px;
+    }
+
+    &:before {
+      content: "";
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 1px solid $--grey-border;
+      border-radius: 50%;
+      position: relative;
+      left: 0;
+      top: 0;
+    }
+
+    &:has(input:checked) {
+      &:before {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border: 6px solid #007BFF;
+        border-radius: 50%;
+        position: relative;
+        left: 0;
+        top: 0;
+      }
+    }
+
+
+  }
+}
+
+.mb {
+  margin-bottom: 20px;
+}
+
+button {
   &:hover, &:focus, &:active {
     cursor: pointer;
-    color: var(--bs-body-color);
-    background-color: var(--bs-body-bg);
-    border-color: #86b7fe;
-    outline: 0;
-    box-shadow: 0 0 0 .25rem rgba(13, 110, 253, .25);
   }
 
-  &:after {
-    content: url("../icons/camera.svg");
-    position: relative;
-    top: 3px;
-  }
+  height: $--action-item-height;
+  border: none;
+  border-radius: 5px;
+  padding: 7px 10px;
+  background: $--action-item-color;
+  color: #FFF;
+
+  text-align: center;
+  text-decoration: none;
+  font-family: Roboto, sans-serif;
+  font-size: 0.9375rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.375rem; /* 146.667% */
+  letter-spacing: -0.00625rem;
 }
 
-.btn-delete {
-  margin-left: 10px;
-  border: 1px solid var(--bs-border-color);
-  border-radius: var(--bs-border-radius);
-  padding: 0;
-  width: 30px;
-  height: 30px;
-  justify-content: center;
-  display: flex;
-  background: none;
-  align-items: center;
-  flex-shrink: 0;
+a {
+  text-decoration: none;
+}
 
-  &:hover {
-    cursor: pointer;
-    color: var(--bs-body-color);
-    background-color: var(--bs-body-bg);
-    border-color: #86b7fe;
-    outline: 0;
-    box-shadow: 0 0 0 .25rem rgba(13, 110, 253, .25);
+.align-items-center {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+input {
+  font-family: Roboto, sans-serif;
+  height: $--action-item-height;
+  border: none;
+  border-radius: 5px;
+  outline: 1px solid $--grey-border;
+  padding: 7px 10px;
+}
+
+.col {
+  min-width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+// second form
+.photo-group {
+  display: flex;
+  gap: 10px;
+
+  .rounded-circle {
+    border-radius: 50%;
+    width: 102px;
+    height: 102px;
+    object-fit: cover;
   }
 
+  .photo-upload {
+    //display: flex;
+
+    .btn-group {
+      margin-bottom: 10px;
+      display: flex;
+
+      .file-import {
+        min-width: 90%;
+        border: 1px solid $--grey-border;
+        border-radius: 5px;
+        height: 30px;
+        padding: 10px;
+        display: flex;
+        align-items: normal;
+        justify-content: right;
+
+
+        &:after {
+          content: url("../icons/camera.svg");
+          position: relative;
+          top: -4px;
+        }
+
+        &:hover, &:focus, &:active {
+          cursor: pointer;
+          color: var(--bs-body-color);
+          background-color: var(--bs-body-bg);
+          border-color: #86b7fe;
+          outline: 0;
+          box-shadow: 0 0 0 .25rem rgba(13, 110, 253, .25);
+        }
+      }
+
+      .btn-delete {
+        margin-left: 10px;
+        border: 1px solid $--grey-border;
+        border-radius: 5px;
+        padding: 0;
+        width: 30px;
+        height: 30px;
+        justify-content: center;
+        display: flex;
+        background: none;
+        align-items: center;
+        flex-shrink: 0;
+
+        &:hover {
+          cursor: pointer;
+          color: var(--bs-body-color);
+          background-color: var(--bs-body-bg);
+          border-color: #86b7fe;
+          outline: 0;
+          box-shadow: 0 0 0 .25rem rgba(13, 110, 253, .25);
+        }
+      }
+    }
+  }
 }
