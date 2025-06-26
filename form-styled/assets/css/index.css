@@ -37,6 +37,7 @@ a {
 }
 
 .select2-container {
+  transition: unset;
   width: auto !important;
 }
 
@@ -153,6 +154,7 @@ h2 {
 }
 
 button {
+  transition: all 100ms ease;
   height: 38px;
   border: none;
   border-radius: 5px;
@@ -170,6 +172,15 @@ button {
 }
 button:hover, button:focus, button:active {
   cursor: pointer;
+}
+button:hover {
+  background: #39a0ff;
+}
+button:active {
+  background: transparent;
+  color: #007BFF;
+  outline: #007BFF solid 1px;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
 
 a {
@@ -189,6 +200,10 @@ input {
   border-radius: 5px;
   outline: 1px solid #E4E4E4;
   padding: 7px 10px;
+}
+input:active, input:focus {
+  outline: #007BFF solid 2px;
+  transition: outline-color 0ms ease;
 }
 
 .col {
