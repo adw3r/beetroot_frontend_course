@@ -104,11 +104,12 @@
                 Profile
             </h2>
             <form action="/profile" method="post" novalidate>
-                <div class="photo-group mb">
-                    <img alt="Profile picture" class="rounded-circle"
-                         src="assets/images/profile_picture.png">
-                    <div class="photo-upload">
-                        <div class="btn-group">
+                <div class="row mb profile">
+                    <div class="col">
+                        <img alt="Profile picture" class="rounded-circle"
+                             src="assets/images/profile_picture.png">
+                        <div class="upload">
+
                             <input id="file" name="file" type="file" class="input-file">
                             <button class="btn-delete"></button>
                         </div>
@@ -116,7 +117,6 @@
                     </div>
                 </div>
                 <div class="row mb">
-
                     <div class="col">
                         <label class="form-label" for="name">
                             Name

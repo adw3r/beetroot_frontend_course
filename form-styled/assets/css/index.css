@@ -213,52 +213,48 @@ input:active, input:focus {
   gap: 7px;
 }
 
-.photo-group {
-  display: flex;
-  gap: 10px;
-  width: auto;
-  flex-flow: row wrap;
-}
-.photo-group .rounded-circle {
-  border-radius: 50%;
-  width: 102px;
-  height: 102px;
-  object-fit: cover;
-}
-.photo-group .photo-upload {
-  width: auto;
-}
-.photo-group .photo-upload .btn-group {
-  margin-bottom: 10px;
-  display: flex;
-  max-width: 100%;
-}
-.photo-group .photo-upload .btn-group .input-file {
+.input-file {
   background: url("../icons/camera.svg") no-repeat right 10px center;
   color: transparent;
   height: 30px;
-  min-width: 100%;
+  width: 100%;
   font-size: 0;
 }
-.photo-group .photo-upload .btn-group .input-file::-webkit-file-upload-button {
+.input-file::-webkit-file-upload-button {
   display: none;
 }
-.photo-group .photo-upload .btn-group .btn-delete {
+
+.btn-delete.btn-delete {
   background: url("../icons/trash.svg") no-repeat center;
   color: transparent;
-  margin-left: 10px;
   border: 1px solid #E4E4E4;
   border-radius: 5px;
-  min-width: 38px;
-  height: auto;
+  width: 38px;
+  height: 30px;
 }
-.photo-group .photo-upload .btn-group .btn-delete:hover {
+.btn-delete.btn-delete:hover {
   cursor: pointer;
   color: var(--bs-body-color);
   background-color: var(--bs-body-bg);
   border-color: #86b7fe;
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.rounded-circle {
+  border-radius: 50%;
+  width: 102px;
+  height: 102px;
+  object-fit: cover;
+}
+
+.profile {
+  grid-template-columns: 1fr;
+}
+
+.upload {
+  display: flex;
+  gap: 10px;
 }
 
 /*# sourceMappingURL=index.css.map */
