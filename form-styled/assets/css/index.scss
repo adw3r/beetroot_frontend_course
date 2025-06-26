@@ -120,7 +120,7 @@ h2 {
 .row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  gap: 10px;
 }
 
 .radio {
@@ -242,22 +242,24 @@ input {
   background: url('../icons/camera.svg') no-repeat right 10px center;
   color: transparent;
   height: 30px;
-  width: 100%;
-  font-size: 0;
+  width: clamp(30px, 138px, 100%);
+  vertical-align: top;
+
+  &:hover {
+    cursor: pointer;
+  }
 
   &::-webkit-file-upload-button {
-    display: none;
+    visibility: hidden;
   }
 }
-
-// second form
 
 .btn-delete.btn-delete {
   background: url('../icons/trash.svg') no-repeat center;
   color: transparent;
   border: 1px solid $--grey-border;
   border-radius: 5px;
-  width: 38px;
+  width: 30px;
   height: 30px;
 
   &:hover {
@@ -278,10 +280,23 @@ input {
 }
 
 .profile {
-  grid-template-columns: 1fr;
+  grid-template-columns: auto;
+}
+
+.flex-flow {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 20px;
 }
 
 .upload {
-  display: flex;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
   gap: 10px;
+
+  .btn-wrapper {
+    display: flex;
+    gap: 10px;
+  }
 }

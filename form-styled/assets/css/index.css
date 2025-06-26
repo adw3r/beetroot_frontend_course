@@ -113,7 +113,7 @@ h2 {
 .row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  gap: 10px;
 }
 
 .radio {
@@ -217,11 +217,14 @@ input:active, input:focus {
   background: url("../icons/camera.svg") no-repeat right 10px center;
   color: transparent;
   height: 30px;
-  width: 100%;
-  font-size: 0;
+  width: clamp(30px, 138px, 100%);
+  vertical-align: top;
+}
+.input-file:hover {
+  cursor: pointer;
 }
 .input-file::-webkit-file-upload-button {
-  display: none;
+  visibility: hidden;
 }
 
 .btn-delete.btn-delete {
@@ -229,7 +232,7 @@ input:active, input:focus {
   color: transparent;
   border: 1px solid #E4E4E4;
   border-radius: 5px;
-  width: 38px;
+  width: 30px;
   height: 30px;
 }
 .btn-delete.btn-delete:hover {
@@ -249,10 +252,22 @@ input:active, input:focus {
 }
 
 .profile {
-  grid-template-columns: 1fr;
+  grid-template-columns: auto;
+}
+
+.flex-flow {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 20px;
 }
 
 .upload {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+}
+.upload .btn-wrapper {
   display: flex;
   gap: 10px;
 }

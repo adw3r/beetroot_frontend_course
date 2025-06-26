@@ -104,13 +104,12 @@
                 Profile
             </h2>
             <form action="/profile" method="post" novalidate>
-                <div class="row mb profile">
-                    <div class="col">
-                        <img alt="Profile picture" class="rounded-circle"
-                             src="assets/images/profile_picture.png">
-                        <div class="upload">
-
-                            <input id="file" name="file" type="file" class="input-file">
+                <div class="flex-flow mb">
+                    <img alt="Profile picture" class="rounded-circle"
+                         src="assets/images/profile_picture.png">
+                    <div class="upload">
+                        <div class="btn-wrapper">
+                            <input id="file" name="file" type="file" class="input-file" placeholder="Upload">
                             <button class="btn-delete"></button>
                         </div>
                         <small class="small">Up to 1 MB (300x300 px)</small>
