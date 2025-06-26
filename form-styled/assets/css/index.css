@@ -226,6 +226,16 @@ input:active, input:focus {
 .input-file::-webkit-file-upload-button {
   visibility: hidden;
 }
+.input-file:active:before, .input-file:focus:before {
+  content: "Upload file...";
+  color: black;
+  vertical-align: top;
+}
+.input-file:before {
+  content: "Upload file...";
+  color: lightgrey;
+  vertical-align: top;
+}
 
 .btn-delete.btn-delete {
   background: url("../icons/trash.svg") no-repeat center;

@@ -252,6 +252,20 @@ input {
   &::-webkit-file-upload-button {
     visibility: hidden;
   }
+
+  &:active, &:focus {
+    &:before {
+      content: 'Upload file...';
+      color: black;
+      vertical-align: top;
+    }
+  }
+
+  &:before {
+    content: 'Upload file...';
+    color: lightgrey;
+    vertical-align: top;
+  }
 }
 
 .btn-delete.btn-delete {
