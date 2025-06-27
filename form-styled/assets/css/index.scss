@@ -127,42 +127,29 @@ h2 {
   display: inline-flex;
   gap: 21px;
 
-  input {
-    display: none;
+  label {
+    vertical-align: top;
   }
 
-  label {
+  input {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    outline: none;
+    border: 1px solid $--grey-border;
 
-    span {
-      vertical-align: top;
-      padding-inline: 5px;
+    &:focus {
+      outline: 1px solid black;
     }
 
-    &:before {
-      content: "";
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-      border: 1px solid $--grey-border;
-      border-radius: 50%;
-      position: relative;
-      left: 0;
-      top: 0;
+    &:checked {
+      border: 6px solid #007BFF;
+
     }
 
-    &:has(input:checked) {
-      &:before {
-        display: inline-block;
-        width: 10px;
-        height: 10px;
-        border: 6px solid #007BFF;
-        border-radius: 50%;
-        position: relative;
-        left: 0;
-        top: 0;
-      }
-    }
-
+    padding: 0;
+    margin: 0 6px 0 0;
+    appearance: none;
 
   }
 }
