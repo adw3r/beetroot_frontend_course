@@ -4,7 +4,7 @@ $--blure: linear-gradient(0deg, #241F24 0%, rgba(91, 91, 91, 0.45) 34.11%, rgba(
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  transition: all .3s ease;
+  transition: opacity .3s ease-in-out, scale .3s ease-in-out;
 }
 
 ul, li {
@@ -68,7 +68,7 @@ section {
   &:hover {
     .img-wrap {
       img {
-        transform: scale(1.1);
+        scale: 1.1;
       }
     }
   }
@@ -111,6 +111,10 @@ section {
           &:hover {
             opacity: 100%;
           }
+
+          &:active {
+            scale: 0.6;
+          }
         }
       }
     }
@@ -120,8 +124,10 @@ section {
       justify-content: space-between;
 
       button {
+        z-index: 1;
+        inset: 0;
+        cursor: pointer;
         opacity: 0;
-        display: flex;
         border-radius: 10px;
         border: none;
         font-size: 1.2rem;
