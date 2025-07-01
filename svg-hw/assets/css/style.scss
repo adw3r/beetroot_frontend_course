@@ -218,11 +218,12 @@ footer {
       width: 38px;
       height: 38px;
       border-radius: 5px;
-      background: var(--1, #EFEEF3);
+      background: #EFEEF3;
 
       &:hover {
         * {
           fill: #3DB370;
+          transition: all .2s ease;
         }
       }
 
@@ -230,6 +231,8 @@ footer {
         width: 100%;
         height: 100%;
         scale: 0.6;
+        fill: black;
+
       }
     }
   }

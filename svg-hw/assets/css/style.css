@@ -180,15 +180,17 @@ footer ul a {
   width: 38px;
   height: 38px;
   border-radius: 5px;
-  background: var(--1, #EFEEF3);
+  background: #EFEEF3;
 }
 footer ul a:hover * {
   fill: #3DB370;
+  transition: all 0.2s ease;
 }
 footer ul a svg {
   width: 100%;
   height: 100%;
   scale: 0.6;
+  fill: black;
 }
 
 /*# sourceMappingURL=style.css.map */
