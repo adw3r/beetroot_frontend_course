@@ -20,7 +20,7 @@ a {
 }
 
 .container {
-  max-width: 65%;
+  max-width: 1200px;
   padding: 0 20px;
   margin-inline: auto;
 }
@@ -54,12 +54,10 @@ main {
 
 header {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  width: 100%;
   z-index: 100;
   background: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.07);
 }
 header .container {
   height: 100px;
@@ -68,7 +66,6 @@ header .container {
   align-items: center;
 }
 header .container div {
-  flex-wrap: wrap;
   display: flex;
 }
 header .container div .lang {
@@ -93,12 +90,6 @@ header .container div nav {
   font-style: normal;
   font-weight: 400;
   letter-spacing: 0.04125rem;
-  flex-wrap: inherit;
-  gap: 10px;
-  display: flex;
-}
-header .container div nav span {
-  max-height: 1rem;
 }
 
 .chapter .container {
