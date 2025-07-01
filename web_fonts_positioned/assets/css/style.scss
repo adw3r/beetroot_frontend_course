@@ -182,3 +182,11 @@ h2 {
     }
   }
 }
+
+html {
+  background-image: url('../images/bg-picture.svg');
+  background-repeat: no-repeat;
+  background-size: 900px 900px;
+  background-position: top 180px left 1000px;
+  background-attachment: fixed;
+}
