@@ -20,7 +20,7 @@ a {
 }
 
 .container {
-  max-width: 1300px;
+  max-width: 1230px;
   padding: 0 20px;
   margin-inline: auto;
 }
@@ -170,7 +170,7 @@ html {
   background-image: url("../images/bg-picture.svg");
   background-repeat: no-repeat;
   background-size: 900px 900px;
-  background-position: top 180px left 1000px;
+  background-position: top 187px left 1157px;
   background-attachment: fixed;
 }
 
