@@ -20,7 +20,7 @@ a {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1300px;
   padding: 0 20px;
   margin-inline: auto;
 }
@@ -48,8 +48,37 @@ body {
   line-height: 3rem; /* 171.429% */
 }
 
-main {
+aside {
+  position: sticky;
+  top: 183px;
+  display: grid;
+  gap: 40px;
+  height: 442px;
+}
+aside h2 {
+  position: relative;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  height: 60px;
+}
+
+.page-container {
+  display: grid;
+  position: relative;
+  gap: 30px;
+  grid-template-columns: 385px 1fr;
   padding-top: 183px;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.page-wrapper main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
 }
 
 header {
@@ -92,24 +121,7 @@ header .container div nav {
   letter-spacing: 0.04125rem;
 }
 
-.chapter .container {
-  vertical-align: top;
-  margin-bottom: 64px;
-  flex-flow: column wrap;
-  display: flex;
-  gap: 33px;
-}
-.chapter .container p {
-  position: relative;
-  top: 5px;
-}
-.chapter .container hgroup {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 2px;
-}
-.chapter .container hgroup h2 {
-  position: relative;
+h2 {
   font-family: "Francois One", sans-serif;
   font-size: 2.25rem;
   font-style: normal;
@@ -118,7 +130,34 @@ header .container div nav {
   letter-spacing: 0.09rem;
   text-transform: uppercase;
 }
-.chapter .container hgroup p {
+
+.chapter {
+  vertical-align: top;
+  margin-bottom: 64px;
+  flex-flow: column wrap;
+  display: flex;
+  gap: 33px;
+}
+.chapter p {
+  position: relative;
+  top: 5px;
+}
+.chapter:before {
+  content: "";
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 8px;
+  background: #000;
+  opacity: 1;
+}
+.chapter hgroup {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+.chapter hgroup p {
   font-size: 1.1rem;
   font-family: "Farro", sans-serif;
   top: 1px;
