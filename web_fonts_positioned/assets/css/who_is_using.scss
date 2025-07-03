@@ -5,6 +5,14 @@ svg {
   fill: black;
 }
 
+.page-wrapper {
+}
+
+.container {
+  max-width: 1280px;
+  //padding: 0 20px;
+}
+
 ul {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
@@ -72,6 +80,7 @@ h3 {
   display: flex;
   gap: 20px;
   align-items: center;
+  margin-bottom: 40px;
 
   &:before {
     content: '';

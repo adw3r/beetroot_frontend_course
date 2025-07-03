@@ -2,6 +2,15 @@
 @import 'components/aside';
 @import "components/header";
 
+html {
+  background-image: url('../images/bg-picture.svg');
+  background-repeat: no-repeat;
+  background-size: 900px 900px;
+
+  background-position: top 187px left 1157px;
+  background-attachment: fixed;
+}
+
 .underline {
   text-decoration: 1px solid underline;
   text-decoration-skip-ink: none;
@@ -22,10 +31,12 @@
 }
 
 .chapter {
-  p {
-    position: relative;
-    top: 5px;
-  }
+  width: auto;
+  vertical-align: top;
+  margin-bottom: 64px;
+  flex-flow: column;
+  display: flex;
+  gap: 33px;
 
   &:before {
     content: '';
@@ -54,11 +65,3 @@
   }
 }
 
-html {
-  background-image: url('../images/bg-picture.svg');
-  background-repeat: no-repeat;
-  background-size: 900px 900px;
-
-  background-position: top 187px left 1157px;
-  background-attachment: fixed;
-}

@@ -84,7 +84,7 @@ a {
 }
 
 .container {
-  width: min(1240px, 80%);
+  max-width: 1280px;
   padding: 0 20px;
   margin: 0 auto;
 }
@@ -127,14 +127,6 @@ h2 {
   text-transform: uppercase;
 }
 
-.chapter {
-  vertical-align: top;
-  margin-bottom: 64px;
-  flex-flow: column wrap;
-  display: flex;
-  gap: 33px;
-}
-
 aside {
   position: sticky;
   top: 183px;
@@ -151,6 +143,7 @@ aside h2 {
 header {
   position: fixed;
   width: 100%;
+  margin: 0 auto;
   z-index: 100;
   background: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.07);
@@ -188,6 +181,14 @@ header .container div nav {
   letter-spacing: 0.04125rem;
 }
 
+html {
+  background-image: url("../images/bg-picture.svg");
+  background-repeat: no-repeat;
+  background-size: 900px 900px;
+  background-position: top 187px left 1157px;
+  background-attachment: fixed;
+}
+
 .underline {
   text-decoration: 1px solid underline;
   text-decoration-skip-ink: none;
@@ -206,9 +207,13 @@ header .container div nav {
   grid-template-columns: 385px 1fr;
 }
 
-.chapter p {
-  position: relative;
-  top: 5px;
+.chapter {
+  width: auto;
+  vertical-align: top;
+  margin-bottom: 64px;
+  flex-flow: column;
+  display: flex;
+  gap: 33px;
 }
 .chapter:before {
   content: "";
@@ -232,14 +237,6 @@ header .container div nav {
   left: -1px;
   line-height: 1;
   letter-spacing: 0.065rem;
-}
-
-html {
-  background-image: url("../images/bg-picture.svg");
-  background-repeat: no-repeat;
-  background-size: 900px 900px;
-  background-position: top 187px left 1157px;
-  background-attachment: fixed;
 }
 
 /*# sourceMappingURL=index.css.map */

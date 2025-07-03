@@ -1,6 +1,7 @@
 header {
   position: fixed;
   width: 100%;
+  margin: 0 auto;
   z-index: 100;
   background: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.07);
@@ -124,7 +125,7 @@ a {
 }
 
 .container {
-  width: min(1240px, 80%);
+  max-width: 1280px;
   padding: 0 20px;
   margin: 0 auto;
 }
@@ -167,16 +168,12 @@ h2 {
   text-transform: uppercase;
 }
 
-.chapter {
-  vertical-align: top;
-  margin-bottom: 64px;
-  flex-flow: column wrap;
-  display: flex;
-  gap: 33px;
-}
-
 svg {
   fill: black;
+}
+
+.container {
+  max-width: 1280px;
 }
 
 ul {
@@ -233,6 +230,7 @@ h3 {
   display: flex;
   gap: 20px;
   align-items: center;
+  margin-bottom: 40px;
 }
 h3:before {
   content: "";
