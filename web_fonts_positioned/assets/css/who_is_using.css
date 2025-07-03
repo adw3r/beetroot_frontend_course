@@ -183,6 +183,9 @@ ul {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
   gap: 30px;
+  padding: 20px 15px;
+  border-top: 1px solid #BFBFBF;
+  border-bottom: 1px solid #BFBFBF;
 }
 ul li {
   border-radius: 8px;
@@ -194,6 +197,28 @@ ul li {
 }
 ul li svg {
   width: 200px;
+}
+
+h3 {
+  color: #000;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 48px; /* 133.333% */
+  letter-spacing: 1.44px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+h3:before {
+  content: "";
+  display: inline-block;
+  align-self: end;
+  width: 100px;
+  height: 8px;
+  background: #000;
+  opacity: 1;
+  margin-bottom: 20px;
 }
 
 /*# sourceMappingURL=who_is_using.css.map */
