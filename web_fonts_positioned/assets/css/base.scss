@@ -1,7 +1,7 @@
 @import "fonts";
 
 
-$container-width: 1230px;
+$container-width: min(1240px, 80%);
 * {
   padding: 0;
   margin: 0;
@@ -23,9 +23,9 @@ a {
 }
 
 .container {
-  max-width: $container-width;
+  width: $container-width;
   padding: 0 20px;
-  margin-inline: auto;
+  margin: 0 auto;
 }
 
 
@@ -42,6 +42,9 @@ body {
   display: grid;
   position: relative;
   gap: 30px;
+}
+
+.pt-183 {
   padding-top: 183px;
 }
 
@@ -74,5 +77,4 @@ h2 {
   flex-flow: column wrap;
   display: flex;
   gap: 33px;
-
 }

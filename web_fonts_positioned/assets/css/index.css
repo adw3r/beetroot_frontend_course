@@ -84,9 +84,9 @@ a {
 }
 
 .container {
-  max-width: 1230px;
+  width: min(1240px, 80%);
   padding: 0 20px;
-  margin-inline: auto;
+  margin: 0 auto;
 }
 
 body {
@@ -102,6 +102,9 @@ body {
   display: grid;
   position: relative;
   gap: 30px;
+}
+
+.pt-183 {
   padding-top: 183px;
 }
 
