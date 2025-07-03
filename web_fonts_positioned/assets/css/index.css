@@ -116,7 +116,6 @@ body {
   display: grid;
   position: relative;
   gap: 30px;
-  grid-template-columns: 385px 1fr;
   padding-top: 183px;
 }
 
@@ -148,41 +147,6 @@ h2 {
   flex-flow: column wrap;
   display: flex;
   gap: 33px;
-}
-.chapter p {
-  position: relative;
-  top: 5px;
-}
-.chapter:before {
-  content: "";
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 100px;
-  height: 8px;
-  background: #000;
-  opacity: 1;
-}
-.chapter hgroup {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 40px;
-}
-.chapter hgroup p {
-  font-size: 1.1rem;
-  font-family: "Farro", sans-serif;
-  top: 1px;
-  left: -1px;
-  line-height: 1;
-  letter-spacing: 0.065rem;
-}
-
-html {
-  background-image: url("../images/bg-picture.svg");
-  background-repeat: no-repeat;
-  background-size: 900px 900px;
-  background-position: top 187px left 1157px;
-  background-attachment: fixed;
 }
 
 aside {
@@ -253,11 +217,7 @@ header .container div nav {
 }
 
 .page-container {
-  display: grid;
-  position: relative;
-  gap: 30px;
   grid-template-columns: 385px 1fr;
-  padding-top: 183px;
 }
 
 .chapter {

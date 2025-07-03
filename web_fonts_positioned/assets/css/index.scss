@@ -18,11 +18,7 @@
 
 
 .page-container {
-  display: grid;
-  position: relative;
-  gap: 30px;
   grid-template-columns: 385px 1fr;
-  padding-top: 183px;
 }
 
 .chapter {
