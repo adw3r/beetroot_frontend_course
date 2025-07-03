@@ -89,20 +89,6 @@ a {
   margin-inline: auto;
 }
 
-.underline {
-  text-decoration: 1px solid underline;
-  text-decoration-skip-ink: none;
-  text-decoration-thickness: auto;
-  text-underline-offset: auto;
-  text-underline-position: from-font;
-}
-
-.code {
-  background: lightgray;
-  font-family: inherit;
-  padding: 5px 2px;
-}
-
 body {
   font-family: "PT Sans", sans-serif;
   color: #000;
@@ -220,13 +206,6 @@ header .container div nav {
   grid-template-columns: 385px 1fr;
 }
 
-.chapter {
-  vertical-align: top;
-  margin-bottom: 64px;
-  flex-flow: column wrap;
-  display: flex;
-  gap: 33px;
-}
 .chapter p {
   position: relative;
   top: 5px;

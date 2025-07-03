@@ -129,20 +129,6 @@ a {
   margin-inline: auto;
 }
 
-.underline {
-  text-decoration: 1px solid underline;
-  text-decoration-skip-ink: none;
-  text-decoration-thickness: auto;
-  text-underline-offset: auto;
-  text-underline-position: from-font;
-}
-
-.code {
-  background: lightgray;
-  font-family: inherit;
-  padding: 5px 2px;
-}
-
 body {
   font-family: "PT Sans", sans-serif;
   color: #000;

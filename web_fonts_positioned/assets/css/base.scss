@@ -28,19 +28,6 @@ a {
   margin-inline: auto;
 }
 
-.underline {
-  text-decoration: 1px solid underline;
-  text-decoration-skip-ink: none;
-  text-decoration-thickness: auto;
-  text-underline-offset: auto;
-  text-underline-position: from-font;
-}
-
-.code {
-  background: lightgray;
-  font-family: inherit;
-  padding: 5px 2px;
-}
 
 body {
   font-family: 'PT Sans', sans-serif;
@@ -88,34 +75,4 @@ h2 {
   display: flex;
   gap: 33px;
 
-  //p {
-  //  position: relative;
-  //  top: 5px;
-  //}
-
-  //&:before {
-  //  content: '';
-  //  position: relative;
-  //  top: 0;
-  //  left: 0;
-  //  width: 100px;
-  //  height: 8px;
-  //  background: #000;
-  //  opacity: 1;
-  //}
-  //
-  //hgroup {
-  //  display: flex;
-  //  gap: 10px;
-  //  margin-bottom: 40px;
-  //
-  //  p {
-  //    font-size: 1.10rem;
-  //    font-family: "Farro", sans-serif;
-  //    top: 1px;
-  //    left: -1px;
-  //    line-height: 1;
-  //    letter-spacing: 0.065rem;
-  //  }
-  //}
 }
