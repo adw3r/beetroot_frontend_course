@@ -25,6 +25,12 @@ ul {
       .inner {
         background-color: #1A1A1A;
         transform: rotateY(180deg);
+
+        .back {
+          svg {
+            filter: invert(1);
+          }
+        }
       }
     }
 
@@ -39,7 +45,7 @@ ul {
       transform-style: preserve-3d;
 
       position: relative;
-      transition: transform 0.6s;
+      transition: transform 1s;
 
       .back, .front {
         position: absolute;
@@ -55,9 +61,7 @@ ul {
         transform: rotateY(180deg);
         left: -35px;
 
-        svg {
-          filter: invert(1);
-        }
+
       }
     }
   }
