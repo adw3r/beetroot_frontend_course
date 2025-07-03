@@ -1,0 +1,45 @@
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.07);
+
+  .container {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+    div {
+      display: flex;
+
+      .lang {
+        margin-right: 50px;
+        font-family: "Tourney", sans-serif;
+        font-size: 1.375rem;
+        font-style: normal;
+        font-weight: 600;
+        letter-spacing: 0.0825rem;
+        position: relative;
+        top: 1px;
+        left: 1px;
+      }
+
+      nav {
+        margin-right: 20px;
+        color: #000;
+        position: relative;
+        top: 4px;
+        left: 2px;
+        font-family: "Staatliches", sans-serif;
+        font-size: 1.375rem;
+        font-style: normal;
+        font-weight: 400;
+        letter-spacing: 0.04125rem;
+
+      }
+    }
+  }
+}
