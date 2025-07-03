@@ -15,6 +15,9 @@ ul {
     background: var(--logos-gray-bg, #E6E6E6);
     //width: 270px;
     height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     svg {
       width: 200px;
