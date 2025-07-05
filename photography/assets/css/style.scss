@@ -4,7 +4,7 @@ $--blure: linear-gradient(0deg, #241F24 0%, rgba(91, 91, 91, 0.45) 34.11%, rgba(
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  transition: opacity .3s ease-in-out, scale .3s ease-in-out;
+  transition: all .3s ease-in-out, scale .3s ease-in-out;
 }
 
 ul, li {
@@ -106,6 +106,18 @@ section {
     &:hover {
       .buttons {
         button {
+          &:last-child {
+            position: relative;
+            top: 0;
+            left: 0;
+          }
+
+          &:first-child {
+            position: relative;
+            top: 0;
+            left: 0;
+          }
+
           opacity: 60%;
 
           &:hover {
@@ -124,6 +136,18 @@ section {
       justify-content: space-between;
 
       button {
+        &:last-child {
+          position: relative;
+          top: -50px;
+          left: 50px;
+        }
+
+        &:first-child {
+          position: relative;
+          top: -50px;
+          left: -50px;
+        }
+
         z-index: 1;
         inset: 0;
         cursor: pointer;
