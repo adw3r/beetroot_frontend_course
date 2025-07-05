@@ -192,9 +192,6 @@ ul li:hover .inner {
   background-color: #1A1A1A;
   transform: rotateY(180deg);
 }
-ul li:hover .inner .back svg {
-  filter: invert(1);
-}
 ul li .inner {
   height: 100%;
   background: var(--logos-gray-bg, #E6E6E6);
@@ -215,6 +212,7 @@ ul li .inner .back, ul li .inner .front {
 }
 ul li .inner .back {
   transform: rotateY(180deg);
+  filter: invert(1);
 }
 
 h3 {
