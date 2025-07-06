@@ -80,10 +80,11 @@ body {
   font-size: 1rem;
   color: #232323;
   font-family: Roboto, sans-serif;
+  overflow-x: hidden;
 }
 
 .page-wrapper {
-  padding: min(40px, 5%) 0;
+  padding: min(20px, 5%) 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -168,7 +169,6 @@ header hgroup h1 {
   scale: 0.933;
 }
 .member .photo .square {
-  overflow: hidden;
   transition: all 0.3s ease-in-out;
   opacity: 1;
   position: absolute;
