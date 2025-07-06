@@ -72,7 +72,7 @@ img {
 }
 
 .container {
-  width: min(95%, 1170px);
+  width: min(80%, 1170px);
   margin: 0 auto;
 }
 
@@ -125,12 +125,21 @@ header hgroup h1 {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-@media (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .member {
     grid-template-columns: 1fr;
   }
+  .member .photo.photo {
+    margin-bottom: 20px;
+  }
+  .member .content.content {
+    padding: 20px 0;
+    border-top: 1px solid #FC0;
+    border-left: none;
+  }
 }
 .member .photo {
+  margin: 0 20px;
   justify-self: center;
   align-self: center;
   position: relative;
@@ -140,6 +149,7 @@ header hgroup h1 {
   grid-template: 1fr 1fr/1fr 1fr;
 }
 .member .photo img {
+  display: block;
   position: absolute;
   justify-self: center;
   align-self: center;
@@ -166,8 +176,11 @@ header hgroup h1 {
   transform: rotate(180deg);
 }
 .member .content {
+  padding: 0 80px;
+  border-left: 1px solid #FC0;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 .member .content .social-icons {
   display: flex;
@@ -180,7 +193,7 @@ header hgroup h1 {
 }
 .member .content button {
   align-self: center;
-  border: 1px solid var(--gold, #FC0);
+  border: 1px solid #FC0;
   padding: 5px 10px;
   background-color: transparent;
   justify-self: center;
@@ -204,7 +217,12 @@ header hgroup h1 {
   font-weight: 500;
   line-height: 1.5rem; /* 171.429% */
 }
-.member .content hgroup p {
+.member .content .header {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.member .content .header p {
   color: #666;
   text-align: center;
   font-family: Raleway, sans-serif;
@@ -214,7 +232,13 @@ header hgroup h1 {
   line-height: 2.25rem; /* 150% */
   text-transform: capitalize;
 }
-.member .content hgroup h2 {
+.member .content .header hr {
+  width: 100px;
+  align-self: center;
+  border: none;
+  border-top: 2px solid #FC0;
+}
+.member .content .header h2 {
   color: #666;
   text-align: center;
   font-size: 2.25rem;

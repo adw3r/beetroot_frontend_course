@@ -37,11 +37,20 @@ header {
 .member {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  @media (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     grid-template-columns: 1fr;
+    .photo.photo {
+      margin-bottom: 20px;
+    }
+    .content.content {
+      padding: 20px 0;
+      border-top: 1px solid $primary-color;
+      border-left: none;
+    }
   }
 
   .photo {
+    margin: 0 20px;
     justify-self: center;
     align-self: center;
     position: relative;
@@ -51,6 +60,7 @@ header {
     grid-template: 1fr 1fr / 1fr 1fr;
 
     img {
+      display: block;
       position: absolute;
       justify-self: center;
       align-self: center;
@@ -84,10 +94,12 @@ header {
   }
 
   .content {
-    border: 1px solid $primary-color;
-    
+    padding: 0 80px;
+    border-left: 1px solid $primary-color;
+
     display: flex;
     flex-direction: column;
+    justify-content: center;
 
     .social-icons {
       display: flex;
@@ -100,7 +112,6 @@ header {
           height: 30px;
         }
       }
-
     }
 
     button {
@@ -116,7 +127,7 @@ header {
       }
 
       align-self: center;
-      border: 1px solid var(--gold, #FC0);
+      border: 1px solid $primary-color;
       padding: 5px 10px;
       background-color: transparent;
       justify-self: center;
@@ -132,7 +143,11 @@ header {
       line-height: 1.5rem; /* 171.429% */
     }
 
-    hgroup {
+    .header {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+
       p {
         color: #666;
         text-align: center;
@@ -142,6 +157,15 @@ header {
         font-weight: 400;
         line-height: 2.25rem; /* 150% */
         text-transform: capitalize;
+      }
+
+      hr {
+        width: 100px;
+        //justify-self: center;
+        align-self: center;
+        //visibility: hidden;
+        border: none;
+        border-top: 2px solid $primary-color;
       }
 
       h2 {
