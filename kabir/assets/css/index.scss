@@ -1,28 +1,34 @@
+@import "fonts";
 @import "base";
 
 header {
   hgroup {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
     p {
-      color: var(--sub-text, #898F8F);
+      color: $secondary-color;
       text-align: center;
 
       /* subtitle */
-      font-family: Raleway;
-      font-size: 18px;
+      font-family: Raleway, sans-serif;
+      font-size: 1.125rem;
       font-style: normal;
       font-weight: 500;
-      line-height: 24px; /* 133.333% */
+      line-height: 1.5rem; /* 133.333% */
       text-transform: uppercase;
     }
 
     h1 {
-      color: var(--gold, #FC0);
+
+      color: $primary-color;
       text-align: center;
-      font-family: Roboto;
-      font-size: 60px;
+      font-family: Roboto, sans-serif;
+      font-size: 3.75rem;
       font-style: normal;
       font-weight: 900;
-      line-height: 66px; /* 110% */
+      line-height: 4.125rem; /* 110% */
       text-transform: uppercase;
     }
   }
