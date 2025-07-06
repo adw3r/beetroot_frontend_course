@@ -93,7 +93,7 @@ body {
 }
 
 header {
-  margin-bottom: min(50px, 0.04%);
+  margin-bottom: 40px;
 }
 header hgroup {
   width: max(450px, 25%);
@@ -104,7 +104,7 @@ header hgroup::after {
   content: url("../images/bonfire.svg");
   position: relative;
   top: 15px;
-  left: 50%;
+  left: 48%;
   transform: translateX(-50%);
   width: 20px;
   height: 20px;
