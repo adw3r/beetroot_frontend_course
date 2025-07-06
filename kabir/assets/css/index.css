@@ -191,11 +191,28 @@ header hgroup h1 {
   gap: 10px;
 }
 .member .content .social-icons li {
+  transition: all 0.2s ease;
+  border: 2px solid #cccccc;
   display: inline-block;
+  background-color: transparent;
+  border-radius: 50%;
+}
+.member .content .social-icons li:hover {
+  border: 2px solid #FC0;
+  scale: 1.2;
+}
+.member .content .social-icons li:hover svg {
+  fill: #FC0;
+}
+.member .content .social-icons li a {
+  text-decoration: none;
+  background-color: transparent;
 }
 .member .content .social-icons li a svg {
+  opacity: 1;
+  fill: #cccccc;
   width: 30px;
-  height: 30px;
+  height: 27px;
 }
 .member .content button {
   align-self: center;
