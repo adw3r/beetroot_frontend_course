@@ -1,0 +1,29 @@
+@import "base";
+
+header {
+  hgroup {
+    p {
+      color: var(--sub-text, #898F8F);
+      text-align: center;
+
+      /* subtitle */
+      font-family: Raleway;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 24px; /* 133.333% */
+      text-transform: uppercase;
+    }
+
+    h1 {
+      color: var(--gold, #FC0);
+      text-align: center;
+      font-family: Roboto;
+      font-size: 60px;
+      font-style: normal;
+      font-weight: 900;
+      line-height: 66px; /* 110% */
+      text-transform: uppercase;
+    }
+  }
+}
