@@ -156,7 +156,11 @@ header hgroup h1 {
   margin: 85px auto;
 }
 .member .photo img {
+  transition: all 0.3s ease;
   scale: 0.9;
+}
+.member .photo img:hover {
+  scale: 1;
 }
 .member .photo .square {
   position: absolute;
@@ -197,11 +201,11 @@ header hgroup h1 {
   background-color: transparent;
   border-radius: 50%;
 }
-.member .content .social-icons li:hover {
+.member .content .social-icons li:hover, .member .content .social-icons li:active, .member .content .social-icons li:focus {
   border: 2px solid #FC0;
   scale: 1.2;
 }
-.member .content .social-icons li:hover svg {
+.member .content .social-icons li:hover svg, .member .content .social-icons li:active svg, .member .content .social-icons li:focus svg {
   fill: #FC0;
 }
 .member .content .social-icons li a {
@@ -215,11 +219,16 @@ header hgroup h1 {
   height: 27px;
 }
 .member .content button {
+  width: 118px;
+  height: 24px;
   align-self: center;
   border: 1px solid #FC0;
   padding: 5px 10px;
   background-color: transparent;
   justify-self: center;
+}
+.member .content button:hover, .member .content button:active, .member .content button:focus {
+  scale: 1.2;
 }
 .member .content button span {
   color: #666;

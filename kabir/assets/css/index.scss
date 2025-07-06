@@ -61,12 +61,19 @@ header {
   }
 
   .photo {
+
     max-width: 400px;
     position: relative;
     display: grid;
     margin: 85px auto;
 
     img {
+      transition: all 0.3s ease;
+
+      &:hover {
+        scale: 1;
+      }
+
       scale: 0.9;
     }
 
@@ -112,7 +119,7 @@ header {
       li {
         transition: all 0.2s ease;
 
-        &:hover {
+        &:hover, &:active, &:focus {
           border: 2px solid $primary-color;
           scale: 1.2;
 
@@ -142,6 +149,13 @@ header {
     }
 
     button {
+      width: 118px;
+      height: 24px;
+
+      &:hover, &:active, &:focus {
+        scale: 1.2;
+      }
+
       span {
         color: #666;
         text-align: center;
