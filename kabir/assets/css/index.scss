@@ -5,6 +5,7 @@ header {
   margin-bottom: min(50px, 0.04%);
 
   hgroup {
+    margin-bottom: 40px;
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -12,8 +13,6 @@ header {
     p {
       color: $secondary-color;
       text-align: center;
-
-      /* subtitle */
       font-family: Raleway, sans-serif;
       font-size: 1.125rem;
       font-style: normal;
@@ -26,7 +25,6 @@ header {
 
       color: $primary-color;
       text-align: center;
-      font-family: Roboto, sans-serif;
       font-size: 3.75rem;
       font-style: normal;
       font-weight: 900;
@@ -39,6 +37,9 @@ header {
 .member {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 
   .photo {
     justify-self: center;
@@ -79,6 +80,79 @@ header {
       height: 100px;
       border-top: 1px solid $primary-color;
       border-left: 1px solid $primary-color;
+    }
+  }
+
+  .content {
+    border: 1px solid $primary-color;
+    
+    display: flex;
+    flex-direction: column;
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+
+      a {
+        svg {
+          width: 30px;
+          height: 30px;
+        }
+      }
+
+    }
+
+    button {
+      span {
+        color: #666;
+        text-align: center;
+        font-family: "Open Sans", sans-serif;
+        font-size: 0.875rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 0.875rem; /* 100% */
+        text-transform: uppercase;
+      }
+
+      align-self: center;
+      border: 1px solid var(--gold, #FC0);
+      padding: 5px 10px;
+      background-color: transparent;
+      justify-self: center;
+    }
+
+    & > p {
+      color: #333;
+      text-align: center;
+      font-family: Raleway, sans-serif;
+      font-size: 0.875rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 1.5rem; /* 171.429% */
+    }
+
+    hgroup {
+      p {
+        color: #666;
+        text-align: center;
+        font-family: Raleway, sans-serif;
+        font-size: 1.5rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 2.25rem; /* 150% */
+        text-transform: capitalize;
+      }
+
+      h2 {
+        color: #666;
+        text-align: center;
+        font-size: 2.25rem;
+        font-style: normal;
+        font-weight: 900;
+        line-height: normal;
+        text-transform: capitalize;
+      }
     }
   }
 }
