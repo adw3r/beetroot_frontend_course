@@ -60,7 +60,6 @@ header {
     grid-template: 1fr 1fr / 1fr 1fr;
 
     img {
-      display: block;
       position: absolute;
       justify-self: center;
       align-self: center;
@@ -102,16 +101,21 @@ header {
     justify-content: center;
 
     .social-icons {
-      display: flex;
       justify-content: center;
+      display: flex;
       gap: 10px;
 
-      a {
-        svg {
-          width: 30px;
-          height: 30px;
+      li {
+        display: inline-block;
+
+        a {
+          svg {
+            width: 30px;
+            height: 30px;
+          }
         }
       }
+
     }
 
     button {
@@ -144,11 +148,12 @@ header {
     }
 
     .header {
+      margin-bottom: 50px;
       display: flex;
       flex-direction: column;
       gap: 30px;
 
-      p {
+      span {
         color: #666;
         text-align: center;
         font-family: Raleway, sans-serif;
@@ -161,9 +166,7 @@ header {
 
       hr {
         width: 100px;
-        //justify-self: center;
         align-self: center;
-        //visibility: hidden;
         border: none;
         border-top: 2px solid $primary-color;
       }

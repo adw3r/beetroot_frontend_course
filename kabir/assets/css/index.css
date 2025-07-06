@@ -149,7 +149,6 @@ header hgroup h1 {
   grid-template: 1fr 1fr/1fr 1fr;
 }
 .member .photo img {
-  display: block;
   position: absolute;
   justify-self: center;
   align-self: center;
@@ -183,11 +182,14 @@ header hgroup h1 {
   justify-content: center;
 }
 .member .content .social-icons {
-  display: flex;
   justify-content: center;
+  display: flex;
   gap: 10px;
 }
-.member .content .social-icons a svg {
+.member .content .social-icons li {
+  display: inline-block;
+}
+.member .content .social-icons li a svg {
   width: 30px;
   height: 30px;
 }
@@ -218,11 +220,12 @@ header hgroup h1 {
   line-height: 1.5rem; /* 171.429% */
 }
 .member .content .header {
+  margin-bottom: 50px;
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
-.member .content .header p {
+.member .content .header span {
   color: #666;
   text-align: center;
   font-family: Raleway, sans-serif;
