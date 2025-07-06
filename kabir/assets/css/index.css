@@ -155,14 +155,21 @@ header hgroup h1 {
   display: grid;
   margin: 85px auto;
 }
-.member .photo img {
-  transition: all 0.3s ease;
-  scale: 0.9;
-}
-.member .photo img:hover {
+.member .photo:hover img {
   scale: 1;
 }
+.member .photo:hover .square {
+  opacity: 0;
+  scale: 3;
+}
+.member .photo img {
+  transition: all 0.3s ease-in-out;
+  scale: 0.9;
+}
 .member .photo .square {
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  opacity: 1;
   position: absolute;
   width: 100px;
   height: 100px;

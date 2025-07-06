@@ -67,17 +67,25 @@ header {
     display: grid;
     margin: 85px auto;
 
+    &:hover img {
+      scale: 1;
+    }
+
+    &:hover .square {
+      opacity: 0;
+      scale: 3;
+    }
+
+
     img {
-      transition: all 0.3s ease;
-
-      &:hover {
-        scale: 1;
-      }
-
+      transition: all .3s ease-in-out;
       scale: 0.9;
     }
 
     .square {
+      overflow: hidden;
+      transition: all .3s ease-in-out;
+      opacity: 1;
       position: absolute;
 
       &:nth-child(3) {
