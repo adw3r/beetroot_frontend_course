@@ -5,18 +5,16 @@ header {
   margin-bottom: min(50px, 0.04%);
 
   hgroup {
-    max-width: 450px;
+    width: max(450px, 25%);
     justify-self: center;
-    display: flex;
-    flex-direction: column;
-    position: relative;
     border-bottom: 1px solid $primary-color;
 
     &::after {
       content: url("../images/bonfire.svg");
-      display: block;
-      position: absolute;
-      //top: -6px;
+      position: relative;
+      top: 15px;
+      left: 50%;
+      transform: translateX(-50%);
       width: 20px;
       height: 20px;
       justify-self: center;
@@ -36,7 +34,6 @@ header {
     }
 
     h1 {
-
       color: $primary-color;
       text-align: center;
       font-size: 3.75rem;

@@ -96,17 +96,16 @@ header {
   margin-bottom: min(50px, 0.04%);
 }
 header hgroup {
-  max-width: 450px;
+  width: max(450px, 25%);
   justify-self: center;
-  display: flex;
-  flex-direction: column;
-  position: relative;
   border-bottom: 1px solid #FC0;
 }
 header hgroup::after {
   content: url("../images/bonfire.svg");
-  display: block;
-  position: absolute;
+  position: relative;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
   width: 20px;
   height: 20px;
   justify-self: center;
