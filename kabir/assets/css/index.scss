@@ -2,7 +2,7 @@
 @import "base";
 
 header {
-  margin-bottom: 40px;
+  margin-bottom: min(40px, 4%);
 
   hgroup {
     width: max(450px, 25%);
@@ -51,7 +51,7 @@ header {
   @media screen and (max-width: 1024px) {
     grid-template-columns: 1fr;
     .photo.photo {
-      margin-bottom: 20px;
+      margin: 20px 85px;
     }
     .content.content {
       padding: 20px 0;
@@ -61,24 +61,17 @@ header {
   }
 
   .photo {
-    margin: 0 20px;
-    justify-self: center;
-    align-self: center;
+    max-width: 400px;
     position: relative;
-    height: 430px;
-    width: 430px;
     display: grid;
-    grid-template: 1fr 1fr / 1fr 1fr;
+    margin: 85px;
 
     img {
-      position: absolute;
-      justify-self: center;
-      align-self: center;
-      width: auto;
-      height: auto;
+      scale: 0.9;
     }
 
     .square {
+      position: absolute;
 
       &:nth-child(3) {
         transform: rotate(90deg);
