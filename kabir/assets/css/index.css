@@ -164,7 +164,7 @@ header hgroup h1 {
 }
 .member .photo img {
   transition: all 0.3s ease-in-out;
-  scale: 0.9;
+  scale: 0.933;
 }
 .member .photo .square {
   overflow: hidden;
