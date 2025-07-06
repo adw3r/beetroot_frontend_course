@@ -96,10 +96,22 @@ header {
   margin-bottom: min(50px, 0.04%);
 }
 header hgroup {
-  margin-bottom: 40px;
+  max-width: 450px;
+  justify-self: center;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  position: relative;
+  border-bottom: 1px solid #FC0;
+}
+header hgroup::after {
+  content: url("../images/bonfire.svg");
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  justify-self: center;
+  align-self: center;
+  background-color: white;
 }
 header hgroup p {
   color: #898F8F;
