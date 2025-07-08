@@ -134,7 +134,7 @@ header .container div .search {
     margin-right: 40px;
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 425px) {
   header .container div .search {
     margin-right: 20px;
   }
@@ -150,7 +150,7 @@ header .container div .hamburger {
   }
 }
 
-main .hero {
+.hero {
   background-image: url(../images/bg-image.jpg);
   min-height: 600px;
   padding-top: 100px;
@@ -159,18 +159,18 @@ main .hero {
   background-repeat: no-repeat;
 }
 @media screen and (max-width: 768px) {
-  main .hero {
+  .hero {
     padding-top: 30px;
     min-height: 320px;
   }
 }
-@media screen and (max-width: 320px) {
-  main .hero {
+@media screen and (max-width: 425px) {
+  .hero {
     padding-top: 70px;
     min-height: 500px;
   }
 }
-main .hero h1 {
+.hero h1 {
   width: 80%;
   color: var(--Base-Black, #000);
   font-family: "Red Hat Display", sans-serif;
@@ -181,15 +181,15 @@ main .hero h1 {
   letter-spacing: 0.15rem;
 }
 @media screen and (max-width: 768px) {
-  main .hero h1 {
+  .hero h1 {
     width: 80%;
     font-size: 2.25rem;
-    line-height: 3.125rem; /* 138.889% */
+    line-height: 3.125rem;
     letter-spacing: 0.1125rem;
   }
 }
-@media screen and (max-width: 320px) {
-  main .hero h1 {
+@media screen and (max-width: 425px) {
+  .hero h1 {
     width: 100%;
     font-size: 1.875rem;
     line-height: 3.125rem;
