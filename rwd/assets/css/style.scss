@@ -58,14 +58,22 @@ body {
 }
 
 header {
+  position: fixed;
+  max-height: 100px;
+  padding: 40px 0;
+  @media screen and (max-width: 768px) {
+    padding: 20px 0;
+    max-height: 60px;
+  }
+  width: 100%;
+  z-index: 100;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
   .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 40px 0;
-    @media screen and (max-width: 768px) {
-      padding: 20px 0;
-    }
 
     div {
       display: inline-flex;
@@ -73,6 +81,9 @@ header {
       nav {
         margin-right: 84px;
 
+        @media screen and (max-width: 1024px) {
+          margin-right: 40px;
+        }
         @media screen and (max-width: 768px) {
           margin-right: 0;
           display: none;
@@ -81,6 +92,9 @@ header {
         ul {
           display: inline-flex;
           gap: 42px;
+          @media screen and (max-width: 1024px) {
+            gap: 20px;
+          }
 
           a {
             text-decoration: none;
@@ -117,7 +131,9 @@ header {
     }
   }
 }
+
 .hero {
+  margin-top: 60px;
   background-image: url(../images/bg-image.jpg);
   min-height: 600px;
   padding-top: 100px;
