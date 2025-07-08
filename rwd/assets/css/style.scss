@@ -133,10 +133,12 @@ header {
 }
 
 .hero {
-  margin-top: 60px;
-  background-image: url(../images/bg-image.jpg);
-  min-height: 600px;
   padding-top: 100px;
+  margin-top: 60px;
+  background: url(../images/bg-image.jpg) center/cover no-repeat;
+  filter: brightness(1.5) grayscale(30%) contrast(0.8);
+
+  min-height: 600px;
   @media screen and (max-width: 768px) {
     padding-top: 30px;
     min-height: 320px;
@@ -146,8 +148,7 @@ header {
     min-height: 500px;
   }
   background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  margin-bottom: 90px;
 
   h1 {
     width: 80%;
@@ -174,5 +175,37 @@ header {
 }
 
 main {
+  .blog {
+    display: grid;
+    gap: 50px;
+
+    article {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      @media screen and (max-width: 580px) {
+        grid-template-columns: auto;
+        img {
+          order: 1;
+        }
+      }
+
+      &:nth-child(odd) {
+        img {
+          order: 1;
+        }
+      }
+    }
+
+    h2 {
+      color: var(--Base-Black, #000);
+      font-family: "Red Hat Display", sans-serif;
+      font-size: 3rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 4rem; /* 133.333% */
+      letter-spacing: 0.15rem;
+    }
+  }
 
 }
