@@ -108,10 +108,8 @@ header .container {
   justify-content: space-between;
   align-items: center;
 }
-header .container div {
-  display: inline-flex;
-}
 header .container div nav {
+  display: inline-flex;
   margin-right: 84px;
 }
 @media screen and (max-width: 1024px) {
@@ -125,16 +123,16 @@ header .container div nav {
     display: none;
   }
 }
-header .container div nav ul {
+header .container div ul {
   display: inline-flex;
   gap: 42px;
 }
 @media screen and (max-width: 1024px) {
-  header .container div nav ul {
+  header .container div ul {
     gap: 20px;
   }
 }
-header .container div nav ul a {
+header .container div a {
   text-decoration: none;
   color: var(--Base-Black, #000);
   font-size: 0.875rem;
@@ -217,33 +215,33 @@ header .container div .hamburger {
   }
 }
 
-main .blog {
+.blog {
   margin-bottom: 90px;
   display: grid;
   gap: 50px;
 }
 @media screen and (max-width: 768px) {
-  main .blog {
+  .blog {
     margin-bottom: 70px;
   }
 }
-main .blog article {
+.blog article {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
 }
 @media screen and (max-width: 580px) {
-  main .blog article {
+  .blog article {
     grid-template-columns: auto;
   }
-  main .blog article img {
+  .blog article img {
     order: 1;
   }
 }
-main .blog article:nth-child(odd) img {
+.blog article:nth-child(odd) img {
   order: 1;
 }
-main .blog h2 {
+.blog h2 {
   color: var(--Base-Black, #000);
   font-family: "Red Hat Display", sans-serif;
   font-size: 3rem;
@@ -253,7 +251,7 @@ main .blog h2 {
   letter-spacing: 0.15rem;
 }
 @media screen and (max-width: 425px) {
-  main .blog h2 {
+  .blog h2 {
     text-align: center;
   }
 }
