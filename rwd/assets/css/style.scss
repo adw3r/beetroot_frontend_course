@@ -176,6 +176,10 @@ header {
 
 main {
   .blog {
+    margin-bottom: 90px;
+    @media screen and (max-width: 768px) {
+      margin-bottom: 70px;
+    }
     display: grid;
     gap: 50px;
 
@@ -198,6 +202,9 @@ main {
     }
 
     h2 {
+      @media screen and (max-width: 425px) {
+        text-align: center;
+      }
       color: var(--Base-Black, #000);
       font-family: "Red Hat Display", sans-serif;
       font-size: 3rem;

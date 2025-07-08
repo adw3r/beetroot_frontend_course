@@ -218,8 +218,14 @@ header .container div .hamburger {
 }
 
 main .blog {
+  margin-bottom: 90px;
   display: grid;
   gap: 50px;
+}
+@media screen and (max-width: 768px) {
+  main .blog {
+    margin-bottom: 70px;
+  }
 }
 main .blog article {
   display: grid;
@@ -245,6 +251,11 @@ main .blog h2 {
   font-weight: 400;
   line-height: 4rem; /* 133.333% */
   letter-spacing: 0.15rem;
+}
+@media screen and (max-width: 425px) {
+  main .blog h2 {
+    text-align: center;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
