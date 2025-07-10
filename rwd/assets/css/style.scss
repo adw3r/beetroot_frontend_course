@@ -2,7 +2,7 @@
 
 $text-color: #232323;
 
-$container-width: min(92%, 1170px);
+$container-width: min(93%, 1170px);
 
 
 *, *::before, *::after {
@@ -140,10 +140,21 @@ header {
       }
 
       .search {
-        height: 17px;
-        width: 18px;
+        height: 20px;
+        width: 20px;
+        background-color: transparent;
+        border: none;
+        vertical-align: bottom;
+
+        svg {
+          width: inherit;
+          height: inherit;
+        }
+
         @media screen and (max-width: 768px) {
+          vertical-align: baseline;
           margin-right: 40px;
+          scale: 1.3;
         }
         @media screen and (max-width: 425px) {
           margin-right: 20px;
@@ -151,8 +162,17 @@ header {
       }
 
       .hamburger {
+        border: none;
         height: 24px;
         width: 34px;
+        background-color: transparent;
+
+        svg {
+          width: inherit;
+          height: inherit;
+        }
+
+
         display: none;
         @media screen and (max-width: 768px) {
           display: inline;
@@ -237,7 +257,9 @@ h3 {
   margin-bottom: 90px;
   @media screen and (max-width: 768px) {
     margin-bottom: 50px;
+
   }
+
 
   .container {
     display: grid;
@@ -249,10 +271,11 @@ h3 {
     .img-wrap {
       height: 470px;
       @media screen and (max-width: 1024px) {
-        height: 280px;
+        height: 100%;
       }
       @media screen and (max-width: 425px) {
         height: 250px;
+        margin-bottom: 0;
       }
     }
 
@@ -267,7 +290,7 @@ h3 {
 
   .date {
     margin-bottom: 50px;
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 768px) {
       margin-bottom: 40px;
     }
   }
@@ -276,6 +299,15 @@ h3 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
+    //max-height: 470px;
+
+    @media screen and (max-width: 768px) {
+      //max-height: 280px;
+      gap: 20px;
+    }
+    @media screen and (max-width: 425px) {
+      max-height: 100%;
+    }
 
     &:nth-child(odd) {
       .img-wrap {
@@ -339,9 +371,13 @@ h2 {
 }
 
 .view-all {
+  @media screen and (max-width: 320px) {
+    align-self: flex-start;
+  }
+  align-self: flex-end;
   vertical-align: baseline;
   padding: 10px 20px;
-  align-self: center;
+  //align-self: center;
   //justify-self: center;
 
   &:hover {
@@ -458,7 +494,6 @@ h2 {
     }
 
     .view-all {
-      align-self: flex-start;
       padding: 0;
     }
   }
@@ -539,7 +574,6 @@ h2 {
     }
 
     .view-all {
-      align-self: flex-start;
       padding: 0;
     }
   }
