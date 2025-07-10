@@ -58,6 +58,7 @@ body {
 
 
 .logo {
+
   height: 12px;
   width: auto;
   margin-left: 3px;
@@ -115,8 +116,13 @@ header {
             background-color: var(--Base-Black, #000);
           }
 
+          a {
+            cursor: url("../images/cursor.svg"), pointer;
+          }
+
           &:hover {
-            cursor: pointer;
+            cursor: url("../images/cursor.svg"), pointer;
+
 
             &:after {
               width: 40px;
@@ -146,6 +152,10 @@ header {
         background-color: transparent;
         border: none;
         vertical-align: bottom;
+
+        &:hover {
+          cursor: url("../images/cursor.svg"), pointer;
+        }
 
         svg {
           width: inherit;
@@ -384,6 +394,7 @@ h2 {
   &:hover {
     outline: 1px solid var(--Base-Black, #000);
     color: var(--Base-Black, #000);
+    cursor: url("../images/cursor.svg"), pointer;
   }
 
   text-decoration: none;
@@ -614,6 +625,7 @@ h2 {
   letter-spacing: 0.1rem;
 
   &:hover {
+    cursor: url("../images/cursor.svg"), pointer;
     background: transparent;
     border: 1px solid var(--gray, #565656);
     color: var(--gray, #565656);
@@ -713,6 +725,7 @@ footer {
       fill: var(--Grey-500, #7B7B7B);
 
       &:hover {
+        cursor: url("../images/cursor.svg"), pointer;
         background: var(--Grey-500, #565656);
         fill: var(--Base-White, #FFF);
       }
