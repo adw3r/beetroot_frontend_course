@@ -138,6 +138,7 @@ header .container div ul {
   }
 }
 header .container div a {
+  transition: width 0.2s ease;
   text-decoration: none;
   color: var(--Base-Black, #000);
   font-size: 0.875rem;
@@ -146,6 +147,20 @@ header .container div a {
   line-height: normal;
   letter-spacing: 4.2px;
   text-transform: uppercase;
+}
+header .container div a:after {
+  content: "";
+  position: relative;
+  left: 45%;
+  top: 3px;
+  transform: translateX(-50%);
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: var(--Base-Black, #000);
+}
+header .container div a:hover:after {
+  width: 40px;
 }
 header .container div .search {
   height: 17px;

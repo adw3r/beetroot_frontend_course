@@ -102,6 +102,26 @@ header {
       }
 
       a {
+        transition: width .2s ease;
+
+        &:after {
+          content: '';
+          position: relative;
+          left: 45%;
+          top: 3px;
+          transform: translateX(-50%);
+          display: block;
+          width: 0;
+          height: 2px;
+          background-color: var(--Base-Black, #000);
+        }
+
+        &:hover {
+          &:after {
+            width: 40px;
+          }
+        }
+
         text-decoration: none;
         color: var(--Base-Black, #000);
         font-size: 0.875rem;
