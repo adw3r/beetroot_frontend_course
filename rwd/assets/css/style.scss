@@ -285,6 +285,16 @@ h3 {
   }
 }
 
+.view-all {
+  text-decoration: none;
+
+  color: var(--Grey-500, #7B7B7B);
+
+  /* Heading / H6 */
+  font-size: 1rem;
+  line-height: 166%; /* 1.66rem */
+  letter-spacing: 0.1rem;
+}
 
 .latest_posts {
   .heading {
@@ -292,7 +302,7 @@ h3 {
 
     h2 {
       color: var(--Base-Black, #000);
-      font-family: "Red Hat Display";
+      font-family: "Red Hat Display", sans-serif;
       font-size: 1.75rem;
       font-style: normal;
       font-weight: 600;
@@ -311,8 +321,8 @@ h3 {
   }
 
   .img-wrap {
-    height: 260px;
-    width: 370px;
+    width: auto;
+    //height: 100;
     margin-bottom: 20px;
     overflow: hidden;
 
@@ -343,26 +353,30 @@ h3 {
     }
   }
 
+
   ul {
     display: flex;
     gap: 30px;
+    @media screen and (max-width: 768px) {
+      display: grid;
+    }
+
+    li {
+      article {
+        @media screen and (max-width: 768px) {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 20px;
+          &:nth-child(odd) {
+            .img-wrap {
+              order: 1;
+            }
+          }
+        }
+        //max-height: 260px;
+        //max-width: 370px;
+      }
+    }
+
   }
-}
-
-.view-all {
-  text-decoration: none;
-
-  color: var(--Grey-500, #7B7B7B);
-
-  /* Heading / H6 */
-  font-family: Lato;
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 166%; /* 1.66rem */
-  letter-spacing: 0.1rem;
-}
-
-main {
-
 }
