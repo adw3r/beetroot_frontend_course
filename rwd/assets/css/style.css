@@ -254,6 +254,19 @@ h3 {
     margin-bottom: 70px;
   }
 }
+.blog .container .img-wrap {
+  height: 470px;
+}
+@media screen and (max-width: 1024px) {
+  .blog .container .img-wrap {
+    height: 280px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .blog .container .img-wrap {
+    height: 250px;
+  }
+}
 .blog h3 {
   margin-bottom: 15px;
 }

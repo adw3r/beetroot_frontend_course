@@ -210,6 +210,16 @@ h3 {
     display: grid;
     gap: 50px;
 
+    .img-wrap {
+      height: 470px;
+      @media screen and (max-width: 1024px) {
+        height: 280px;
+      }
+      @media screen and (max-width: 425px) {
+        height: 250px;
+      }
+    }
+
   }
 
   h3 {
