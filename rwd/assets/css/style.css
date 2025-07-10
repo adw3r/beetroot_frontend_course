@@ -356,36 +356,40 @@ h3 {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 30px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
   .latest_posts ul {
     grid-template-columns: auto;
   }
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 600px) {
   .latest_posts ul {
     gap: 50px;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
+  .latest_posts ul li article .img-wrap {
+    height: 240px;
+  }
   .latest_posts ul li:nth-child(even) article .img-wrap {
-    margin: 0;
     order: 1;
-    max-height: 240px;
   }
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 600px) {
+  .latest_posts ul li article .img-wrap {
+    height: 210px;
+  }
   .latest_posts ul li:nth-child(even) article .img-wrap {
     order: 0;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
   .latest_posts ul li article {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
   }
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 600px) {
   .latest_posts ul li article {
     display: flex;
     flex-direction: column;
@@ -393,10 +397,11 @@ h3 {
   }
 }
 .latest_posts ul li article .img-wrap {
+  height: 260px;
   margin-bottom: 20px;
   overflow: hidden;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
   .latest_posts ul li article .img-wrap {
     margin: 0;
   }
@@ -407,7 +412,7 @@ h3 {
 .latest_posts ul li article .content .text h3 {
   margin-bottom: 20px;
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 600px) {
   .latest_posts ul li article .content .text h3 {
     color: var(--Base-Black, #000);
     font-family: "Red Hat Display";
@@ -429,7 +434,7 @@ h3 {
   font-size: 0.75rem;
   letter-spacing: 0.075rem;
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 600px) {
   .latest_posts ul li article .content .info p, .latest_posts ul li article .content .info span {
     color: var(--Grey-500, #7B7B7B);
     font-size: 1rem;
