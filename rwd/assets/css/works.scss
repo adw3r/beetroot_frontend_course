@@ -1,3 +1,4 @@
+@use "header" as *;
 @use 'style' as *;
 
 img {
@@ -7,10 +8,6 @@ img {
 section {
   margin-bottom: 90px;
 }
-
-//header {
-//  box-shadow: none;
-//}
 
 .content {
   display: flex;
@@ -66,7 +63,7 @@ h2 {
 
 p {
   color: var(--Grey-700, #565656);
-  font-family: Lato;
+  font-family: Lato, sans-serif;
   font-size: 19px;
   font-style: normal;
   font-weight: 400;
