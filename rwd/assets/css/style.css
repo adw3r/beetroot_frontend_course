@@ -69,7 +69,7 @@ img {
 }
 
 .container {
-  width: min(95%, 1170px);
+  width: min(95%, min(92%, 1170px));
   margin: 0 auto;
 }
 
@@ -265,14 +265,21 @@ h3 {
   letter-spacing: 0.14375rem;
 }
 
-.blog .container {
+.blog {
   margin-bottom: 90px;
+}
+@media screen and (max-width: 768px) {
+  .blog {
+    margin-bottom: 50px;
+  }
+}
+.blog .container {
   display: grid;
   gap: 50px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 425px) {
   .blog .container {
-    margin-bottom: 70px;
+    gap: 30px;
   }
 }
 .blog .container .img-wrap {
@@ -291,8 +298,18 @@ h3 {
 .blog h3 {
   margin-bottom: 15px;
 }
+@media screen and (max-width: 425px) {
+  .blog h3 {
+    font-size: 1.375rem;
+  }
+}
 .blog .date {
   margin-bottom: 50px;
+}
+@media screen and (max-width: 425px) {
+  .blog .date {
+    margin-bottom: 40px;
+  }
 }
 .blog article {
   display: grid;
@@ -351,11 +368,18 @@ h2 {
 }
 
 .view-all {
+  vertical-align: baseline;
+  padding: 10px 20px;
+  align-self: center;
   text-decoration: none;
   color: var(--Grey-500, #7B7B7B);
   font-size: 1rem;
   line-height: 166%; /* 1.66rem */
   letter-spacing: 0.1rem;
+}
+.view-all:hover {
+  outline: 1px solid var(--Base-Black, #000);
+  color: var(--Base-Black, #000);
 }
 
 .heading {
@@ -392,6 +416,7 @@ h2 {
 }
 @media screen and (max-width: 600px) {
   .content .text h3 {
+    margin-bottom: 10px;
     color: var(--Base-Black, #000);
     font-family: "Red Hat Display";
     font-size: 1.375rem;
@@ -406,6 +431,11 @@ h2 {
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 25px;
+}
+@media screen and (max-width: 425px) {
+  .content .info {
+    margin-bottom: 15px;
+  }
 }
 .content .info p, .content .info span {
   color: var(--Grey-500, #7B7B7B);
@@ -430,6 +460,25 @@ h2 {
   .latest_posts {
     margin-bottom: 70px;
   }
+}
+.latest_posts .heading {
+  align-items: flex-start;
+  gap: 10px;
+}
+@media screen and (max-width: 425px) {
+  .latest_posts .heading {
+    margin-bottom: 30px;
+  }
+}
+.latest_posts .heading h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 2.25rem; /* 128.571% */
+  letter-spacing: 0.0875rem;
+}
+.latest_posts .heading .view-all {
+  align-self: flex-start;
+  padding: 0;
 }
 .latest_posts ul {
   display: grid;
@@ -489,6 +538,25 @@ h2 {
   .most_popular {
     margin-bottom: 70px;
   }
+}
+.most_popular .heading {
+  align-items: flex-start;
+  gap: 10px;
+}
+@media screen and (max-width: 425px) {
+  .most_popular .heading {
+    margin-bottom: 30px;
+  }
+}
+.most_popular .heading h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 2.25rem; /* 128.571% */
+  letter-spacing: 0.0875rem;
+}
+.most_popular .heading .view-all {
+  align-self: flex-start;
+  padding: 0;
 }
 .most_popular ul {
   margin-bottom: 50px;
@@ -563,7 +631,7 @@ h2 {
 }
 @media screen and (max-width: 600px) {
   .outro .container {
-    height: 454px;
+    height: 500px;
     gap: 40px;
   }
 }
@@ -657,7 +725,6 @@ footer .footer-content {
   }
 }
 footer .cta {
-  color: var(--Base-Black, #000);
   font-size: 1rem;
   line-height: 166%; /* 1.66rem */
   letter-spacing: 0.1rem;
@@ -669,12 +736,7 @@ footer .cta .contacts {
 }
 @media screen and (max-width: 425px) {
   footer .cta .contacts {
-    color: var(--Base-Black, #000);
-    text-align: center;
-    font-family: Lato;
     font-size: 1.125rem;
-    font-style: normal;
-    font-weight: 400;
     line-height: 166%; /* 1.8675rem */
     letter-spacing: 0.1125rem;
   }
@@ -689,6 +751,7 @@ footer .cta h2 {
 }
 @media screen and (max-width: 425px) {
   footer .cta h2 {
+    margin-bottom: 10px;
     font-size: 2rem;
   }
 }
