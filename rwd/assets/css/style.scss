@@ -95,6 +95,7 @@ header {
           gap: 20px;
         }
       }
+
       a {
         text-decoration: none;
         color: var(--Base-Black, #000);
@@ -105,6 +106,7 @@ header {
         letter-spacing: 4.2px;
         text-transform: uppercase;
       }
+
       .search {
         height: 17px;
         width: 18px;
@@ -182,6 +184,13 @@ header {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
+
+    &:nth-child(odd) {
+      img {
+        order: 1;
+      }
+    }
+
     @media screen and (max-width: 580px) {
       grid-template-columns: auto;
       img {
@@ -189,11 +198,69 @@ header {
       }
     }
 
-    &:nth-child(odd) {
-      img {
-        order: 1;
+    .content {
+      margin: auto 0;
+      max-width: 450px;
+      width: 100%;
+      @media screen and (max-width: 580px) {
+        width: 100%;
+      }
+
+      p {
+        color: var(--Grey-700, #565656);
+
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 166%; /* 1.66rem */
+        letter-spacing: 0.05rem;
+
+        svg {
+          position: relative;
+          left: 15px;
+          top: 1px
+          //width: 24px;
+          //height: 12px;
+        }
+      }
+
+      .date {
+        display: inline-block;
+        margin-bottom: 50px;
+        color: var(--Grey-500, #7B7B7B);
+
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 166%; /* 26.56px */
+        letter-spacing: 1.6px;
+      }
+
+      hgroup {
+        h3 {
+          margin-bottom: 15px;
+          color: var(--Base-Black, #000);
+          font-family: "Red Hat Display", sans-serif;
+          font-size: 1.4375rem;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 166%; /* 2.38625rem */
+          letter-spacing: 0.14375rem;
+        }
+
+        p {
+          margin-bottom: 30px;
+          color: var(--Grey-500, #7B7B7B);
+
+          font-size: 1rem;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 166%; /* 1.66rem */
+          letter-spacing: 0.1rem;
+        }
       }
     }
+
   }
 
   h2 {
