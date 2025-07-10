@@ -38,63 +38,8 @@
   font-weight: 600;
   src: url("../fonts/red-hat-display-v20-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
-*, *::before, *::after {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-ul, ol {
-  list-style: none;
-}
-
-a, button {
-  transition: all 0.2s ease;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-button {
-  cursor: pointer;
-}
-
-img {
-  vertical-align: top;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.container {
-  width: min(95%, min(93%, 1170px));
-  margin: 0 auto;
-}
-
-body {
-  font-size: 18px;
-  color: #232323;
-  font-family: Lato, sans-serif;
-}
-
-.page-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.page-wrapper main {
-  flex-grow: 1;
-}
-
-.logo {
-  height: 12px;
-  width: auto;
-  vertical-align: baseline;
-}
-
 header {
+  transition: all 0.2s ease;
   position: fixed;
   max-height: 100px;
   padding: 40px 0;
@@ -139,6 +84,7 @@ header .container div ul {
   }
 }
 header .container div ul li:after {
+  transition: all 0.2s ease;
   content: "";
   position: relative;
   left: 45%;
@@ -149,14 +95,16 @@ header .container div ul li:after {
   height: 2px;
   background-color: var(--Base-Black, #000);
 }
+header .container div ul li a {
+  cursor: url("../icons/cursor.svg"), pointer;
+}
 header .container div ul li:hover {
-  cursor: pointer;
+  cursor: url("../icons/cursor.svg"), pointer;
 }
 header .container div ul li:hover:after {
   width: 40px;
 }
 header .container div a {
-  transition: width 0.2s ease;
   text-decoration: none;
   color: var(--Base-Black, #000);
   font-size: 0.875rem;
@@ -172,6 +120,9 @@ header .container div .search {
   background-color: transparent;
   border: none;
   vertical-align: bottom;
+}
+header .container div .search:hover {
+  cursor: url("../icons/cursor.svg"), pointer;
 }
 header .container div .search svg {
   width: inherit;
@@ -204,6 +155,60 @@ header .container div .hamburger svg {
   header .container div .hamburger {
     display: inline;
   }
+}
+
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  vertical-align: top;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container {
+  width: min(95%, min(93%, 1170px));
+  margin: 0 auto;
+}
+
+body {
+  font-size: 18px;
+  color: #232323;
+  font-family: Lato, sans-serif;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.page-wrapper main {
+  flex-grow: 1;
+}
+
+.logo {
+  height: 12px;
+  width: auto;
+  margin-left: 3px;
+  vertical-align: baseline;
 }
 
 .hero {
@@ -414,6 +419,7 @@ h2 {
 .view-all:hover {
   outline: 1px solid var(--Base-Black, #000);
   color: var(--Base-Black, #000);
+  cursor: url("../icons/cursor.svg"), pointer;
 }
 
 .heading {
@@ -452,7 +458,6 @@ h2 {
   .content .text h3 {
     margin-bottom: 10px;
     color: var(--Base-Black, #000);
-    font-family: "Red Hat Display";
     font-size: 1.375rem;
     font-style: normal;
     font-weight: 500;
@@ -628,6 +633,7 @@ h2 {
   letter-spacing: 0.1rem;
 }
 .load_more:hover {
+  cursor: url("../icons/cursor.svg"), pointer;
   background: transparent;
   border: 1px solid var(--gray, #565656);
   color: var(--gray, #565656);
@@ -735,6 +741,7 @@ footer .social-icons a {
   fill: var(--Grey-500, #7B7B7B);
 }
 footer .social-icons a:hover {
+  cursor: url("../icons/cursor.svg"), pointer;
   background: var(--Grey-500, #565656);
   fill: var(--Base-White, #FFF);
 }
@@ -803,4 +810,4 @@ footer .copyright {
   }
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=index.css.map */
