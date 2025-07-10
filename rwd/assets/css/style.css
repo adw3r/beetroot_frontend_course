@@ -138,18 +138,7 @@ header .container div ul {
     gap: 20px;
   }
 }
-header .container div a {
-  transition: width 0.2s ease;
-  text-decoration: none;
-  color: var(--Base-Black, #000);
-  font-size: 0.875rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: 4.2px;
-  text-transform: uppercase;
-}
-header .container div a:after {
+header .container div ul li:after {
   content: "";
   position: relative;
   left: 45%;
@@ -160,8 +149,22 @@ header .container div a:after {
   height: 2px;
   background-color: var(--Base-Black, #000);
 }
-header .container div a:hover:after {
+header .container div ul li:hover {
+  cursor: pointer;
+}
+header .container div ul li:hover:after {
   width: 40px;
+}
+header .container div a {
+  transition: width 0.2s ease;
+  text-decoration: none;
+  color: var(--Base-Black, #000);
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 4.2px;
+  text-transform: uppercase;
 }
 header .container div .search {
   height: 17px;
