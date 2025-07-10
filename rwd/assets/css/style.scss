@@ -117,11 +117,11 @@ header {
           }
 
           a {
-            cursor: url("../images/cursor.svg"), pointer;
+            cursor: url("../icons/cursor.svg"), pointer;
           }
 
           &:hover {
-            cursor: url("../images/cursor.svg"), pointer;
+            cursor: url("../icons/cursor.svg"), pointer;
 
 
             &:after {
@@ -154,7 +154,7 @@ header {
         vertical-align: bottom;
 
         &:hover {
-          cursor: url("../images/cursor.svg"), pointer;
+          cursor: url("../icons/cursor.svg"), pointer;
         }
 
         svg {
@@ -394,7 +394,7 @@ h2 {
   &:hover {
     outline: 1px solid var(--Base-Black, #000);
     color: var(--Base-Black, #000);
-    cursor: url("../images/cursor.svg"), pointer;
+    cursor: url("../icons/cursor.svg"), pointer;
   }
 
   text-decoration: none;
@@ -625,7 +625,7 @@ h2 {
   letter-spacing: 0.1rem;
 
   &:hover {
-    cursor: url("../images/cursor.svg"), pointer;
+    cursor: url("../icons/cursor.svg"), pointer;
     background: transparent;
     border: 1px solid var(--gray, #565656);
     color: var(--gray, #565656);
@@ -725,7 +725,7 @@ footer {
       fill: var(--Grey-500, #7B7B7B);
 
       &:hover {
-        cursor: url("../images/cursor.svg"), pointer;
+        cursor: url("../icons/cursor.svg"), pointer;
         background: var(--Grey-500, #565656);
         fill: var(--Base-White, #FFF);
       }
