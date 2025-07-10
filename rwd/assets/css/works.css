@@ -140,6 +140,7 @@ header .container div ul {
   }
 }
 header .container div ul li:after {
+  transition: width 0.2s ease;
   content: "";
   position: relative;
   left: 45%;
@@ -160,7 +161,6 @@ header .container div ul li:hover:after {
   width: 40px;
 }
 header .container div a {
-  transition: width 0.2s ease;
   text-decoration: none;
   color: var(--Base-Black, #000);
   font-size: 0.875rem;
@@ -820,10 +820,6 @@ section {
   margin-bottom: 90px;
 }
 
-header {
-  box-shadow: none;
-}
-
 .content {
   display: flex;
   flex-direction: column;
@@ -914,7 +910,12 @@ p {
 }
 
 .first-screen {
-  margin-top: 110px;
+  margin-top: 150px;
+}
+@media screen and (max-width: 768px) {
+  .first-screen {
+    margin-top: 100px;
+  }
 }
 @media screen and (max-width: 425px) {
   .first-screen {
@@ -942,13 +943,6 @@ p {
 @media screen and (max-width: 425px) {
   .description .content {
     width: 100%;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .first-section {
-    margin-top: 80px;
-    margin-bottom: 70px;
   }
 }
 

@@ -8,9 +8,9 @@ section {
   margin-bottom: 90px;
 }
 
-header {
-  box-shadow: none;
-}
+//header {
+//  box-shadow: none;
+//}
 
 .content {
   display: flex;
@@ -86,7 +86,10 @@ p {
 }
 
 .first-screen {
-  margin-top: 110px;
+  margin-top: 150px;
+  @media screen and (max-width: 768px) {
+    margin-top: 100px;
+  }
   @media screen and (max-width: 425px) {
     margin-top: 80px;
     margin-bottom: 70px;
@@ -110,13 +113,6 @@ p {
     @media screen and (max-width: 425px) {
       width: 100%;
     }
-  }
-}
-
-.first-section {
-  @media screen and (max-width: 768px) {
-    margin-top: 80px;
-    margin-bottom: 70px;
   }
 }
 

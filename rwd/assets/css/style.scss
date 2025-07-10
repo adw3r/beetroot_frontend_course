@@ -104,7 +104,9 @@ header {
         }
 
         li {
+
           &:after {
+            transition: width .2s ease;
             content: '';
             position: relative;
             left: 45%;
@@ -133,7 +135,6 @@ header {
       }
 
       a {
-        transition: width .2s ease;
 
 
         text-decoration: none;

@@ -11,7 +11,8 @@
     <header>
         <div class="container">
             <a href="#">
-                <img alt="Manifest logo" class="logo" src="assets/images/Logo.svg">
+                <img alt="Manifest logo" class="logo" src="assets/images/Logo.svg" class="lazy"
+                     data-src="assets/images/Logo.svg">
             </a>
             <div>
                 <nav>
@@ -329,5 +330,10 @@
         </div>
     </footer>
 </div>
+<script type="module">
+    import LazyLoad from "https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.0.3/+esm";
+
+    const lazyLoadInstance = new LazyLoad({});
+</script>
 </body>
 </html>
