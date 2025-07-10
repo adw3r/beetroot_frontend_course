@@ -301,6 +301,7 @@ h3 {
   @media screen and (max-width: 768px) {
     margin-bottom: 70px;
   }
+
   .heading {
     display: flex;
     justify-content: space-between;
@@ -313,16 +314,12 @@ h3 {
       color: var(--Base-Black, #000);
       font-family: "Red Hat Display", sans-serif;
       font-size: 1.75rem;
-      font-style: normal;
-      font-weight: 600;
-      line-height: 166%; /* 2.905rem */
       letter-spacing: 0.175rem;
     }
 
-
     a {
       svg {
-        margin-left: 20px;
+        margin-left: 10px;
       }
     }
   }
@@ -333,14 +330,10 @@ h3 {
     gap: 30px;
     @media screen and (max-width: 768px) {
       grid-template-columns: auto;
-      .img-wrap {
-        margin: 0;
-      }
     }
     @media screen and (max-width: 425px) {
       gap: 50px;
     }
-
 
     li {
       @media screen and (max-width: 768px) {

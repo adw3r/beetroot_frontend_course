@@ -346,13 +346,10 @@ h3 {
   color: var(--Base-Black, #000);
   font-family: "Red Hat Display", sans-serif;
   font-size: 1.75rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 166%; /* 2.905rem */
   letter-spacing: 0.175rem;
 }
 .latest_posts .heading a svg {
-  margin-left: 20px;
+  margin-left: 10px;
 }
 .latest_posts ul {
   display: grid;
@@ -362,9 +359,6 @@ h3 {
 @media screen and (max-width: 768px) {
   .latest_posts ul {
     grid-template-columns: auto;
-  }
-  .latest_posts ul .img-wrap {
-    margin: 0;
   }
 }
 @media screen and (max-width: 425px) {
