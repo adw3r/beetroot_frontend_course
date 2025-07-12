@@ -1,8 +1,7 @@
-@use "header" as *;
-@use "fonts" as *;
+@use "header.min.css" as *;
+@use "fonts.min.css" as *;
 
 $text-color: #232323;
-
 $container-width: min(93%, 1170px);
 
 
@@ -53,8 +52,6 @@ body {
     flex-grow: 1;
   }
 }
-
-
 
 
 .hero {

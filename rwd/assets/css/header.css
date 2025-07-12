@@ -121,6 +121,8 @@ header .container div .hamburger svg {
   height: 13px;
   width: auto;
   margin-left: 3px;
+  position: relative;
+  top: -2px;
 }
 
 /*# sourceMappingURL=header.css.map */
