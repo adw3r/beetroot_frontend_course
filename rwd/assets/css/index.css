@@ -8,7 +8,6 @@ header {
   background-color: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(5px);
 }
-
 @media screen and (max-width: 768px) {
   header {
     padding: 20px 0;
@@ -20,12 +19,10 @@ header .container {
   justify-content: space-between;
   align-items: center;
 }
-
 header .container div nav {
   display: inline-flex;
   margin-right: 84px;
 }
-
 @media screen and (max-width: 1024px) {
   header .container div nav {
     margin-right: 40px;
@@ -41,7 +38,6 @@ header .container div ul {
   display: inline-flex;
   gap: 42px;
 }
-
 @media screen and (max-width: 1024px) {
   header .container div ul {
     gap: 20px;
@@ -59,15 +55,15 @@ header .container div ul li:after {
   height: 2px;
   background-color: var(--Base-Black, #000);
 }
-
-header .container div .search:hover, header .container div ul li a, header .container div ul li:hover {
-  cursor: url(../icons/cursor.svg), pointer;
+header .container div ul li a {
+  cursor: url("../icons/cursor.svg"), pointer;
 }
-
+header .container div ul li:hover {
+  cursor: url("../icons/cursor.svg"), pointer;
+}
 header .container div ul li:hover:after {
   width: 40px;
 }
-
 header .container div a {
   text-decoration: none;
   color: var(--Base-Black, #000);
@@ -78,20 +74,20 @@ header .container div a {
   letter-spacing: 4.2px;
   text-transform: uppercase;
 }
-
 header .container div .search {
   height: 20px;
   width: 20px;
   background-color: transparent;
-  border: 0;
+  border: none;
   vertical-align: bottom;
 }
-
-header .container div .hamburger svg, header .container div .search svg {
+header .container div .search:hover {
+  cursor: url("../icons/cursor.svg"), pointer;
+}
+header .container div .search svg {
   width: inherit;
   height: inherit;
 }
-
 @media screen and (max-width: 768px) {
   header .container div .search {
     vertical-align: baseline;
@@ -105,18 +101,22 @@ header .container div .hamburger svg, header .container div .search svg {
   }
 }
 header .container div .hamburger {
-  border: 0;
+  border: none;
   height: 24px;
   width: 34px;
   background-color: transparent;
   display: none;
 }
-
+header .container div .hamburger svg {
+  width: inherit;
+  height: inherit;
+}
 @media screen and (max-width: 768px) {
   header .container div .hamburger {
     display: inline;
   }
 }
+
 .logo {
   height: 13px;
   width: auto;
@@ -125,40 +125,45 @@ header .container div .hamburger {
   top: -2px;
 }
 
+/* lato-regular - latin */
 @font-face {
-  font-display: swap;
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: "Lato";
   font-style: normal;
   font-weight: 400;
-  src: url(../fonts/lato-v24-latin-regular.woff2) format("woff2");
+  src: url("../fonts/lato-v24-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+/* lato-700 - latin */
 @font-face {
-  font-display: swap;
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: "Lato";
   font-style: normal;
   font-weight: 700;
-  src: url(../fonts/lato-v24-latin-700.woff2) format("woff2");
+  src: url("../fonts/lato-v24-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+/* red-hat-display-regular - latin */
 @font-face {
-  font-display: swap;
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: "Red Hat Display";
   font-style: normal;
   font-weight: 400;
-  src: url(../fonts/red-hat-display-v20-latin-regular.woff2) format("woff2");
+  src: url("../fonts/red-hat-display-v20-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+/* red-hat-display-500 - latin */
 @font-face {
-  font-display: swap;
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: "Red Hat Display";
   font-style: normal;
   font-weight: 500;
-  src: url(../fonts/red-hat-display-v20-latin-500.woff2) format("woff2");
+  src: url("../fonts/red-hat-display-v20-latin-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+/* red-hat-display-600 - latin */
 @font-face {
-  font-display: swap;
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: "Red Hat Display";
   font-style: normal;
   font-weight: 600;
-  src: url(../fonts/red-hat-display-v20-latin-600.woff2) format("woff2");
+  src: url("../fonts/red-hat-display-v20-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 *, *::before, *::after {
   padding: 0;
@@ -212,9 +217,9 @@ body {
   margin-top: 100px;
   background: url(../images/bg-image.jpg) center center/cover no-repeat;
   filter: brightness(1.5) grayscale(30%) contrast(0.8);
+  margin-bottom: 90px;
   min-height: 600px;
   height: calc(100dvh - 100px);
-  margin-bottom: 90px;
 }
 @media screen and (max-width: 768px) {
   .hero {

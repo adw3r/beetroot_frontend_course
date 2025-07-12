@@ -1,5 +1,5 @@
-@use "header" as *;
-@use 'index' as *;
+@use "header.scss" as *;
+@use 'index.scss' as *;
 
 img {
   vertical-align: top;
@@ -30,6 +30,10 @@ section {
 }
 
 h1 {
+  margin-bottom: 70px;
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 3rem;
+  letter-spacing: 0.15rem;
   @media screen and (max-width: 768px) {
     font-size: 2.0625rem;
     letter-spacing: 0.10313rem;
@@ -43,10 +47,6 @@ h1 {
     letter-spacing: 0.09375rem;
     margin-bottom: 40px;
   }
-  margin-bottom: 70px;
-  font-family: "Red Hat Display", sans-serif;
-  font-size: 3rem;
-  letter-spacing: 0.15rem;
 }
 
 h2 {

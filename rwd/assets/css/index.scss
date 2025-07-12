@@ -1,5 +1,5 @@
-@use "header.min.css" as *;
-@use "fonts.min.css" as *;
+@use "header.scss" as *;
+@use "fonts.scss" as *;
 
 $text-color: #232323;
 $container-width: min(93%, 1170px);
@@ -59,6 +59,7 @@ body {
   margin-top: 100px;
   background: url(../images/bg-image.jpg) center center/cover no-repeat;
   filter: brightness(1.5) grayscale(30%) contrast(0.8);
+  margin-bottom: 90px;
 
   min-height: 600px;
   height: calc(100dvh - 100px);
@@ -73,10 +74,16 @@ body {
     padding-top: 70px;
     min-height: 500px;
   }
-  margin-bottom: 90px;
 
   h1 {
     width: 80%;
+    color: var(--Base-Black, #000);
+    font-family: "Red Hat Display", sans-serif;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 4rem; /* 133.333% */
+    letter-spacing: 0.15rem;
     @media screen and (max-width: 768px) {
       width: 80%;
       font-size: 2.25rem;
@@ -89,13 +96,6 @@ body {
       line-height: 3.125rem;
       letter-spacing: 0.09375rem;
     }
-    color: var(--Base-Black, #000);
-    font-family: "Red Hat Display", sans-serif;
-    font-size: 3rem;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 4rem; /* 133.333% */
-    letter-spacing: 0.15rem;
   }
 }
 
@@ -196,8 +196,6 @@ h3 {
         order: 1;
       }
     }
-
-
   }
 
   .content {
@@ -233,9 +231,6 @@ h3 {
 }
 
 h2 {
-  @media screen and (max-width: 425px) {
-    text-align: center;
-  }
   color: var(--Base-Black, #000);
   font-family: "Red Hat Display", sans-serif;
   font-size: 3rem;
@@ -243,31 +238,29 @@ h2 {
   font-weight: 400;
   line-height: 4rem; /* 133.333% */
   letter-spacing: 0.15rem;
+  @media screen and (max-width: 425px) {
+    text-align: center;
+  }
 }
 
 .view-all {
-  @media screen and (max-width: 320px) {
-    align-self: flex-start;
-  }
   align-self: flex-end;
   vertical-align: baseline;
   padding: 10px 20px;
-  //align-self: center;
-  //justify-self: center;
+  text-decoration: none;
+  color: var(--Grey-500, #7B7B7B);
+  font-size: 1rem;
+  line-height: 166%; /* 1.66rem */
+  letter-spacing: 0.1rem;
 
+  @media screen and (max-width: 320px) {
+    align-self: flex-start;
+  }
   &:hover {
     outline: 1px solid var(--Base-Black, #000);
     color: var(--Base-Black, #000);
     cursor: url("../icons/cursor.svg"), pointer;
   }
-
-  text-decoration: none;
-
-  color: var(--Grey-500, #7B7B7B);
-
-  font-size: 1rem;
-  line-height: 166%; /* 1.66rem */
-  letter-spacing: 0.1rem;
 }
 
 .heading {
