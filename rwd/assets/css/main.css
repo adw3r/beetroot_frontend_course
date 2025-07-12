@@ -45,7 +45,8 @@ header {
   padding: 40px 0;
   width: 100%;
   z-index: 100;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(5px);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 @media screen and (max-width: 768px) {
@@ -640,7 +641,6 @@ h2 {
 }
 .load_more:active {
   scale: 0.9;
-  transition: all 0.2s ease;
   background: #99CC99;
   color: var(--Base-White, #FFF);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
@@ -810,4 +810,4 @@ footer .copyright {
   }
 }
 
-/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=main.css.map */
