@@ -1,43 +1,3 @@
-/* lato-regular - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: "Lato";
-  font-style: normal;
-  font-weight: 400;
-  src: url("../fonts/lato-v24-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
-/* lato-700 - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: "Lato";
-  font-style: normal;
-  font-weight: 700;
-  src: url("../fonts/lato-v24-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
-/* red-hat-display-regular - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: "Red Hat Display";
-  font-style: normal;
-  font-weight: 400;
-  src: url("../fonts/red-hat-display-v20-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
-/* red-hat-display-500 - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: "Red Hat Display";
-  font-style: normal;
-  font-weight: 500;
-  src: url("../fonts/red-hat-display-v20-latin-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
-/* red-hat-display-600 - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: "Red Hat Display";
-  font-style: normal;
-  font-weight: 600;
-  src: url("../fonts/red-hat-display-v20-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
 header {
   transition: all 0.2s ease;
   position: fixed;
@@ -47,7 +7,6 @@ header {
   z-index: 100;
   background-color: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(5px);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 @media screen and (max-width: 768px) {
   header {
@@ -158,6 +117,53 @@ header .container div .hamburger svg {
   }
 }
 
+.logo {
+  height: 12px;
+  width: auto;
+  margin-left: 3px;
+  vertical-align: top;
+}
+
+/* lato-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/lato-v24-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* lato-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/lato-v24-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* red-hat-display-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/red-hat-display-v20-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* red-hat-display-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/red-hat-display-v20-latin-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* red-hat-display-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../fonts/red-hat-display-v20-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
 *, *::before, *::after {
   padding: 0;
   margin: 0;
@@ -214,21 +220,24 @@ body {
 
 .hero {
   padding-top: 100px;
-  margin-top: 60px;
-  background: url(../images/bg-image.jpg) center/cover no-repeat;
+  margin-top: 100px;
+  background: url(../images/bg-image.jpg) center center/cover no-repeat;
   filter: brightness(1.5) grayscale(30%) contrast(0.8);
   min-height: 600px;
-  background-size: cover;
+  height: calc(100dvh - 100px);
   margin-bottom: 90px;
 }
 @media screen and (max-width: 768px) {
   .hero {
-    padding-top: 30px;
+    padding-top: 60px;
     min-height: 320px;
+    height: calc(100dvh - 60px);
+    margin-top: 60px;
   }
 }
 @media screen and (max-width: 425px) {
   .hero {
+    margin-top: 60px;
     padding-top: 70px;
     min-height: 500px;
   }
@@ -493,32 +502,6 @@ h2 {
   }
 }
 
-.latest_posts {
-  margin-bottom: 90px;
-}
-@media screen and (max-width: 768px) {
-  .latest_posts {
-    margin-bottom: 70px;
-  }
-}
-.latest_posts .heading {
-  align-items: flex-start;
-  gap: 10px;
-}
-@media screen and (max-width: 425px) {
-  .latest_posts .heading {
-    margin-bottom: 30px;
-  }
-}
-.latest_posts .heading h2 {
-  font-size: 1.75rem;
-  font-weight: 600;
-  line-height: 2.25rem; /* 128.571% */
-  letter-spacing: 0.0875rem;
-}
-.latest_posts .heading .view-all {
-  padding: 0;
-}
 .latest_posts ul {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -570,32 +553,33 @@ h2 {
   }
 }
 
-.most_popular {
+.basic-block {
   margin-bottom: 90px;
 }
 @media screen and (max-width: 768px) {
-  .most_popular {
+  .basic-block {
     margin-bottom: 70px;
   }
 }
-.most_popular .heading {
+.basic-block .heading {
   align-items: flex-start;
   gap: 10px;
 }
 @media screen and (max-width: 425px) {
-  .most_popular .heading {
+  .basic-block .heading {
     margin-bottom: 30px;
   }
 }
-.most_popular .heading h2 {
+.basic-block .heading h2 {
   font-size: 1.75rem;
   font-weight: 600;
   line-height: 2.25rem; /* 128.571% */
   letter-spacing: 0.0875rem;
 }
-.most_popular .heading .view-all {
+.basic-block .heading .view-all {
   padding: 0;
 }
+
 .most_popular ul {
   margin-bottom: 50px;
   display: grid;
@@ -810,4 +794,4 @@ footer .copyright {
   }
 }
 
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=index.css.map */
