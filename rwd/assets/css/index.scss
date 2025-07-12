@@ -1,8 +1,8 @@
+@use "fonts.min.css" as *;
 @use "header" as *;
-@use "fonts" as *;
 
-$text-color: #232323;
 $container-width: min(93%, 1170px);
+$text-color: #232323;
 
 
 *, *::before, *::after {
