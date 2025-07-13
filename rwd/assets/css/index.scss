@@ -1,63 +1,29 @@
-@use "fonts.min.css" as *;
-@use "header" as *;
+@import "base";
+@import "header";
+@import "footer";
 
-$container-width: min(93%, 1170px);
-$text-color: #232323;
-$grey-500: #7B7B7B;
-$base-black: #000;
-$grey-700: #565656;
-$base-white: #FFF;
-$grey-100: #F4F4F4;
-
-
-*, *::before, *::after {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  transition: all .5s ease;
-}
-
-ul, ol {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-button {
-  cursor: pointer;
-}
-
-img {
-  vertical-align: top;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.container {
-  width: min(95%, $container-width);
-  margin: 0 auto;
-}
-
-body {
-  font-size: 18px;
-  color: $text-color;
-  font-family: Lato, sans-serif;
-}
-
-.page-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  main {
-    flex-grow: 1;
+h1 {
+  width: 80%;
+  color: $base-black;
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 4rem; /* 133.333% */
+  letter-spacing: 0.15rem;
+  @media screen and (max-width: 768px) {
+    width: 80%;
+    font-size: 2.25rem;
+    line-height: 3.125rem;
+    letter-spacing: 0.1125rem;
+  }
+  @media screen and (max-width: 425px) {
+    width: 100%;
+    font-size: 1.875rem;
+    line-height: 3.125rem;
+    letter-spacing: 0.09375rem;
   }
 }
-
 
 .hero {
   padding-top: 100px;
@@ -80,28 +46,7 @@ body {
     min-height: 500px;
   }
 
-  h1 {
-    width: 80%;
-    color: $base-black;
-    font-family: "Red Hat Display", sans-serif;
-    font-size: 3rem;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 4rem; /* 133.333% */
-    letter-spacing: 0.15rem;
-    @media screen and (max-width: 768px) {
-      width: 80%;
-      font-size: 2.25rem;
-      line-height: 3.125rem;
-      letter-spacing: 0.1125rem;
-    }
-    @media screen and (max-width: 425px) {
-      width: 100%;
-      font-size: 1.875rem;
-      line-height: 3.125rem;
-      letter-spacing: 0.09375rem;
-    }
-  }
+
 }
 
 .date {
@@ -543,95 +488,3 @@ h2 {
   }
 }
 
-footer {
-  padding: 70px 0 30px 0;
-  @media screen and (max-width: 768px) {
-    padding: 50px 0;
-    .footer-content {
-      text-align: center;
-    }
-  }
-  background: $grey-100;
-
-  .social-icons {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-
-    a {
-      border: 1px solid $grey-500;
-      display: inline-flex;
-      width: 50px;
-      height: 50px;
-      padding: 10px;
-      fill: $grey-500;
-
-      &:hover {
-        cursor: url("../icons/cursor.svg"), pointer;
-        background: $grey-500;
-        fill: $base-white;
-      }
-    }
-  }
-
-  .footer-content {
-    margin-bottom: 20px;
-    @media screen and (max-width: 768px) {
-      margin-bottom: 40px;
-    }
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    @media screen and (max-width: 768px) {
-      flex-direction: column;
-      gap: 40px;
-    }
-  }
-
-  .cta {
-
-    .contacts {
-      @media screen and (max-width: 425px) {
-        font-size: 1.125rem;
-        line-height: 166%; /* 1.8675rem */
-        letter-spacing: 0.1125rem;
-      }
-
-      display: flex;
-      flex-direction: column;
-
-      gap: 10px;
-    }
-
-    h2 {
-      margin-bottom: 30px;
-      @media screen and (max-width: 768px) {
-        margin-bottom: 20px;
-      }
-      @media screen and (max-width: 425px) {
-        margin-bottom: 10px;
-        font-size: 2rem;
-      }
-    }
-
-    font-size: 1rem;
-    line-height: 166%; /* 1.66rem */
-    letter-spacing: 0.1rem;
-  }
-
-  .copyright {
-    display: block;
-    text-align: center;
-    color: $base-black;
-    margin: 0 auto;
-    font-size: 0.75rem;
-    letter-spacing: 0.075rem;
-
-    @media screen and (max-width: 425px) {
-      font-size: 1rem;
-      font-weight: 400;
-      line-height: 166%; /* 1.66rem */
-    }
-  }
-}

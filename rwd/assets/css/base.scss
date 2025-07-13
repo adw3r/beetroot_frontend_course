@@ -1,0 +1,57 @@
+@use "fonts.min.css" as *;
+$container-width: min(100% - 20px, 1170px);
+$text-color: #232323;
+$grey-500: #7B7B7B;
+$base-black: #000;
+$grey-700: #565656;
+$base-white: #FFF;
+$grey-100: #F4F4F4;
+
+
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: all .2s ease;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  vertical-align: top;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container {
+  width: min(95%, $container-width);
+  margin: 0 auto;
+}
+
+body {
+  font-size: 18px;
+  color: $text-color;
+  font-family: Lato, sans-serif;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  main {
+    flex-grow: 1;
+  }
+}

@@ -1,5 +1,6 @@
-@use "hamburger" as *;
+@import "hamburger";
 .hamburger {
+    padding: 0;
     display: none;
 
     @media screen and (max-width: 768px) {
