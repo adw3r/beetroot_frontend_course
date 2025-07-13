@@ -1,4 +1,6 @@
-@use "fonts.min.css" as *;
+@import "animate.min.css";
+@import "fonts.min.css";
+
 $container-width: min(100% - 20px, 1170px);
 $text-color: #232323;
 $grey-500: #7B7B7B;

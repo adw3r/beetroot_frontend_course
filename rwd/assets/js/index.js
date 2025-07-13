@@ -1,5 +1,7 @@
 import Lazyload from './lazyload.js';
 
+new WOW().init(); // WOW будет глобальной переменной
+
 const lazyload = new Lazyload({});
 lazyload.update()
 
@@ -31,6 +33,7 @@ const getBgImageForWidth = (width) => {
 const bg_element = document.querySelector('.hero.lazy');
 
 function updateBg() {
+    if (!bg_element) return;
     bg_element.dataset.bg = getBgImageForWidth(window.innerWidth);
     bg_element.removeAttribute('data-ll-status');        // если есть кастомные метки
     lazyload.update();
