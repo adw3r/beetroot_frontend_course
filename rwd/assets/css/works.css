@@ -243,15 +243,30 @@ body {
   flex-direction: column;
   justify-content: center;
 }
+@media screen and (max-width: 570px) {
+  .mobile-menu nav {
+    width: 200px;
+  }
+}
 .mobile-menu nav ul {
   gap: 60px;
   display: flex;
   flex-direction: column;
 }
+@media screen and (max-width: 570px) {
+  .mobile-menu nav ul {
+    gap: 30px;
+  }
+}
 .mobile-menu nav ul a {
   font-size: 2rem;
   letter-spacing: 4.2px;
   text-transform: uppercase;
+}
+@media screen and (max-width: 570px) {
+  .mobile-menu nav ul a {
+    font-size: 1.5rem;
+  }
 }
 
 header {

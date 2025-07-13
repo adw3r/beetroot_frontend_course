@@ -243,15 +243,30 @@ body {
   flex-direction: column;
   justify-content: center;
 }
+@media screen and (max-width: 570px) {
+  .mobile-menu nav {
+    width: 200px;
+  }
+}
 .mobile-menu nav ul {
   gap: 60px;
   display: flex;
   flex-direction: column;
 }
+@media screen and (max-width: 570px) {
+  .mobile-menu nav ul {
+    gap: 30px;
+  }
+}
 .mobile-menu nav ul a {
   font-size: 2rem;
   letter-spacing: 4.2px;
   text-transform: uppercase;
+}
+@media screen and (max-width: 570px) {
+  .mobile-menu nav ul a {
+    font-size: 1.5rem;
+  }
 }
 
 header {
@@ -491,7 +506,6 @@ h1 {
   padding-top: 100px;
   margin-top: 100px;
   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=) center center/cover no-repeat;
-  filter: brightness(1.5) grayscale(30%) contrast(0.8);
   margin-bottom: 90px;
   min-height: 600px;
   height: calc(100dvh - 100px);
