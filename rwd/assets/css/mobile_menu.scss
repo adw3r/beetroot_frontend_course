@@ -1,0 +1,53 @@
+@use "hamburger" as *;
+.hamburger {
+    display: none;
+
+    @media screen and (max-width: 768px) {
+        display: inline-block;
+    }
+}
+
+.mobile-menu {
+    transition: all .2s ease;
+    &.open {
+        .overlay {
+            visibility: visible;
+            opacity: 1;
+        }
+        nav {
+            left: 0;
+        }
+    }
+    .overlay {
+        visibility: hidden;
+        opacity: 0;
+        position: fixed;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 22;
+        width: 100%;
+        height: 100vh;
+    }
+    nav {
+        position: fixed;
+        left: -300px;
+        top: 0;
+        z-index: 33;
+        background-color: white;
+        width: 300px;
+        height: 100vh;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        ul {
+            gap: 60px;
+            display: flex;
+            flex-direction: column;
+            a {
+                font-size: 2rem;
+                letter-spacing: 4.2px;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
