@@ -7,6 +7,28 @@
     <link href="assets/css/works.min.css" rel="stylesheet">
 </head>
 <body>
+<div class="mobile-menu">
+    <div class="overlay" onclick="toggleMenu()"></div>
+    <nav>
+        <ul>
+            <li>
+                <a href="index.html" rel="nofollow" title="Home">Home</a>
+            </li>
+            <li>
+                <a href="#" rel="nofollow" title="About">About</a>
+            </li>
+            <li>
+                <a href="works.html" rel="nofollow" title="Works">Works</a>
+            </li>
+            <li>
+                <a href="#" rel="nofollow" title="Blog">Blog</a>
+            </li>
+            <li>
+                <a href="#" rel="nofollow" title="Contact">Contact</a>
+            </li>
+        </ul>
+    </nav>
+</div>
 <div class="page-wrapper">
     <header>
         <div class="container">
@@ -42,10 +64,10 @@
                         <use xlink:href="assets/icons/search.svg"></use>
                     </svg>
                 </button>
-                <button class="hamburger" type="button">
-                    <svg>
-                        <use xlink:href="assets/icons/hamburger.svg"></use>
-                    </svg>
+                <button class="hamburger hamburger--vortex js-hamburger" onclick="toggleMenu()" type="button">
+                  <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                  </span>
                 </button>
             </div>
         </div>
