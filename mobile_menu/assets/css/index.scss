@@ -1,0 +1,10 @@
+@use "base";
+
+
+.main-content {
+  background-image: url("../../assets/images/light/bg.jpg");
+  background-repeat: no-repeat;
+  height: 100dvh;
+  background-size: cover;
+  width: 100dvw;
+}
