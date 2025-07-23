@@ -1,164 +1,168 @@
 /* montserrat-regular - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 400;
-  src: url("../fonts/montserrat-v30-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/montserrat-v30-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+
 /* montserrat-700 - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 700;
-  src: url("../fonts/montserrat-v30-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../fonts/montserrat-v30-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+
 @font-face {
-  font-family: "icomoon";
-  src: url("../icons/icomoon.woff?lf8lv7") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
+    font-family: "icomoon";
+    src: url("../icons/icomoon.woff?lf8lv7") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
 }
+
 [class^=icon-], [class*=" icon-"] {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: "icomoon" !important;
-  speak: never;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: "icomoon" !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .icon-bubble:before {
-  content: "\e900";
+    content: "\e900";
 }
 
 .icon-calendar:before {
-  content: "\e901";
+    content: "\e901";
 }
 
 .icon-change-theme:before {
-  content: "\e902";
+    content: "\e902";
 }
 
 .icon-dashboard:before {
-  content: "\e903";
+    content: "\e903";
 }
 
 .icon-eye:before {
-  content: "\e904";
+    content: "\e904";
 }
 
 .icon-lab:before {
-  content: "\e905";
+    content: "\e905";
 }
 
 .icon-location:before {
-  content: "\e906";
+    content: "\e906";
 }
 
 .icon-lock:before {
-  content: "\e907";
+    content: "\e907";
 }
 
 .icon-log-out:before {
-  content: "\e908";
+    content: "\e908";
 }
 
 .icon-mail:before {
-  content: "\e909";
+    content: "\e909";
 }
 
 .icon-news:before {
-  content: "\e90a";
+    content: "\e90a";
 }
 
 .icon-page:before {
-  content: "\e90b";
+    content: "\e90b";
 }
 
 .icon-pen:before {
-  content: "\e90c";
+    content: "\e90c";
 }
 
 .icon-profile:before {
-  content: "\e90d";
+    content: "\e90d";
 }
 
 .icon-search:before {
-  content: "\e90e";
+    content: "\e90e";
 }
 
 .icon-set:before {
-  content: "\e90f";
+    content: "\e90f";
 }
 
 .icon-stack:before {
-  content: "\e910";
+    content: "\e910";
 }
 
 .icon-star:before {
-  content: "\e911";
+    content: "\e911";
 }
 
 .icon-study-1:before {
-  content: "\e912";
+    content: "\e912";
 }
 
 .icon-wallet:before {
-  content: "\e913";
+    content: "\e913";
 }
 
 *, *::before, *::after {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 ul, ol {
-  list-style: none;
+    list-style: none;
 }
 
 a, button {
-  transition: all 0.2s ease;
+    transition: all 0.2s ease;
 }
 
 button {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 img {
-  vertical-align: top;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    vertical-align: top;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .container {
-  width: min(90%, 1200px);
-  margin: 0 auto;
+    width: min(90%, 1200px);
+    margin: 0 auto;
 }
 
 body {
-  font-size: 1rem;
-  color: #232323;
-  font-family: sans-serif;
-  overflow-y: scroll;
+    font-size: 1rem;
+    color: #232323;
+    font-family: sans-serif;
+    overflow-y: scroll;
 }
 
 .page-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
+
 .page-wrapper main {
-  flex-grow: 1;
+    flex-grow: 1;
 }
 
 /*# sourceMappingURL=base.css.map */
