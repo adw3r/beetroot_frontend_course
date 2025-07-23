@@ -1,3 +1,121 @@
+/* montserrat-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/montserrat-v30-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* montserrat-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/montserrat-v30-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+@font-face {
+  font-family: "icomoon";
+  src: url("../icons/icomoon.woff?lf8lv7") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+[class^=icon-], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-bubble:before {
+  content: "\e900";
+}
+
+.icon-calendar:before {
+  content: "\e901";
+}
+
+.icon-change-theme:before {
+  content: "\e902";
+}
+
+.icon-dashboard:before {
+  content: "\e903";
+}
+
+.icon-eye:before {
+  content: "\e904";
+}
+
+.icon-lab:before {
+  content: "\e905";
+}
+
+.icon-location:before {
+  content: "\e906";
+}
+
+.icon-lock:before {
+  content: "\e907";
+}
+
+.icon-log-out:before {
+  content: "\e908";
+}
+
+.icon-mail:before {
+  content: "\e909";
+}
+
+.icon-news:before {
+  content: "\e90a";
+}
+
+.icon-page:before {
+  content: "\e90b";
+}
+
+.icon-pen:before {
+  content: "\e90c";
+}
+
+.icon-profile:before {
+  content: "\e90d";
+}
+
+.icon-search:before {
+  content: "\e90e";
+}
+
+.icon-set:before {
+  content: "\e90f";
+}
+
+.icon-stack:before {
+  content: "\e910";
+}
+
+.icon-star:before {
+  content: "\e911";
+}
+
+.icon-study-1:before {
+  content: "\e912";
+}
+
+.icon-wallet:before {
+  content: "\e913";
+}
+
 *, *::before, *::after {
   padding: 0;
   margin: 0;
@@ -45,11 +163,38 @@ body {
 }
 
 .main-content {
-  background-image: url("../../assets/images/light/bg.jpg");
+  background-image: url("../images/light/bg.jpg");
   background-repeat: no-repeat;
   height: 100dvh;
   background-size: cover;
   width: 100dvw;
+}
+
+.mobile-menu {
+  position: fixed;
+  padding: 30px 15px;
+  background: #FFF;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
+  z-index: 22;
+  max-width: 220px;
+}
+.mobile-menu .logo {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+.mobile-menu .logo .close-btn {
+  background: none;
+  border: none;
+}
+.mobile-menu .navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+header {
+  display: none;
 }
 
 /*# sourceMappingURL=index.css.map */

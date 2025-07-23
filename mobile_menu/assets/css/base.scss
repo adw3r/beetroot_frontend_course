@@ -1,3 +1,7 @@
+@use "fonts";
+@use "icons";
+
+
 $text-color: #232323;
 
 *, *::before, *::after {
@@ -41,6 +45,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
   main {
     flex-grow: 1;
   }

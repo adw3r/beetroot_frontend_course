@@ -2,9 +2,36 @@
 
 
 .main-content {
-  background-image: url("../../assets/images/light/bg.jpg");
+  background-image: url("../images/light/bg.jpg");
   background-repeat: no-repeat;
   height: 100dvh;
   background-size: cover;
   width: 100dvw;
+}
+.mobile-menu {
+  position: fixed;
+  padding: 30px 15px;
+  background: #FFF;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
+  z-index: 22;
+  max-width: 220px;
+  //width: 25%;
+  .logo {
+    display: flex;
+    gap:30px;
+    margin-bottom: 40px;
+    .close-btn {
+      background: none;
+      border: none;
+    }
+  }
+  .navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+}
+header {
+  display: none;
 }
