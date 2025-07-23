@@ -3,6 +3,7 @@
 
 
 $text-color: #232323;
+$--text-gray-dark: #4F4F4F;
 
 *, *::before, *::after {
   padding: 0;
@@ -35,10 +36,12 @@ img {
 }
 
 body {
+  color: $--text-gray-dark;
+  font-family: Montserrat, sans-serif;
   font-size: 1rem;
-  color: $text-color;
-  font-family: sans-serif;
-  overflow-y: scroll;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .page-wrapper {
