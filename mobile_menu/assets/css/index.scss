@@ -62,11 +62,13 @@
         margin-bottom: 15px;
       }
       li {
-        padding: 10px 15px;
-        //padding-inline: 15px;
-
-        display: flex;
-        gap: 20px;
+        a {
+          height: 100%;
+          width: 100%;
+          padding: 10px 15px;
+          display: flex;
+          gap: 20px;
+        }
         align-items: center;
         &:hover {
           background: var(--colors-purple-light, #9E8CFC);
@@ -99,7 +101,6 @@
 }
 .mobile-menu.is-hidden {
   width: 86px;
-  padding-inline: 10px;
 
 
   .logo {

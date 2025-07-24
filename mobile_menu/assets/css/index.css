@@ -130,6 +130,11 @@ a, button {
   transition: all 0.2s ease;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 button {
   cursor: pointer;
 }
@@ -220,10 +225,14 @@ body {
   margin-bottom: 15px;
 }
 .mobile-menu .navigation ul li {
+  align-items: center;
+}
+.mobile-menu .navigation ul li a {
+  height: 100%;
+  width: 100%;
   padding: 10px 15px;
   display: flex;
   gap: 20px;
-  align-items: center;
 }
 .mobile-menu .navigation ul li:hover {
   background: var(--colors-purple-light, #9E8CFC);
@@ -244,7 +253,6 @@ body {
 
 .mobile-menu.is-hidden {
   width: 86px;
-  padding-inline: 10px;
 }
 .mobile-menu.is-hidden .logo {
   justify-content: center;
