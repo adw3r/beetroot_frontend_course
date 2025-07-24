@@ -61,7 +61,6 @@
         padding-inline: 15px;
         margin-bottom: 15px;
       }
-
       li {
         a {
           height: 100%;
@@ -71,7 +70,6 @@
           gap: 20px;
           align-items: center;
         }
-
         &:hover {
           background: var(--colors-purple-light, #9E8CFC);
           box-shadow: 0 0 20px 0 rgba(158, 140, 252, 0.70);
@@ -149,13 +147,12 @@
 }
 
 .mobile-menu.is-hidden {
-  width: 86px;
+  width: 70px;
 
   overflow: visible;
 
   .logo {
     justify-content: center;
-
     .img-logo-sm {
       display: block;
     }
@@ -167,11 +164,10 @@
     .close-btn {
       position: absolute;
       left: 90%;
-
       svg {
         fill: white;
       }
-
+      //z-index: 1000000000000000000;
       transform: rotate(180deg);
       align-self: center;
       top: 34%;

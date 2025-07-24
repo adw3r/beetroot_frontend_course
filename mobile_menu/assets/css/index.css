@@ -280,7 +280,7 @@ body {
 }
 
 .mobile-menu.is-hidden {
-  width: 86px;
+  width: 70px;
   overflow: visible;
 }
 .mobile-menu.is-hidden .logo {
