@@ -246,6 +246,35 @@ body {
   content: "USER INTERFACE";
 }
 
+.badge {
+  position: relative;
+}
+.badge-green::after {
+  background: lightgreen;
+  color: var(--text-gray-dark, #4F4F4F);
+}
+.badge-red::after {
+  background: lightcoral;
+  color: var(--text-gray-dark, #fff);
+}
+.badge::after {
+  position: absolute;
+  right: -16px;
+  top: -5px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  content: "10";
+  font-family: Montserrat, sans-serif;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  border-radius: 50%;
+}
+
 .mobile-menu.is-hidden {
   width: 86px;
   overflow: visible;
