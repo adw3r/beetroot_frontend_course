@@ -175,7 +175,6 @@ body {
 
 .mobile-menu {
   transition: all 0.2s ease;
-  padding-inline: 15px;
   padding-bottom: 30px;
   background: #FFF;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
@@ -187,6 +186,7 @@ body {
   height: 100vh;
 }
 .mobile-menu .logo {
+  padding-inline: 15px;
   position: sticky;
   top: 0;
   background-color: inherit;
@@ -214,11 +214,23 @@ body {
   flex-direction: column;
   gap: 30px;
 }
+.mobile-menu .navigation ul::before {
+  display: block;
+  padding-inline: 15px;
+  margin-bottom: 15px;
+}
 .mobile-menu .navigation ul li {
-  padding: 10px 0;
+  padding: 10px 15px;
   display: flex;
   gap: 20px;
   align-items: center;
+}
+.mobile-menu .navigation ul li:hover {
+  background: var(--colors-purple-light, #9E8CFC);
+  box-shadow: 0 0 20px 0 rgba(158, 140, 252, 0.7);
+}
+.mobile-menu .navigation ul li:hover span {
+  color: white;
 }
 .mobile-menu .navigation .apps::before {
   content: "APPS";
@@ -256,21 +268,18 @@ body {
   display: none;
 }
 .mobile-menu.is-hidden .apps::before {
-  display: block;
   content: "" !important;
   height: 4px;
   background: url("../images/line.svg") no-repeat center/contain;
   margin-bottom: 7px;
 }
 .mobile-menu.is-hidden .auth-pages::before {
-  display: block;
   content: "" !important;
   height: 4px;
   background: url("../images/line.svg") no-repeat center/contain;
   margin-bottom: 7px;
 }
 .mobile-menu.is-hidden .user-interface::before {
-  display: block;
   content: "" !important;
   height: 4px;
   background: url("../images/line.svg") no-repeat center/contain;
