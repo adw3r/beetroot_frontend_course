@@ -76,6 +76,15 @@
           background: var(--colors-purple-light, #9E8CFC);
           box-shadow: 0 0 20px 0 rgba(158, 140, 252, 0.70);
           color: white;
+
+          a {
+            span {
+              &::after {
+                background: #F2C94C;
+                color: var(--text-gray-dark, #0c0c0c);
+              }
+            }
+          }
         }
       }
     }
