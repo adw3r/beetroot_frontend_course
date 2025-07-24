@@ -9,38 +9,32 @@
   width: 100dvw;
 }
 
-.is-hidden {
-  width: 86px;
-  transition: all .2s ease;
-
-  .logo {
-    .close-btn {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background: none;
-      border: none;
-      transform: rotate(180deg);
-
-    }
-  }
-}
-
 .mobile-menu {
   transition: all .2s ease;
-
-  padding-inline: 17px;
+  padding-inline: 15px;
   padding-bottom: 30px;
   background: #FFF;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
   z-index: 22;
-  max-width: 235px;
+  width: 245px;
   position: fixed;
   overflow-y: auto;
   overflow-x: hidden;
   height: 100vh;
 
   .logo {
+    .img-logo-sm {
+      display: none;
+      width: auto;
+      height: auto;
+    }
+
+    .img-logo-big {
+      display: block;
+      width: auto;
+      height: auto;
+    }
+
     position: sticky;
     top: 0;
     background-color: inherit;
@@ -52,7 +46,6 @@
     .close-btn {
       background: none;
       border: none;
-      //transform: rotate(180deg);
     }
   }
 
@@ -88,7 +81,72 @@
       }
     }
   }
+}
+.mobile-menu.is-hidden {
+  width: 86px;
+  padding-inline: 10px;
 
+
+  .logo {
+    justify-content: center;
+    .img-logo-sm {
+      display: block;
+    }
+
+    .img-logo-big {
+      display: none;
+    }
+
+    .close-btn {
+      position: absolute;
+      left: calc(100%);
+      transform: rotate(180deg);
+    }
+  }
+
+  .navigation {
+    ul {
+      li {
+        gap: 0;
+
+        span:nth-child(2) {
+          display: none;
+        }
+
+        justify-content: center;
+      }
+    }
+  }
+
+  .apps {
+    &::before {
+      display: block;
+      content: '' !important;
+      height: 4px;
+      background: url("../images/line.svg") no-repeat center/contain;
+      margin-bottom: 7px;
+    }
+  }
+
+  .auth-pages {
+    &::before {
+      display: block;
+      content: '' !important;
+      height: 4px;
+      background: url("../images/line.svg") no-repeat center/contain;
+      margin-bottom: 7px;
+    }
+  }
+
+  .user-interface {
+    &::before {
+      display: block;
+      content: '' !important;
+      height: 4px;
+      background: url("../images/line.svg") no-repeat center/contain;
+      margin-bottom: 7px;
+    }
+  }
 }
 
 header {

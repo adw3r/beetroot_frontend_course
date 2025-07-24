@@ -173,27 +173,14 @@ body {
   width: 100dvw;
 }
 
-.is-hidden {
-  width: 86px;
-  transition: all 0.2s ease;
-}
-.is-hidden .logo .close-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: none;
-  border: none;
-  transform: rotate(180deg);
-}
-
 .mobile-menu {
   transition: all 0.2s ease;
-  padding-inline: 17px;
+  padding-inline: 15px;
   padding-bottom: 30px;
   background: #FFF;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
   z-index: 22;
-  max-width: 235px;
+  width: 245px;
   position: fixed;
   overflow-y: auto;
   overflow-x: hidden;
@@ -207,6 +194,16 @@ body {
   margin-bottom: 10px;
   display: flex;
   gap: 30px;
+}
+.mobile-menu .logo .img-logo-sm {
+  display: none;
+  width: auto;
+  height: auto;
+}
+.mobile-menu .logo .img-logo-big {
+  display: block;
+  width: auto;
+  height: auto;
 }
 .mobile-menu .logo .close-btn {
   background: none;
@@ -231,6 +228,53 @@ body {
 }
 .mobile-menu .navigation .user-interface::before {
   content: "USER INTERFACE";
+}
+
+.mobile-menu.is-hidden {
+  width: 86px;
+  padding-inline: 10px;
+}
+.mobile-menu.is-hidden .logo {
+  justify-content: center;
+}
+.mobile-menu.is-hidden .logo .img-logo-sm {
+  display: block;
+}
+.mobile-menu.is-hidden .logo .img-logo-big {
+  display: none;
+}
+.mobile-menu.is-hidden .logo .close-btn {
+  position: absolute;
+  left: 100%;
+  transform: rotate(180deg);
+}
+.mobile-menu.is-hidden .navigation ul li {
+  gap: 0;
+  justify-content: center;
+}
+.mobile-menu.is-hidden .navigation ul li span:nth-child(2) {
+  display: none;
+}
+.mobile-menu.is-hidden .apps::before {
+  display: block;
+  content: "" !important;
+  height: 4px;
+  background: url("../images/line.svg") no-repeat center/contain;
+  margin-bottom: 7px;
+}
+.mobile-menu.is-hidden .auth-pages::before {
+  display: block;
+  content: "" !important;
+  height: 4px;
+  background: url("../images/line.svg") no-repeat center/contain;
+  margin-bottom: 7px;
+}
+.mobile-menu.is-hidden .user-interface::before {
+  display: block;
+  content: "" !important;
+  height: 4px;
+  background: url("../images/line.svg") no-repeat center/contain;
+  margin-bottom: 7px;
 }
 
 header {
