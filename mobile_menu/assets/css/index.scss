@@ -17,7 +17,7 @@
   z-index: 22;
   width: 245px;
   position: fixed;
-  overflow-y: auto;
+  //overflow-y: auto;
   overflow-x: hidden;
   height: 100vh;
 
@@ -68,14 +68,12 @@
           padding: 10px 15px;
           display: flex;
           gap: 20px;
+          align-items: center;
         }
-        align-items: center;
         &:hover {
           background: var(--colors-purple-light, #9E8CFC);
           box-shadow: 0 0 20px 0 rgba(158, 140, 252, 0.70);
-          span {
-            color: white;
-          }
+          color: white;
         }
       }
     }
@@ -102,6 +100,7 @@
 .mobile-menu.is-hidden {
   width: 86px;
 
+  overflow: visible;
 
   .logo {
     justify-content: center;
@@ -115,15 +114,24 @@
 
     .close-btn {
       position: absolute;
-      left: calc(100%);
+      left: 90%;
+      svg {
+        fill: white;
+      }
+      //z-index: 1000000000000000000;
       transform: rotate(180deg);
+      align-self: center;
+      top: 34%;
+
     }
   }
 
   .navigation {
     ul {
       li {
-        gap: 0;
+        a {
+          justify-content: center;
+        }
 
         span:nth-child(2) {
           display: none;

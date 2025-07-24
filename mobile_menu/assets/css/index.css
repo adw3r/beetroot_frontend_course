@@ -186,7 +186,6 @@ body {
   z-index: 22;
   width: 245px;
   position: fixed;
-  overflow-y: auto;
   overflow-x: hidden;
   height: 100vh;
 }
@@ -224,21 +223,17 @@ body {
   padding-inline: 15px;
   margin-bottom: 15px;
 }
-.mobile-menu .navigation ul li {
-  align-items: center;
-}
 .mobile-menu .navigation ul li a {
   height: 100%;
   width: 100%;
   padding: 10px 15px;
   display: flex;
   gap: 20px;
+  align-items: center;
 }
 .mobile-menu .navigation ul li:hover {
   background: var(--colors-purple-light, #9E8CFC);
   box-shadow: 0 0 20px 0 rgba(158, 140, 252, 0.7);
-}
-.mobile-menu .navigation ul li:hover span {
   color: white;
 }
 .mobile-menu .navigation .apps::before {
@@ -253,6 +248,7 @@ body {
 
 .mobile-menu.is-hidden {
   width: 86px;
+  overflow: visible;
 }
 .mobile-menu.is-hidden .logo {
   justify-content: center;
@@ -265,11 +261,18 @@ body {
 }
 .mobile-menu.is-hidden .logo .close-btn {
   position: absolute;
-  left: 100%;
+  left: 90%;
   transform: rotate(180deg);
+  align-self: center;
+  top: 34%;
+}
+.mobile-menu.is-hidden .logo .close-btn svg {
+  fill: white;
 }
 .mobile-menu.is-hidden .navigation ul li {
-  gap: 0;
+  justify-content: center;
+}
+.mobile-menu.is-hidden .navigation ul li a {
   justify-content: center;
 }
 .mobile-menu.is-hidden .navigation ul li span:nth-child(2) {
