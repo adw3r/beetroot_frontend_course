@@ -18,18 +18,50 @@
     <header></header>
     <main class="container d-flex flex-column gap-5 my-5">
         <div>
-            <button class="btn btn-primary" onclick="askUserName()" type="button">
+            <button class="btn btn-primary btn-sm" onclick="askUserName()" type="button">
                 Ask user name
             </button>
             <span class="mx-5" id="userName"></span>
         </div>
         <div>
-            <button class="btn btn-primary" id="get_age_btn" type="button">
+            <button class="btn btn-primary btn-sm" id="get_age_btn" type="button">
                 Ask Year of birth
             </button>
             <span class="mx-5" id="age"></span>
         </div>
-
+        <div class="d-flex flex-column gap-3 " style="max-width: 300px">
+            <label class="d-flex gap-2 flex-column">
+                <span class="d-block ">
+                    Whats is the length of the square?
+                </span>
+                <input class="form-control" id="square_length" name="square_length" placeholder="type length here" type="text">
+            </label>
+            <button class="btn btn-primary btn-sm d-block" onclick="
+                const perimeter = calculatePerimeter(document.getElementById('#square_length').value);
+                document.getElementById('perimeter').textContent = `Perimeter: ${perimeter}`;
+            " type="button">
+                calculate
+            </button>
+            <div id="result">
+                <span id="perimeter"></span>
+                <span id="area"></span>
+            </div>
+        </div>
+        <div class="d-flex flex-column gap-3 " style="max-width: 300px">
+            <label class="d-flex gap-2 flex-column">
+                <span class="d-block ">
+                    Whats is the radius of the circle?
+                </span>
+                <input class="form-control" id="circle_radius" name="circle_radius" placeholder="type radius here" type="text">
+            </label>
+            <button class="btn btn-primary btn-sm d-block" onclick="calculateRadius()" type="button">
+                calculate
+            </button>
+            <div id="circle_result">
+                <span id="perimeter"></span>
+                <span id="area"></span>
+            </div>
+        </div>
     </main>
     <footer></footer>
 </div>
