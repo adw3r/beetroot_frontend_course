@@ -52,7 +52,8 @@ chocolateCalculatorElement.querySelector('button').addEventListener('click', () 
         }
         const result = budget / price;
         chocolateCalculatorElement
-            .querySelector('div.result').textContent = `Result: you can buy ${result.toFixed(0)} chocolates`;
+            .querySelector('div.result').textContent = `Result: you can buy 
+            ${result.toFixed(0)} chocolates`;
     } catch (error) {
         console.log(error);
         alert('Wrong input!');
