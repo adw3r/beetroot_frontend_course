@@ -16,11 +16,19 @@
 <body>
 <div class="page-wrapper">
     <header></header>
-    <main class="container my-5">
-        <button class="btn btn-primary" id="askUserName" onclick="askUserName()" type="button">
-            Ask user name
-        </button>
-        <div class="my-5" id="userName"></div>
+    <main class="container d-flex flex-column gap-5 my-5">
+        <div>
+            <button class="btn btn-primary" onclick="askUserName()" type="button">
+                Ask user name
+            </button>
+            <span class="mx-5" id="userName"></span>
+        </div>
+        <div>
+            <button class="btn btn-primary" id="get_age_btn" type="button">
+                Ask Year of birth
+            </button>
+            <span class="mx-5" id="age"></span>
+        </div>
 
     </main>
     <footer></footer>
