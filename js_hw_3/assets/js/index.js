@@ -3,19 +3,23 @@
 const checkIsNumber = (number) => {
     if (!number) {
         alert('Please enter a value!');
-        return;
+        return false;
     }
     number = +number;
     if (isNaN(number)) {
         alert('Please enter a number!');
+        return false;
     }
+    return true;
 }
 const ageCalculatorElement = document.getElementById('age_calculator');
 ageCalculatorElement.querySelector('button').addEventListener('click', () => {
     console.log('clicked age_calculator button')
     try {
         let age = ageCalculatorElement.querySelector('#age_input').value;
-        checkIsNumber(age)
+        if (!checkIsNumber(age)) {
+            return;
+        }
         let result;
         if (age <= 0) {
             alert('Please enter a positive number!');
@@ -44,9 +48,11 @@ specialSymbol.querySelector('button').addEventListener('click', () => {
     console.log('clicked special_symbol button')
     try {
         let number = specialSymbol.querySelector('#age_input').value;
-        checkIsNumber(number)
-        let result;
+        if (!checkIsNumber(number)) {
+            return;
+        }
 
+        let result = undefined;
         ageCalculatorElement.querySelector('div.result').textContent = `Result: ${result}`;
     } catch (error) {
         console.log(error);
