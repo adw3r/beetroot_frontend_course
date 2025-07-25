@@ -16,8 +16,8 @@
 <body>
 <div class="page-wrapper">
     <header></header>
-    <main class="container d-flex  flex-column flex-md-row gap-5 my-5">
-        <div class="d-flex flex-column gap-3 col-xl-2 col-">
+    <main class="container d-flex justify-content-between flex-column flex-lg-row gap-4 my-5">
+        <div class="d-flex flex-column gap-3 col-lg-3 col-">
             <button class="d-block  btn btn-primary " onclick="UserName.ask()" type="button">
                 Ask user name
             </button>
@@ -27,61 +27,52 @@
             <span class="" id="userName"></span>
             <span class="" id="age"></span>
         </div>
-        <div class="d-flex flex-column gap-3">
-            <div class="d-flex flex-column gap-3 ">
-                <label class="d-flex gap-2 flex-column">
+        <div class="d-flex flex-column gap-3 ">
+            <label class="d-flex gap-2 flex-column">
                     <span class="d-block">
                         Whats is the length of the square?
                     </span>
-                    <input class="form-control" id="square_length" name="square_length" pattern="[0-9]+"
-                           placeholder="type length here" type="text">
-                </label>
-                <div class="d-flex gap-2">
-                    <button class="btn btn-primary btn-sm d-block" id="square_btn" type="button">
-                        calculate
-                    </button>
-                    <span id="square_perimeter"></span>
-                </div>
-            </div>
-            <div class="d-flex flex-column gap-3 ">
-                <label class="d-flex gap-2 flex-column">
+                <input class="form-control" id="square_length" name="square_length" pattern="[0-9]+"
+                       placeholder="type length here" type="text">
+            </label>
+            <button class="btn btn-primary btn-sm d-block" id="square_btn" type="button">
+                calculate
+            </button>
+            <span id="square_perimeter"></span>
+        </div>
+        <div class="d-flex flex-column gap-3 ">
+            <label class="d-flex gap-2 flex-column">
                 <span class="d-block ">
                     What is the radius of the circle?
                 </span>
-                    <input class="form-control" id="circle_radius" name="circle_radius" pattern="[0-9]+"
-                           placeholder="type radius here"
-                           type="text">
-                </label>
-                <div class="d-flex gap-2">
-
-                    <button class="btn btn-primary btn-sm d-block" id="circle_btn" type="button">
-                        calculate
-                    </button>
-                    <span id="circle_area"></span>
-                </div>
-            </div>
-            <div class="d-flex flex-column gap-3 ">
-                <label class="d-flex gap-2 flex-column">
+                <input class="form-control" id="circle_radius" name="circle_radius" pattern="[0-9]+"
+                       placeholder="type radius here"
+                       type="text">
+            </label>
+            <button class="btn btn-primary btn-sm d-block" id="circle_btn" type="button">
+                calculate
+            </button>
+            <span id="circle_area"></span>
+        </div>
+        <div class="d-flex flex-column gap-3 ">
+            <label class="d-flex gap-2 flex-column">
                     <span class="d-block ">
                         What is the distance between the cities?
                     </span>
-                    <input class="form-control" id="distance" name="distance" placeholder="type distance here"
-                           type="text">
-                </label>
-                <label class="d-flex gap-2 flex-column">
+                <input class="form-control" id="distance" name="distance" placeholder="type distance here"
+                       type="text">
+            </label>
+            <label class="d-flex gap-2 flex-column">
                     <span class="d-block ">
                         Whats the preferable speed??
                     </span>
-                    <input class="form-control" id="speed" name="speed" placeholder="type speed here"
-                           type="text">
-                </label>
-                <div class="d-flex gap-2">
-                    <button class="btn btn-primary btn-sm d-block " id="time_btn" type="button">
-                        calculate
-                    </button>
-                    <span id="time"></span>
-                </div>
-            </div>
+                <input class="form-control" id="speed" name="speed" placeholder="type speed here"
+                       type="text">
+            </label>
+            <button class="btn btn-primary btn-sm d-block " id="time_btn" type="button">
+                calculate
+            </button>
+            <span id="time"></span>
         </div>
     </main>
     <footer></footer>
