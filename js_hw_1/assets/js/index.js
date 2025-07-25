@@ -121,6 +121,31 @@ class Circle {
     }
 }
 
-new Age()
-new Square()
-new Circle()
+class Speed {
+    constructor() {
+        document.getElementById('speed_btn').addEventListener('click', () => {
+            try {
+                let distance = document.getElementById('distance').value
+                let speed = document.getElementById('speed').value
+                if (!distance && !speed) {
+                    alert('Distance or speed can`t be empty!')
+                    return
+                }
+                distance = +distance;
+                speed = +speed;
+                let time = document.getElementById('time')
+                time.textContent = `Time: ${distance / speed} hours`;
+            } catch (e) {
+                console.log(e);
+                alert('Wrong input!');
+            }
+        })
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    new Age()
+    new Square()
+    new Circle()
+    new Speed()
+})
