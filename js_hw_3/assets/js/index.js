@@ -1,5 +1,4 @@
-// Запитай у користувача його вік і визначи, ким він є: дитиною (0-11), підлітком (12-17), 
-// дорослим (18_59) або пенсіонером (60 ...), передбач можливість введення невірних даних.
+const symbols = [')', '!', '@', '#', '$', '%', '^', '&', '*', '('];
 const checkIsNumber = (number) => {
     if (!number) {
         alert('Please enter a value!');
@@ -12,6 +11,9 @@ const checkIsNumber = (number) => {
     }
     return true;
 }
+
+// Запитай у користувача його вік і визначи, ким він є: дитиною (0-11), підлітком (12-17),
+// дорослим (18_59) або пенсіонером (60 ...), передбач можливість введення невірних даних.
 const ageCalculatorElement = document.getElementById('age_calculator');
 ageCalculatorElement.querySelector('button').addEventListener('click', () => {
     console.log('clicked age_calculator button')
@@ -42,13 +44,13 @@ ageCalculatorElement.querySelector('button').addEventListener('click', () => {
         alert('Wrong input!');
     }
 })
-const symbols = [')', '!', '@', '#', '$', '%', '^', '&', '*', '('];
-
-const specialSymbol = document.getElementById('special_symbol');
-specialSymbol.querySelector('button').addEventListener('click', () => {
+// Запитай у користувача число від 0 до 9 і виведи йому спецсимвол, який розташований на цій клавіші
+// (1 !, 2 @, 3 # і т. д).
+const specialSymbolElement = document.getElementById('special_symbol');
+specialSymbolElement.querySelector('button').addEventListener('click', () => {
     console.log('clicked special_symbol button')
     try {
-        let digit = specialSymbol.querySelector('#digit').value;
+        let digit = specialSymbolElement.querySelector('#digit').value;
         if (!checkIsNumber(digit)) {
             return;
         }
@@ -57,7 +59,26 @@ specialSymbol.querySelector('button').addEventListener('click', () => {
             return;
         }
         const result = symbols[digit];
-        specialSymbol.querySelector('div.result').textContent = `Result: ${result}`;
+        specialSymbolElement.querySelector('div.result').textContent = `Result: ${result}`;
+    } catch (error) {
+        console.log(error);
+        alert('Wrong input!');
+    }
+})
+
+
+// Підрахуй суму всіх чисел в заданому користувачем діапазоні.
+const rangeSumElement = document.getElementById('range_sum');
+rangeSumElement.querySelector('button').addEventListener('click', () => {
+    console.log('clicked range_sum button')
+    try {
+        let range = specialSymbolElement.querySelector('#range').value;
+        if (!checkIsNumber(range)) {
+            return;
+        }
+
+        const result = undefined;
+        rangeSumElement.querySelector('div.result').textContent = `Result: ${result}`;
     } catch (error) {
         console.log(error);
         alert('Wrong input!');
