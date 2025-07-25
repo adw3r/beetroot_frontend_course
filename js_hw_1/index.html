@@ -17,19 +17,17 @@
 <div class="page-wrapper">
     <header></header>
     <main class="container d-flex flex-row gap-5 my-5">
-        <div class="d-flex flex-column gap-3 ">
-            <div>
-                <button class="btn btn-primary btn-sm" onclick="UserName.ask()" type="button">
+        <div class="col-3 gap-3">
+            <div class="mb-4 d-flex flex-column gap-3">
+                <button class="d-block  btn btn-primary btn-sm" onclick="UserName.ask()" type="button">
                     Ask user name
                 </button>
-                <span class="mx-5" id="userName"></span>
-            </div>
-            <div>
-                <button class="btn btn-primary btn-sm" id="get_age_btn" type="button">
+                <button class=" d-block btn btn-primary btn-sm" id="get_age_btn" type="button">
                     Ask Year of birth
                 </button>
-                <span class="mx-5" id="age"></span>
             </div>
+            <span class="d-block" id="userName"></span>
+            <span class="d-block " id="age"></span>
         </div>
         <div class="d-flex flex-column gap-3 ">
             <div class="">
