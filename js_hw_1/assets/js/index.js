@@ -46,3 +46,16 @@ document.getElementById('get_age_btn').addEventListener('click', () => {
         alert('Wrong input!');
     }
 });
+
+const calculatePerimeter = (length) => {
+    if (!length) {
+        alert('Length can`t be empty!')
+        return
+    }
+    const perimeter = 4 * Number(length);
+    return perimeter;
+}
+
+const calculateRadius = (radius) => {
+    return undefined;
+}
