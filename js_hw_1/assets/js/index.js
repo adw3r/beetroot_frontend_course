@@ -10,6 +10,19 @@ let var-data; can`t be used
 let 213varData; can`t be used
 let 213varData;
 */
+const checkIsNumber = (number) => {
+    if (!number) {
+        alert('Please enter a value!');
+        return false;
+    }
+    number = +number;
+    if (isNaN(number)) {
+        alert('Please enter a number!');
+        return false;
+    }
+    return true;
+}
+
 class UserName {
     static USER_NAME_ELEMENT = '#userName';
 
@@ -56,15 +69,10 @@ class Age {
         document.getElementById('get_age_btn').addEventListener('click', () => {
             try {
                 let year = prompt('Enter your year of birth:');
-                if (!year) {
-                    alert('Year can`t be empty!')
+                if (!checkIsNumber(year)) {
                     return
                 }
-                year = +year;
-                if (isNaN(year)) {
-                    alert('Not a number!');
-                    return
-                }
+
                 document.querySelector('#age').textContent = `You are ${this.CURRENT_YEAR - year} years old.`;
             } catch (error) {
                 console.log(error);
@@ -79,15 +87,10 @@ class Square {
         document.getElementById('square_btn').addEventListener('click', () => {
             try {
                 let length = document.getElementById('square_length').value
-                if (!length) {
-                    alert('Length can`t be empty!')
+                if (!checkIsNumber(length)) {
                     return
                 }
-                length = +length;
-                if (isNaN(length)) {
-                    alert('Not a number!');
-                    return
-                }
+
                 const perimeter = 4 * Number(length);
                 document.getElementById('square_perimeter').textContent = `Perimeter: ${perimeter}`;
             } catch (e) {
@@ -103,15 +106,10 @@ class Circle {
         document.getElementById('circle_btn').addEventListener('click', () => {
             try {
                 let radius = document.getElementById('circle_radius').value
-                if (!radius) {
-                    alert('Radius can`t be empty!')
+                if (!checkIsNumber(radius)) {
                     return
                 }
-                radius = +radius;
-                if (isNaN(radius)) {
-                    alert('Not a number!');
-                    return
-                }
+
                 const area = Math.PI * radius ** 2;
                 document.getElementById('circle_area').textContent = `Area: ${area}`;
             } catch (e) {
@@ -127,17 +125,17 @@ class Speed {
         document.getElementById('speed_btn').addEventListener('click', () => {
             try {
                 let distance = document.getElementById('distance').value
+                checkIsNumber(distance)
+                if (!checkIsNumber(distance)) {
+                    return
+                }
+
                 let speed = document.getElementById('speed').value
-                if (!distance && !speed) {
-                    alert('Distance or speed can`t be empty!')
+                checkIsNumber(speed)
+                if (!checkIsNumber(speed)) {
                     return
                 }
-                distance = +distance;
-                speed = +speed;
-                if (isNaN(distance) || isNaN(speed)) {
-                    alert('Not a number!');
-                    return
-                }
+
                 const time = document.getElementById('time')
                 time.textContent = `Time: ${distance / speed} hours`;
             } catch (e) {
@@ -155,16 +153,9 @@ class Currency {
         document.getElementById('euro_btn').addEventListener('click', () => {
             try {
                 let usd_amount = document.getElementById('usd_amount').value
-                if (!usd_amount) {
-                    alert('USD_AMOUNT can`t be empty!')
+                if (!checkIsNumber(usd_amount)) {
                     return
                 }
-                usd_amount = +usd_amount;
-                if (isNaN(usd_amount)) {
-                    alert('Not a number!');
-                    return
-                }
-
 
                 const euro = document.getElementById('euro')
                 euro.textContent = `Euro: ${usd_amount * this.CURRENCY}`;

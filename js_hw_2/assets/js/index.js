@@ -11,19 +11,24 @@ const FILE_SIZE = 820;
 const checkIsNumber = (number) => {
     if (!number) {
         alert('Please enter a value!');
-        return;
+        return false;
     }
     number = +number;
     if (isNaN(number)) {
         alert('Please enter a number!');
+        return false;
     }
+    return true;
 }
 const flashDriveSizeElement = document.getElementById('flash_drive_size');
 flashDriveSizeElement.querySelector('button').addEventListener('click', () => {
     console.log('clicked flash_drive_size button')
     try {
         let size = flashDriveSizeElement.querySelector('input').value;
-        checkIsNumber(size)
+        if (!checkIsNumber(size)) {
+            return
+        }
+
         const result = size * MB_IN_GB / FILE_SIZE;
         flashDriveSizeElement.querySelector('div.result').textContent = `Result: you can 
             store ${FILE_SIZE}mb file in your flash-drive ${result.toFixed(0)} times`;
@@ -39,9 +44,14 @@ chocolateCalculatorElement.querySelector('button').addEventListener('click', () 
     console.log('clicked chocolate_calculator button')
     try {
         let budget = chocolateCalculatorElement.querySelector('#budget').value;
-        checkIsNumber(budget)
+        if (!checkIsNumber(budget)) {
+            return
+        }
+
         let price = chocolateCalculatorElement.querySelector('#price').value;
-        checkIsNumber(price)
+        if (!checkIsNumber(price)) {
+            return
+        }
 
         const result = budget / price;
         chocolateCalculatorElement
@@ -59,7 +69,9 @@ numToRevert.querySelector('button').addEventListener('click', () => {
     console.log('clicked revert_int button')
     try {
         let num = numToRevert.querySelector('#num').value;
-        checkIsNumber(num)
+        if (!checkIsNumber(num)) {
+            return
+        }
 
         const result = num.toString().split('').reverse().join('');
         numToRevert.querySelector('div.result').textContent = `Result: ${result}`;
@@ -74,7 +86,9 @@ depositCalc.querySelector('button').addEventListener('click', () => {
     console.log('clicked deposit_calc button')
     try {
         let deposit_amount = depositCalc.querySelector('#deposit_amount').value;
-        checkIsNumber(deposit_amount)
+        if (!checkIsNumber(deposit_amount)) {
+            return
+        }
 
         const annualRate = 5;
         const months = 2;
