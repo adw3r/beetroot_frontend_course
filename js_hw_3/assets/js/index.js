@@ -47,13 +47,13 @@ const specialSymbol = document.getElementById('special_symbol');
 specialSymbol.querySelector('button').addEventListener('click', () => {
     console.log('clicked special_symbol button')
     try {
-        let number = specialSymbol.querySelector('#age_input').value;
+        let number = specialSymbol.querySelector('#number').value;
         if (!checkIsNumber(number)) {
             return;
         }
 
         let result = undefined;
-        ageCalculatorElement.querySelector('div.result').textContent = `Result: ${result}`;
+        specialSymbol.querySelector('div.result').textContent = `Result: ${result}`;
     } catch (error) {
         console.log(error);
         alert('Wrong input!');
