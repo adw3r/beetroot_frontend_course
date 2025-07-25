@@ -36,12 +36,11 @@ flashDriveSizeElement.querySelector('button')
 
 
 const chocolateCalculatorElement = document.getElementById('chocolate_calculator');
-chocolateCalculatorElement.querySelector('button')
-    .addEventListener('click', () => {
+chocolateCalculatorElement.querySelector('button').addEventListener('click', () => {
         console.log('clicked chocolate_calculator button')
         try {
-            let budget = flashDriveSizeElement.querySelector('budget').value;
-            let price = flashDriveSizeElement.querySelector('price').value;
+            let budget = chocolateCalculatorElement.querySelector('#budget').value;
+            let price = chocolateCalculatorElement.querySelector('#price').value;
             
             if (!budget && !price) {
                 alert('Please enter a value!');
@@ -61,4 +60,3 @@ chocolateCalculatorElement.querySelector('button')
             alert('Wrong input!');
         }
     })
-
