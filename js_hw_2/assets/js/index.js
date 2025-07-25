@@ -8,21 +8,22 @@ console.log(Number(a) + b);
 
 const MB_IN_GB = 1024;
 const FILE_SIZE = 820;
-
+const checkIsNumber = (number) => {
+    if (!number) {
+        alert('Please enter a value!');
+        return;
+    }
+    number = +number;
+    if (isNaN(number)) {
+        alert('Please enter a number!');
+    }
+}
 const flashDriveSizeElement = document.getElementById('flash_drive_size');
 flashDriveSizeElement.querySelector('button').addEventListener('click', () => {
     console.log('clicked flash_drive_size button')
     try {
         let size = flashDriveSizeElement.querySelector('input').value;
-        if (!size) {
-            alert('Please enter a value!');
-            return;
-        }
-        size = +size;
-        if (isNaN(size)) {
-            alert('Please enter a number!');
-            return;
-        }
+        checkIsNumber(size)
         const result = size * MB_IN_GB / FILE_SIZE;
         flashDriveSizeElement.querySelector('div.result').textContent = `Result: you can 
             store ${FILE_SIZE}mb file in your flash-drive ${result.toFixed(0)} times`;
@@ -38,17 +39,10 @@ chocolateCalculatorElement.querySelector('button').addEventListener('click', () 
     console.log('clicked chocolate_calculator button')
     try {
         let budget = chocolateCalculatorElement.querySelector('#budget').value;
+        checkIsNumber(budget)
         let price = chocolateCalculatorElement.querySelector('#price').value;
+        checkIsNumber(price)
 
-        if (!budget && !price) {
-            alert('Please enter a value!');
-            return;
-        }
-        budget = +budget;
-        price = +price;
-        if (isNaN(price) || isNaN(budget)) {
-            alert('Please enter a number!');
-        }
         const result = budget / price;
         chocolateCalculatorElement
             .querySelector('div.result').textContent = `Result: you can buy 
@@ -65,15 +59,8 @@ numToRevert.querySelector('button').addEventListener('click', () => {
     console.log('clicked revert_int button')
     try {
         let num = numToRevert.querySelector('#num').value;
+        checkIsNumber(num)
 
-        if (!num) {
-            alert('Please enter a value!');
-            return;
-        }
-        num = +num;
-        if (isNaN(num)) {
-            alert('Please enter a number!');
-        }
         const result = num.toString().split('').reverse().join('');
         numToRevert.querySelector('div.result').textContent = `Result: ${result}`;
     } catch (error) {
@@ -87,14 +74,8 @@ depositCalc.querySelector('button').addEventListener('click', () => {
     console.log('clicked deposit_calc button')
     try {
         let deposit_amount = depositCalc.querySelector('#deposit_amount').value;
-        if (!deposit_amount) {
-            alert('Please enter a value!');
-            return;
-        }
-        deposit_amount = +deposit_amount;
-        if (isNaN(deposit_amount)) {
-            alert('Please enter a number!');
-        }
+        checkIsNumber(deposit_amount)
+
         const annualRate = 5;
         const months = 2;
         const result = deposit_amount * (annualRate / 100) * (months / 12);
