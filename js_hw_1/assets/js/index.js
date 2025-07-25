@@ -1,9 +1,9 @@
 console.log('Hello World');
 
 // Minimum
-// let varData;
-// let var_ata;
-// let VarData;
+let varData;
+let var_ata;
+let VarData;
 /*
 let var-data; can`t be used
 let 213varData; can`t be used
@@ -133,8 +133,40 @@ class Speed {
                 }
                 distance = +distance;
                 speed = +speed;
-                let time = document.getElementById('time')
+                if (isNaN(distance) || isNaN(speed)) {
+                    alert('Not a number!');
+                    return
+                }
+                const time = document.getElementById('time')
                 time.textContent = `Time: ${distance / speed} hours`;
+            } catch (e) {
+                console.log(e);
+                alert('Wrong input!');
+            }
+        })
+    }
+}
+
+class Currency {
+    CURRENCY = 1.17;
+
+    constructor() {
+        document.getElementById('euro_btn').addEventListener('click', () => {
+            try {
+                let usd_amount = document.getElementById('usd_amount').value
+                if (!usd_amount) {
+                    alert('USD_AMOUNT can`t be empty!')
+                    return
+                }
+                usd_amount = +usd_amount;
+                if (isNaN(usd_amount)) {
+                    alert('Not a number!');
+                    return
+                }
+
+
+                const euro = document.getElementById('euro')
+                euro.textContent = `Euro: ${usd_amount * this.CURRENCY}`;
             } catch (e) {
                 console.log(e);
                 alert('Wrong input!');
@@ -148,4 +180,5 @@ document.addEventListener('DOMContentLoaded', () => {
     new Square()
     new Circle()
     new Speed()
+    new Currency()
 })
