@@ -10,28 +10,27 @@ const MB_IN_GB = 1024;
 const FILE_SIZE = 820;
 
 const flashDriveSizeElement = document.getElementById('flash_drive_size');
-flashDriveSizeElement.querySelector('button')
-    .addEventListener('click', () => {
-        console.log('clicked flash_drive_size button')
-        try {
-            let size = flashDriveSizeElement.querySelector('input').value;
-            if (!size) {
-                alert('Please enter a value!');
-                return;
-            }
-            size = +size;
-            if (isNaN(size)) {
-                alert('Please enter a number!');
-                return;
-            }
-            const result = size * MB_IN_GB / FILE_SIZE;
-            flashDriveSizeElement.querySelector('div.result').textContent = `Result: you can 
-            store ${FILE_SIZE}mb file in your flash-drive ${result.toFixed(0)} times`;
-        } catch (error) {
-            console.log(error);
-            alert('Wrong input!');
+flashDriveSizeElement.querySelector('button').addEventListener('click', () => {
+    console.log('clicked flash_drive_size button')
+    try {
+        let size = flashDriveSizeElement.querySelector('input').value;
+        if (!size) {
+            alert('Please enter a value!');
+            return;
         }
-    })
+        size = +size;
+        if (isNaN(size)) {
+            alert('Please enter a number!');
+            return;
+        }
+        const result = size * MB_IN_GB / FILE_SIZE;
+        flashDriveSizeElement.querySelector('div.result').textContent = `Result: you can 
+            store ${FILE_SIZE}mb file in your flash-drive ${result.toFixed(0)} times`;
+    } catch (error) {
+        console.log(error);
+        alert('Wrong input!');
+    }
+})
 
 
 const chocolateCalculatorElement = document.getElementById('chocolate_calculator');
@@ -100,7 +99,7 @@ depositCalc.querySelector('button').addEventListener('click', () => {
         const months = 2;
         const result = deposit_amount * (annualRate / 100) * (months / 12);
         depositCalc.querySelector('div.result').textContent = `Result: ${result.toFixed(2)}%`;
-        
+
     } catch (error) {
         console.log(error);
         alert('Wrong input!');
