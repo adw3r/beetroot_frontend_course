@@ -9,8 +9,6 @@ let var-data; can`t be used
 let 213varData; can`t be used
 let 213varData;
 */
-const CURRENT_YEAR = 2025;
-
 class UserName {
     static USER_NAME_ELEMENT = '#userName';
 
@@ -49,7 +47,10 @@ class UserName {
     };
 }
 
+
 class Age {
+    CURRENT_YEAR = 2025;
+
     constructor() {
         document.getElementById('get_age_btn').addEventListener('click', () => {
             try {
@@ -63,7 +64,7 @@ class Age {
                     alert('Not a number!');
                     return
                 }
-                document.querySelector('#age').textContent = `You are ${CURRENT_YEAR - year} years old.`;
+                document.querySelector('#age').textContent = `You are ${this.CURRENT_YEAR - year} years old.`;
             } catch (error) {
                 console.log(error);
                 alert('Wrong input!');
@@ -96,5 +97,30 @@ class Square {
     }
 }
 
+class Circle {
+    constructor() {
+        document.getElementById('circle_btn').addEventListener('click', () => {
+            try {
+                let radius = document.getElementById('circle_radius').value
+                if (!radius) {
+                    alert('Radius can`t be empty!')
+                    return
+                }
+                radius = +radius;
+                if (isNaN(radius)) {
+                    alert('Not a number!');
+                    return
+                }
+                const area = Math.PI * radius ** 2;
+                document.getElementById('circle_area').textContent = `Area: ${area}`;
+            } catch (e) {
+                console.log(e);
+                alert('Wrong input!');
+            }
+        });
+    }
+}
+
 new Age()
 new Square()
+new Circle()
