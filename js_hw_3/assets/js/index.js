@@ -42,17 +42,21 @@ ageCalculatorElement.querySelector('button').addEventListener('click', () => {
         alert('Wrong input!');
     }
 })
+const symbols = [')', '!', '@', '#', '$', '%', '^', '&', '*', '('];
 
 const specialSymbol = document.getElementById('special_symbol');
 specialSymbol.querySelector('button').addEventListener('click', () => {
     console.log('clicked special_symbol button')
     try {
-        let number = specialSymbol.querySelector('#number').value;
-        if (!checkIsNumber(number)) {
+        let digit = specialSymbol.querySelector('#digit').value;
+        if (!checkIsNumber(digit)) {
             return;
         }
-
-        let result = undefined;
+        if (digit < 0 || digit > symbols.length - 1) {
+            alert('Please enter a number between 0 and 9!');
+            return;
+        }
+        const result = symbols[digit];
         specialSymbol.querySelector('div.result').textContent = `Result: ${result}`;
     } catch (error) {
         console.log(error);
