@@ -4,6 +4,7 @@ console.log('Hello World');
 let varData;
 let var_ata;
 let VarData;
+
 /*
 let var-data; can`t be used
 let 213varData; can`t be used
@@ -175,10 +176,8 @@ class Currency {
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    new Age()
-    new Square()
-    new Circle()
-    new Speed()
-    new Currency()
-})
+new Age()
+new Square()
+new Circle()
+new Speed()
+new Currency()
