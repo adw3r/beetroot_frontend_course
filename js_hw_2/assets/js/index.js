@@ -73,7 +73,23 @@ numToRevert.querySelector('button').addEventListener('click', () => {
             return
         }
 
-        const result = num.toString().split('').reverse().join('');
+        let isNegative = num < 0;
+        num = Math.abs(num);
+
+        let reversed = 0;
+        while (num > 0) {
+            let digit = num % 10;
+            reversed = reversed * 10 + digit;
+            num = Math.floor(num / 10);
+        }
+
+        if (isNegative) {
+            reversed = -reversed;
+        }
+
+        const result = reversed;
+
+
         numToRevert.querySelector('div.result').textContent = `Result: ${result}`;
     } catch (error) {
         console.log(error);
