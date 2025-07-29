@@ -29,11 +29,11 @@ ageCalculatorElement.querySelector('button').addEventListener('click', () => {
         } else if (age > 116) {
             alert('cant be more than 116 years old!');
             return;
-        } else if (age <= 11) {
+        } else if (age < 12) {
             result = 'child';
-        } else if (age <= 17) {
+        } else if (age < 18) {
             result = 'teenager';
-        } else if (age <= 59) {
+        } else if (age < 60) {
             result = 'mature';
         } else {
             result = 'senior';
@@ -72,10 +72,14 @@ const rangeSumElement = document.getElementById('range_sum');
 rangeSumElement.querySelector('button').addEventListener('click', () => {
     console.log('clicked range_sum button')
     try {
-        let range = specialSymbolElement.querySelector('#range').value;
-        if (!checkIsNumber(range)) {
+        let sum_range_1 = specialSymbolElement.querySelector('#sum_range_1').value;
+        let sum_range_2 = specialSymbolElement.querySelector('#sum_range_2').value;
+        if (!checkIsNumber(sum_range_2) || !checkIsNumber(sum_range_1)) {
             return;
         }
+        sum_range_1 = +sum_range_1;
+        sum_range_2 = +sum_range_2;
+
 
         const result = undefined;
         rangeSumElement.querySelector('div.result').textContent = `Result: ${result}`;
