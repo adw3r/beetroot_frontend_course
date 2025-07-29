@@ -72,16 +72,18 @@ const rangeSumElement = document.getElementById('range_sum');
 rangeSumElement.querySelector('button').addEventListener('click', () => {
     console.log('clicked range_sum button')
     try {
-        let sum_range_1 = specialSymbolElement.querySelector('#sum_range_1').value;
-        let sum_range_2 = specialSymbolElement.querySelector('#sum_range_2').value;
+        let sum_range_1 = rangeSumElement.querySelector('#sum_range_1').value;
+        let sum_range_2 = rangeSumElement.querySelector('#sum_range_2').value;
         if (!checkIsNumber(sum_range_2) || !checkIsNumber(sum_range_1)) {
             return;
         }
         sum_range_1 = +sum_range_1;
         sum_range_2 = +sum_range_2;
 
-
-        const result = undefined;
+        let result = sum_range_1;
+        for (let i = sum_range_1 + 1; i <= sum_range_2; i++) {
+            result += i
+        }
         rangeSumElement.querySelector('div.result').textContent = `Result: ${result}`;
     } catch (error) {
         console.log(error);
