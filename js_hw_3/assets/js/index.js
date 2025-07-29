@@ -112,7 +112,7 @@ gcd_block.querySelector('button').addEventListener('click', () => {
             return x;
         }
 
-        const result = gcd(a, b);
+        const result = gcd(gcd_input_1, gcd_input_2);
         gcd_block.querySelector('div.result').textContent = `GCD: ${result}`;
 
         rangeSumElement.querySelector('div.result').textContent = `Result: ${result}`;
