@@ -95,7 +95,7 @@ rangeSumElement.querySelector('button').addEventListener('click', () => {
 // Підрахуй суму всіх чисел в заданому користувачем діапазоні.
 const gcd_block = document.getElementById('gcd_block');
 gcd_block.querySelector('button').addEventListener('click', () => {
-    console.log('clicked range_sum button')
+    console.log('clicked gcd_block button')
     try {
         let gcd_input_1 = gcd_block.querySelector('#gcd_input_1').value;
         let gcd_input_2 = gcd_block.querySelector('#gcd_input_2').value;
@@ -121,3 +121,30 @@ gcd_block.querySelector('button').addEventListener('click', () => {
         alert('Wrong input!');
     }
 })
+
+// Запитай у користувача число і виведи всі дільники цього числа
+const divisorsBlock = document.getElementById('divisors_block');
+divisorsBlock.querySelector('button').addEventListener('click', () => {
+    console.log('clicked divisors button');
+    try {
+        let divisor = divisorsBlock.querySelector('#divisor').value;
+
+        if (!checkIsNumber(divisor)) {
+            return;
+        }
+
+        divisor = Math.abs(+divisor);
+        const divisors = [];
+
+        for (let i = 1; i <= divisor; i++) {
+            if (divisor % i === 0) {
+                divisors.push(i);
+            }
+        }
+
+        divisorsBlock.querySelector('div.result').textContent = `Divisors: ${divisors.join(', ')}`;
+    } catch (error) {
+        console.log(error);
+        alert('Error occurred!');
+    }
+});
