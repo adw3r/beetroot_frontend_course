@@ -90,3 +90,34 @@ rangeSumElement.querySelector('button').addEventListener('click', () => {
         alert('Wrong input!');
     }
 })
+
+
+// Підрахуй суму всіх чисел в заданому користувачем діапазоні.
+const gcd_block = document.getElementById('gcd_block');
+gcd_block.querySelector('button').addEventListener('click', () => {
+    console.log('clicked range_sum button')
+    try {
+        let gcd_input_1 = gcd_block.querySelector('#gcd_input_1').value;
+        let gcd_input_2 = gcd_block.querySelector('#gcd_input_2').value;
+        if (!checkIsNumber(gcd_input_1) || !checkIsNumber(gcd_input_2)) {
+            return;
+        }
+        gcd_input_1 = Math.abs(+gcd_input_1);
+        gcd_input_2 = Math.abs(+gcd_input_2);
+
+        const gcd = (x, y) => {
+            while (y !== 0) {
+                [x, y] = [y, x % y];
+            }
+            return x;
+        }
+
+        const result = gcd(a, b);
+        gcd_block.querySelector('div.result').textContent = `GCD: ${result}`;
+
+        rangeSumElement.querySelector('div.result').textContent = `Result: ${result}`;
+    } catch (error) {
+        console.log(error);
+        alert('Wrong input!');
+    }
+})
