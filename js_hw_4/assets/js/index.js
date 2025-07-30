@@ -1,0 +1,484 @@
+const symbols = [')', '!', '@', '#', '$', '%', '^', '&', '*', '('];
+const checkIsNumber = (number) => {
+    if (!number) {
+        alert('Please enter a value!');
+        return false;
+    }
+    number = +number;
+    if (isNaN(number)) {
+        alert('Please enter a number!');
+        return false;
+    }
+    return true;
+}
+
+// Запитай у користувача його вік і визначи, ким він є: дитиною (0-11), підлітком (12-17),
+// дорослим (18_59) або пенсіонером (60 ...), передбач можливість введення невірних даних.
+const ageCalculatorElement = document.getElementById('age_calculator');
+ageCalculatorElement.querySelector('button').addEventListener('click', () => {
+    console.log('clicked age_calculator button')
+    try {
+        let age = ageCalculatorElement.querySelector('#age_input').value;
+        if (!checkIsNumber(age)) {
+            return;
+        }
+        let result;
+        if (age <= 0) {
+            alert('Please enter a positive number!');
+            return;
+        } else if (age > 116) {
+            alert('cant be more than 116 years old!');
+            return;
+        } else if (age < 12) {
+            result = 'child';
+        } else if (age < 18) {
+            result = 'teenager';
+        } else if (age < 60) {
+            result = 'mature';
+        } else {
+            result = 'senior';
+        }
+        ageCalculatorElement.querySelector('div.result').textContent = `You are (teen, mature, ...): ${result}`;
+    } catch (error) {
+        console.log(error);
+        alert('Wrong input!');
+    }
+})
+// Запитай у користувача число від 0 до 9 і виведи йому спецсимвол, який розташований на цій клавіші
+// (1 !, 2 @, 3 # і т. д).
+const specialSymbolElement = document.getElementById('special_symbol');
+specialSymbolElement.querySelector('button').addEventListener('click', () => {
+    console.log('clicked special_symbol button')
+    try {
+        let digit = specialSymbolElement.querySelector('#digit').value;
+        if (!checkIsNumber(digit)) {
+            return;
+        }
+        if (digit < 0 || digit > symbols.length - 1) {
+            alert('Please enter a number between 0 and 9!');
+            return;
+        }
+        const result = symbols[digit];
+        specialSymbolElement.querySelector('div.result').textContent = `Special char: ${result}`;
+    } catch (error) {
+        console.log(error);
+        alert('Wrong input!');
+    }
+})
+
+
+// Підрахуй суму всіх чисел в заданому користувачем діапазоні.
+const rangeSumElement = document.getElementById('range_sum');
+rangeSumElement.querySelector('button').addEventListener('click', () => {
+    console.log('clicked range_sum button')
+    try {
+        let sum_range_1 = rangeSumElement.querySelector('#sum_range_1').value;
+        let sum_range_2 = rangeSumElement.querySelector('#sum_range_2').value;
+        if (!checkIsNumber(sum_range_2) || !checkIsNumber(sum_range_1)) {
+            return;
+        }
+        sum_range_1 = +sum_range_1;
+        sum_range_2 = +sum_range_2;
+
+        let result = sum_range_1;
+        for (let i = sum_range_1 + 1; i <= sum_range_2; i++) {
+            result += i
+        }
+        rangeSumElement.querySelector('div.result').textContent = `Range sum: ${result}`;
+    } catch (error) {
+        console.log(error);
+        alert('Wrong input!');
+    }
+})
+
+
+// Підрахуй суму всіх чисел в заданому користувачем діапазоні.
+const gcd_block = document.getElementById('gcd_block');
+gcd_block.querySelector('button').addEventListener('click', () => {
+    console.log('clicked gcd_block button')
+    try {
+        let gcd_input_1 = gcd_block.querySelector('#gcd_input_1').value;
+        let gcd_input_2 = gcd_block.querySelector('#gcd_input_2').value;
+        if (!checkIsNumber(gcd_input_1) || !checkIsNumber(gcd_input_2)) {
+            return;
+        }
+        gcd_input_1 = Math.abs(+gcd_input_1);
+        gcd_input_2 = Math.abs(+gcd_input_2);
+
+        const gcd = (x, y) => {
+            while (y !== 0) {
+                [x, y] = [y, x % y];
+            }
+            return x;
+        }
+
+        const result = gcd(gcd_input_1, gcd_input_2);
+        gcd_block.querySelector('div.result').textContent = `GCD: ${result}`;
+
+        rangeSumElement.querySelector('div.result').textContent = `Greatest common digest: ${result}`;
+    } catch (error) {
+        console.log(error);
+        alert('Wrong input!');
+    }
+})
+
+// Запитай у користувача число і виведи всі дільники цього числа
+const divisorsBlock = document.getElementById('divisors_block');
+divisorsBlock.querySelector('button').addEventListener('click', () => {
+    console.log('clicked divisors button');
+    try {
+        let divisor = divisorsBlock.querySelector('#divisor').value;
+
+        if (!checkIsNumber(divisor)) {
+            return;
+        }
+
+        divisor = Math.abs(+divisor);
+        const divisors = [];
+
+        for (let i = 1; i <= divisor; i++) {
+            if (divisor % i === 0) {
+                divisors.push(i);
+            }
+        }
+
+        divisorsBlock.querySelector('div.result').textContent = `Divisors: ${divisors.join(', ')}`;
+    } catch (error) {
+        console.log(error);
+        alert('Error occurred!');
+    }
+});
+
+// Запитай у користувача п’ятирозрядне число і визначи, чи є воно паліндромом.
+const palindrome_block = document.getElementById('palindrome_block');
+palindrome_block.querySelector('button').addEventListener('click', () => {
+    console.log('clicked palindrome_block button');
+    try {
+        let palindromeInput = palindrome_block.querySelector('#palindrome').value;
+
+        if (!checkIsNumber(palindromeInput)) {
+            return;
+        }
+
+        palindromeInput = Math.abs(+palindromeInput); // гарантуємо позитивне число
+        const str = palindromeInput.toString();
+
+        if (str.length !== 5) {
+            alert('Int must be 5 digits long!');
+            return;
+        }
+
+        const reversed = str.split('').reverse().join('');
+        const isPalindrome = str === reversed;
+
+        let result = isPalindrome ? `${str} — is a palindrome!` : `${str} — not a palindrome!`;
+
+        palindrome_block.querySelector('div.result').textContent = `Result: ${result}`;
+    } catch (error) {
+        console.log(error);
+        alert('Error occurred!');
+    }
+});
+
+
+// 1. Запитай у користувача суму покупки і виведи суму до оплати зі знижкою:
+//     1. від 200 до 300 - знижка буде 3%;
+//     2. від 300 до 500 - 5%;
+//     3. від 500 і вище - 7%.
+const discount_amnt_block = document.getElementById('discount_amnt_block');
+discount_amnt_block.querySelector('button').addEventListener('click', () => {
+    console.log('clicked discount_amnt_block button');
+    try {
+        let payment = discount_amnt_block.querySelector('#payment').value;
+
+        if (!checkIsNumber(payment)) {
+            return;
+        }
+        payment = +payment; // гарантуємо позитивне число
+        if (payment <= 0) {
+            alert('Сума має бути більшою за 0!');
+            return;
+        }
+
+        let discount = 0;
+        if (payment >= 500) {
+            discount = 7;
+        } else if (payment >= 300) {
+            discount = 5;
+        } else if (payment >= 200) {
+            discount = 3;
+        }
+
+        const discountedTotal = payment * (1 - discount / 100);
+
+        discount_amnt_block.querySelector('div.result').textContent = discount > 0 ? `Discount ${discount}%. Payment amount: ${discountedTotal.toFixed(2)} uah` : `Discount is not applied. Payment amount: ${payment.toFixed(2)} uah`;
+    } catch (error) {
+        console.log(error);
+        alert('Error occurred!');
+    }
+});
+
+// Запитай у користувача 10 чисел і порахуй, скільки він ввів додатніх, від’ємних і нулів. 
+// При цьому також порахуй, скільки з них парних і непарних. Виведи статистику на екран. 
+// Враховуй, що достатньо однієї змінної (не 10) для введення чисел користувачем.
+const numbers_count_block = document.getElementById('numbers_count_block');
+numbers_count_block.querySelector('button').addEventListener('click', () => {
+    console.log('clicked numbers_count_block button');
+    try {
+        let positives = 0;
+        let negatives = 0;
+        let zeros = 0;
+        let even = 0;
+        let odd = 0;
+
+        for (let i = 0; i < 10; i++) {
+            let input = prompt(`Enter a number #${i + 1}:`);
+
+            if (input === null) {
+                alert('Input canceled!');
+                break;
+            } else input = +input
+
+            if (isNaN(input)) {
+                alert('That is not a number. Try again.');
+                i--;
+                continue
+            }
+
+            if (input > 0) positives++; else if (input < 0) negatives++; else zeros++;
+            if (input % 2 === 0) even++; else odd++;
+        }
+
+        numbers_count_block.querySelector('div.result').textContent =
+            'Result: ' + `Positive numbers: ${positives}` + ' ' +
+            `Negative numbers: ${negatives}` + ' ' +
+            `Zeros numbers: ${zeros}` + ' ' +
+            `Even numbers: ${even}` + ' ' +
+            `Odd numbers: ${odd}`
+    } catch (error) {
+        console.log(error);
+        alert('Error occurred!');
+    }
+});
+
+// Зацикли відображення днів тижня таким чином: 
+// «День тижня. Хочеш побачити наступний день? » і так до тих пір, поки користувач натискає OK.
+const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+const next_day_block = document.getElementById('next_day');
+let today = new Date();
+let index = today.getDay() - 1;
+let answer = days[index];
+next_day_block.querySelector('div.result').textContent = 'Today is: ' + answer
+
+next_day_block.addEventListener('click', () => {
+    console.log('clicked next_day');
+    try {
+        today = new Date();
+        index = today.getDay() - 1;
+        answer = days[index];
+        let counter = 0;
+
+        next_day_block.querySelector('div.result').textContent = 'Result: ' + answer
+
+        while (1) {
+            if (index === today.getDay() - 1) {
+                answer = confirm(`Today is ${days[index]}. Want to see next day?`);
+            } else {
+                answer = confirm(`It would be ${days[index]}. Want to see next day?`);
+            }
+            if (!answer) break;
+            index = (index + 1) % days.length; // Переходимо до наступного дня по колу
+            counter++
+        }
+
+        next_day_block.querySelector('div.result').textContent = `The next day in ${counter} days would be: ${days[index]}`
+    } catch (error) {
+        console.log(error);
+        alert('Error occurred!');
+    }
+});
+
+
+// Гра «Вгадай число». Запропонуй користувачеві загадати число від 0 до 100 
+// і відгадай його наступним способом: кожну ітерацію циклу діли діапазон чисел навпіл,
+// записуй результат в N і питай у користувача «Ваше число> N, <N або == N?». Залежно від 
+// того що вказав користувач, зменшуй діапазон. Початковий діапазон від 0 до 100, поділи
+// навпіл і отримай 50. Якщо користувач вказав, що його число> 50, то зміни діапазон на
+// від 50 до 100. І так до тих пір, поки користувач не вибере == N (буде корисним почитати
+// про алгоритм: "бінарний пошук").
+const guess_number = document.getElementById('guess_number');
+guess_number.querySelector('button').addEventListener('click', () => {
+    console.log('clicked guess_number button');
+    try {
+        let min = 0;
+        let max = 100;
+        let attempts = 0;
+
+        let guess = Math.floor((min + max) / 2);
+        while (1) {
+            guess = Math.floor((min + max) / 2);
+            attempts++;
+
+            const answer = prompt(`Is your number > ${guess}, < ${guess} or == ${guess}? type 'break' to stop.`);
+
+            if (answer === '==') {
+                alert(`I guessed correctly! The number is ${guess}. Attempts by the computer: ${attempts}`);
+                break;
+            } else if (answer === '>') {
+                min = guess + 1;
+            } else if (answer === '<') {
+                max = guess - 1;
+            } else if (answer === 'break') {
+                guess_number.querySelector('div.result').textContent = 'Result: ' + answer
+                return
+            } else {
+                alert("Please enter only ‘>’, ‘<’ or ‘==’.'");
+                attempts--;
+            }
+
+            if (min > max) {
+                alert('It seems that something went wrong. You changed your answer or the number you entered is not within the range.');
+                break;
+            }
+        }
+        guess_number.querySelector('div.result').textContent = 'Result: ' + guess
+    } catch (error) {
+        console.log(error);
+        alert('Error occurred!');
+    }
+});
+
+// Виведи таблицю множення для всіх чисел від 2 до 9. Кожне число необхідно помножити на числа від 1 до 10.
+const render_multiplication_table = () => {
+    console.log('scrolled into ');
+    try {
+        // Заголовок
+        const table = document.querySelector('#multiplication_table_block table.result');
+        table.innerHTML = ''; // Очистити таблицю перед новим виводом
+        const thead = document.createElement('thead');
+        const headRow = document.createElement('tr');
+        headRow.innerHTML = '<th>×</th>';
+        for (let j = 1; j <= 10; j++) {
+            headRow.innerHTML += `<th>${j}</th>`;
+        }
+        thead.appendChild(headRow);
+        table.appendChild(thead);
+
+        // Рядки таблиці множення
+        const tbody = document.createElement('tbody');
+        for (let i = 2; i <= 9; i++) {
+            const row = document.createElement('tr');
+            row.innerHTML = `<th>${i}</th>`;
+            for (let j = 1; j <= 10; j++) {
+                row.innerHTML += `<td>${i * j}</td>`;
+            }
+            tbody.appendChild(row);
+        }
+        table.appendChild(tbody);
+    } catch (error) {
+        console.log(error);
+        alert('Error occurred!');
+    }
+};
+
+
+// Запитай дату (день, місяць, рік) і виведи наступну за нею дату.
+// Враховуй можливість переходу на наступний місяць, рік, а також високосний рік.
+const next_date_block = document.getElementById('next_date_block')
+const now = new Date();
+const current_date = `${String(now.getDate()).padStart(2, '0')}.${String(now.getMonth() + 1).padStart(2, '0')}.${now.getFullYear()}`;
+next_date_block.querySelector('input').placeholder = current_date;
+next_date_block.querySelector('input').value = current_date;
+
+// Обработчик клика
+next_date_block.querySelector('button').addEventListener('click', () => {
+    try {
+        let input = next_date_block.querySelector('input').value.trim();
+        const [dayStr, monthStr, yearStr] = input.split(".");
+        const day = parseInt(dayStr, 10);
+        const month = parseInt(monthStr, 10);
+        const year = parseInt(yearStr, 10);
+
+        if (isNaN(day) || isNaN(month) || isNaN(year)) {
+            throw new Error("Неправильний формат дати");
+        }
+
+        // Создаём дату: даже если она невалидна (например, 31.02), браузер сам скорректирует
+        let parsed_date = new Date(year, month - 1, day);
+
+        // Вывод ближайшей реальной даты
+        const adjusted_date_str = `${String(parsed_date.getDate()).padStart(2, '0')}.${String(parsed_date.getMonth() + 1).padStart(2, '0')}.${parsed_date.getFullYear()}`;
+
+        // Прибавляем 1 день
+        parsed_date.setDate(parsed_date.getDate() + 1);
+        const next_date_str = `${String(parsed_date.getDate()).padStart(2, '0')}.${String(parsed_date.getMonth() + 1).padStart(2, '0')}.${parsed_date.getFullYear()}`;
+
+        next_date_block.querySelector('div.result').textContent = `Введена дата скоригована до: ${adjusted_date_str}, наступна дата: ${next_date_str}`;
+    } catch (error) {
+        console.error(error);
+        alert('Помилка: ' + error.message);
+    }
+});
+
+// Запитай дату (день, місяць, рік) і виведи наступну за нею дату. 
+// Враховуй можливість переходу на наступний місяць, рік, а також високосний рік.
+const next_date_block_math = document.getElementById('next_date_block_math')
+// Установка текущей даты вручную (можно оставить пустым, если нельзя использовать Date)
+const now_math = new Date();
+const current_date_math = `${String(now_math.getDate()).padStart(2, '0')}.${String(now_math.getMonth() + 1).padStart(2, '0')}.${now_math.getFullYear()}`.trim();
+next_date_block_math.querySelector('input').placeholder = current_date_math;
+next_date_block_math.querySelector('input').value = current_date_math;
+
+// Повертає кількість днів у місяці з урахуванням високосного року
+function getDaysInMonth(month, year) {
+    const daysPerMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    // Перевірка на високосний рік
+    if (month === 2 && ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0))) {
+        return 29;
+    }
+    return daysPerMonth[month - 1];
+}
+
+next_date_block_math.querySelector('button').addEventListener('click', () => {
+    try {
+        let input = next_date_block_math.querySelector('#date_math').value.trim();
+        const [dayStr, monthStr, yearStr] = input.split(".");
+        let day = parseInt(dayStr, 10);
+        let month = parseInt(monthStr, 10);
+        let year = parseInt(yearStr, 10);
+
+        if (isNaN(day) || isNaN(month) || isNaN(year) || day < 1 || month < 1 || month > 12) {
+            throw new Error("Неправильний формат дати");
+        }
+
+        const maxDay = getDaysInMonth(month, year);
+        if (day > maxDay) {
+            day = maxDay; // скоригована дата
+        }
+
+        // Вираховуємо наступну дату
+        day += 1;
+        if (day > getDaysInMonth(month, year)) {
+            day = 1;
+            month += 1;
+            if (month > 12) {
+                month = 1;
+                year += 1;
+            }
+        }
+
+        const adjusted_day = String(Math.min(parseInt(dayStr), getDaysInMonth(monthStr, year))).padStart(2, '0');
+        const adjusted_month = String(monthStr).padStart(2, '0');
+        const adjusted_year = yearStr;
+
+        const next_day = String(day).padStart(2, '0');
+        const next_month = String(month).padStart(2, '0');
+        const next_year = String(year);
+
+        next_date_block_math.querySelector('div.result').textContent =
+            `Введена дата скоригована до: ${adjusted_day}.${adjusted_month}.${adjusted_year}, наступна дата: ${next_day}.${next_month}.${next_year}`;
+    } catch (error) {
+        console.error(error);
+        alert('Помилка: ' + error.message);
+    }
+});
