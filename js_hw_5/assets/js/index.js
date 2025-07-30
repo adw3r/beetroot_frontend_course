@@ -129,3 +129,63 @@ class Time {
         this.hours += h;
     }
 }
+
+
+class Fraction {
+    constructor(numerator, denominator) {
+        if (denominator === 0) {
+            throw new Error("Denominator cannot be zero.");
+        }
+        this.numerator = numerator;
+        this.denominator = denominator;
+        this.reduce(); // автоматично скорочує при створенні
+    }
+
+    static gcd(a, b) {
+        return b === 0 ? a : Fraction.gcd(b, a % b);
+    }
+
+    reduce() {
+        const gcd = Fraction.gcd(Math.abs(this.numerator), Math.abs(this.denominator));
+        this.numerator /= gcd;
+        this.denominator /= gcd;
+        if (this.denominator < 0) { // знак переносимо в чисельник
+            this.numerator *= -1;
+            this.denominator *= -1;
+        }
+        return this;
+    }
+
+    add(other) {
+        const num = this.numerator * other.denominator + other.numerator * this.denominator;
+        const den = this.denominator * other.denominator;
+        return new Fraction(num, den);
+    }
+
+    subtract(other) {
+        const num = this.numerator * other.denominator - other.numerator * this.denominator;
+        const den = this.denominator * other.denominator;
+        return new Fraction(num, den);
+    }
+
+    multiply(other) {
+        return new Fraction(
+            this.numerator * other.numerator,
+            this.denominator * other.denominator
+        );
+    }
+
+    divide(other) {
+        if (other.numerator === 0) {
+            throw new Error("Division by zero.");
+        }
+        return new Fraction(
+            this.numerator * other.denominator,
+            this.denominator * other.numerator
+        );
+    }
+
+    toString() {
+        return `${this.numerator}/${this.denominator}`;
+    }
+}
