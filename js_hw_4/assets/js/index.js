@@ -1,3 +1,16 @@
+const checkIsNumber = (number) => {
+    if (!number) {
+        alert('Please enter a value!');
+        return false;
+    }
+    number = +number;
+    if (isNaN(number)) {
+        alert('Please enter a number!');
+        return false;
+    }
+    return true;
+}
+
 // 1.Напиши всі можливі варіанти створення функцій.
 // ✅ Має підняття (hoisting) — можна викликати до оголошення.
 function greet_1(name) {
@@ -61,3 +74,39 @@ const getPrimesInRange = (min, max) => {
     }
     return primes;
 };
+
+
+const args_length = document.getElementById('args_length');
+args_length.querySelector('button').addEventListener('click', () => {
+    try {
+        let args = args_length.querySelector('input').value;
+        if (!args) {
+            alert('Please enter a value!');
+            return
+        }
+        console.log(args)
+        const res = countArgs(...args.split(','));
+        args_length.querySelector('div.result').textContent = `Args length: ${res}, Args: ${args}`;
+    } catch (error) {
+        console.log(error);
+        alert('Wrong input!');
+    }
+})
+
+const what_is_bigger_el = document.getElementById('what_is_bigger');
+what_is_bigger_el.querySelector('button').addEventListener('click', () => {
+    try {
+        let arg1 = what_is_bigger_el.querySelector('.arg1').value;
+        let arg2 = what_is_bigger_el.querySelector('.arg2').value;
+        
+        if (!checkIsNumber(arg1) || !checkIsNumber(arg2)) {
+            alert('Please enter a number!');
+            return
+        }
+        let res = whatIsBigger(arg1, arg2);
+        what_is_bigger_el.querySelector('div.result').textContent = `Res: ${res}`;
+    } catch (error) {
+        console.log(error);
+        alert('Wrong input!');
+    }
+})
