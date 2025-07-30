@@ -51,7 +51,7 @@ const concat = (...args) => args.join('');
 
 // 6. Напиши функцію, яка приймає довжину і ширину прямокутника і обчислює його площу.
 // Якщо в функцію передали 1 параметр, то вона обчислює площу квадрата.
-const calculateArea = (length, width = length) => length * width;
+const calc_area = (length, width = length) => length * width;
 
 
 // Напиши функцію, яка перевіряє, чи є передане їй число “досконалим числом”.
@@ -128,23 +128,24 @@ factorial_block.querySelector('button').addEventListener('click', () => {
     }
 })
 
-const concat_nums = document.getElementById('concat_nums');
-concat_nums.querySelector('button').addEventListener('click', () => {
+const calc_area_block = document.getElementById('calc_area');
+calc_area_block.querySelector('button').addEventListener('click', () => {
     try {
-        let arg1 = concat_nums.querySelector('.arg1').value;
-        let arg2 = concat_nums.querySelector('.arg2').value;
-        let arg3 = concat_nums.querySelector('.arg3').value;
+        let arg1 = calc_area_block.querySelector('.arg1').value;
+        let arg2 = calc_area_block.querySelector('.arg2').value;
+        if (!arg2) {
+            arg2 = arg1;
+        }
 
         if (
             !checkIsNumber(arg1) ||
-            !checkIsNumber(arg2) ||
-            !checkIsNumber(arg3)
+            !checkIsNumber(arg2)
         ) {
             alert('Please enter a number!');
             return
         }
-        let res = concat(arg1, arg2, arg3);
-        concat_nums.querySelector('div.result').textContent = `Res: ${res}`;
+        let res = calc_area(arg1, arg2);
+        calc_area_block.querySelector('div.result').textContent = `Area: ${res}`;
     } catch (error) {
         console.log(error);
         alert('Wrong input!');
