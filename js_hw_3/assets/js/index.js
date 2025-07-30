@@ -294,9 +294,13 @@ next_day_block.addEventListener('click', () => {
 });
 
 
-// Запитай у користувача 10 чисел і порахуй, скільки він ввів додатніх, від’ємних і нулів. 
-// При цьому також порахуй, скільки з них парних і непарних. Виведи статистику на екран. 
-// Враховуй, що достатньо однієї змінної (не 10) для введення чисел користувачем.
+// Гра «Вгадай число». Запропонуй користувачеві загадати число від 0 до 100 
+// і відгадай його наступним способом: кожну ітерацію циклу діли діапазон чисел навпіл,
+// записуй результат в N і питай у користувача «Ваше число> N, <N або == N?». Залежно від 
+// того що вказав користувач, зменшуй діапазон. Початковий діапазон від 0 до 100, поділи
+// навпіл і отримай 50. Якщо користувач вказав, що його число> 50, то зміни діапазон на
+// від 50 до 100. І так до тих пір, поки користувач не вибере == N (буде корисним почитати
+// про алгоритм: "бінарний пошук").
 const guess_number = document.getElementById('guess_number');
 guess_number.querySelector('button').addEventListener('click', () => {
     console.log('clicked guess_number button');
@@ -310,7 +314,7 @@ guess_number.querySelector('button').addEventListener('click', () => {
             guess = Math.floor((min + max) / 2);
             attempts++;
 
-            const answer = prompt(`Is your number > ${guess}, < ${guess} or == ${guess}?`);
+            const answer = prompt(`Is your number > ${guess}, < ${guess} or == ${guess}? type 'break' to stop.`);
 
             if (answer === '==') {
                 alert(`I guessed correctly! The number is ${guess}. Attempts by the computer: ${attempts}`);
@@ -319,6 +323,9 @@ guess_number.querySelector('button').addEventListener('click', () => {
                 min = guess + 1;
             } else if (answer === '<') {
                 max = guess - 1;
+            } else if (answer === 'break') {
+                guess_number.querySelector('div.result').textContent = 'Result: ' + answer
+                return
             } else {
                 alert("Please enter only ‘>’, ‘<’ or ‘==’.'");
                 attempts--;
@@ -335,3 +342,36 @@ guess_number.querySelector('button').addEventListener('click', () => {
         alert('Error occurred!');
     }
 });
+
+// Виведи таблицю множення для всіх чисел від 2 до 9. Кожне число необхідно помножити на числа від 1 до 10.
+const render_multiplication_table = () => {
+    console.log('scrolled into ');
+    try {
+        // Заголовок
+        const table = document.querySelector('#multiplication_table_block table.result');
+        table.innerHTML = ''; // Очистити таблицю перед новим виводом
+        const thead = document.createElement('thead');
+        const headRow = document.createElement('tr');
+        headRow.innerHTML = '<th>×</th>';
+        for (let j = 1; j <= 10; j++) {
+            headRow.innerHTML += `<th>${j}</th>`;
+        }
+        thead.appendChild(headRow);
+        table.appendChild(thead);
+
+        // Рядки таблиці множення
+        const tbody = document.createElement('tbody');
+        for (let i = 2; i <= 9; i++) {
+            const row = document.createElement('tr');
+            row.innerHTML = `<th>${i}</th>`;
+            for (let j = 1; j <= 10; j++) {
+                row.innerHTML += `<td>${i * j}</td>`;
+            }
+            tbody.appendChild(row);
+        }
+        table.appendChild(tbody);
+    } catch (error) {
+        console.log(error);
+        alert('Error occurred!');
+    }
+};

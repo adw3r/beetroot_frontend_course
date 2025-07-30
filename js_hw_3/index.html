@@ -11,6 +11,9 @@
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
     <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
           integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
     <style>
         .container {
             max-width: 700px;
@@ -145,7 +148,18 @@
             <button class="btn btn-primary btn-sm d-block" type="button">
                 calculate
             </button>
-            <div class="result"></div>
+            <div class="result">Result:</div>
+        </div>
+        <hr>
+        <div class="d-flex flex-column gap-3" id="multiplication_table_block"
+             x-data="{ shown: false }"
+             x-init="$watch('shown', value => render_multiplication_table())"
+             x-intersect.once="shown = true"
+        >
+            Division table
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped result"></table>
+            </div>
         </div>
     </main>
 </div>
