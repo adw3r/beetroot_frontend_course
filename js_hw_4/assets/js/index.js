@@ -128,6 +128,29 @@ factorial_block.querySelector('button').addEventListener('click', () => {
     }
 })
 
+const concat_nums = document.getElementById('concat_nums');
+concat_nums.querySelector('button').addEventListener('click', () => {
+    try {
+        let arg1 = concat_nums.querySelector('.arg1').value;
+        let arg2 = concat_nums.querySelector('.arg2').value;
+        let arg3 = concat_nums.querySelector('.arg3').value;
+
+        if (
+            !checkIsNumber(arg1) ||
+            !checkIsNumber(arg2) ||
+            !checkIsNumber(arg3)
+        ) {
+            alert('Please enter a number!');
+            return
+        }
+        let res = concat(arg1, arg2, arg3);
+        concat_nums.querySelector('div.result').textContent = `Res: ${res}`;
+    } catch (error) {
+        console.log(error);
+        alert('Wrong input!');
+    }
+})
+
 const calc_area_block = document.getElementById('calc_area');
 calc_area_block.querySelector('button').addEventListener('click', () => {
     try {
@@ -146,6 +169,34 @@ calc_area_block.querySelector('button').addEventListener('click', () => {
         }
         let res = calc_area(arg1, arg2);
         calc_area_block.querySelector('div.result').textContent = `Area: ${res}`;
+    } catch (error) {
+        console.log(error);
+        alert('Wrong input!');
+    }
+})
+
+const prime_block = document.getElementById('prime_block');
+prime_block.querySelector('button').addEventListener('click', () => {
+    console.log('clicked prime_block button')
+    try {
+        let arg1 = prime_block.querySelector('.arg1').value;
+        let arg2 = prime_block.querySelector('.arg2').value;
+        if (
+            !checkIsNumber(arg1) ||
+            !checkIsNumber(arg2)
+        ) {
+            alert('Please enter a number!');
+            return
+        }
+        arg1 = +arg1;
+        arg2 = +arg2;
+        if (arg1 > arg2) {
+            alert('arg1 can`t be greater than arg1!');
+            return
+        }
+        let res = getPrimesInRange(arg1, arg2);
+        console.log(res)
+        prime_block.querySelector('div.result').textContent = `Primes: ${res}`;
     } catch (error) {
         console.log(error);
         alert('Wrong input!');
