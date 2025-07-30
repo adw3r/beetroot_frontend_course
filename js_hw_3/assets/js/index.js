@@ -249,7 +249,12 @@ numbers_count_block.querySelector('button').addEventListener('click', () => {
             if (input % 2 === 0) even++; else odd++;
         }
 
-        numbers_count_block.querySelector('div.result').textContent = 'Result: ' + `Positive numbers: ${positives}` + ' ' + `Negative numbers: ${negatives}` + ' ' + `Zeros numbers: ${zeros}` + ' ' + `Even numbers: ${even}` + ' ' + `Odd numbers: ${odd}`
+        numbers_count_block.querySelector('div.result').textContent = 
+            'Result: ' + `Positive numbers: ${positives}` + ' ' + 
+            `Negative numbers: ${negatives}` + ' ' + 
+            `Zeros numbers: ${zeros}` + ' ' + 
+            `Even numbers: ${even}` + ' ' + 
+            `Odd numbers: ${odd}`
     } catch (error) {
         console.log(error);
         alert('Error occurred!');
@@ -375,3 +380,42 @@ const render_multiplication_table = () => {
         alert('Error occurred!');
     }
 };
+
+
+// Запитай дату (день, місяць, рік) і виведи наступну за нею дату. 
+// Враховуй можливість переходу на наступний місяць, рік, а також високосний рік.
+const next_date_block = document.getElementById('next_date_block')
+const now = new Date();
+const current_date = `${String(now.getDate()).padStart(2, '0')}.${String(now.getMonth() + 1).padStart(2, '0')}.${now.getFullYear()}`;
+next_date_block.querySelector('input').placeholder = current_date;
+next_date_block.querySelector('input').value = current_date;
+
+// Обработчик клика
+next_date_block.querySelector('button').addEventListener('click', () => {
+    try {
+        let input = next_date_block.querySelector('input').value.trim();
+        const [dayStr, monthStr, yearStr] = input.split(".");
+        const day = parseInt(dayStr, 10);
+        const month = parseInt(monthStr, 10);
+        const year = parseInt(yearStr, 10);
+
+        if (isNaN(day) || isNaN(month) || isNaN(year)) {
+            throw new Error("Неправильний формат дати");
+        }
+
+        // Создаём дату: даже если она невалидна (например, 31.02), браузер сам скорректирует
+        let parsed_date = new Date(year, month - 1, day);
+
+        // Вывод ближайшей реальной даты
+        const adjusted_date_str = `${String(parsed_date.getDate()).padStart(2, '0')}.${String(parsed_date.getMonth() + 1).padStart(2, '0')}.${parsed_date.getFullYear()}`;
+
+        // Прибавляем 1 день
+        parsed_date.setDate(parsed_date.getDate() + 1);
+        const next_date_str = `${String(parsed_date.getDate()).padStart(2, '0')}.${String(parsed_date.getMonth() + 1).padStart(2, '0')}.${parsed_date.getFullYear()}`;
+
+        next_date_block.querySelector('div.result').textContent = `Введена дата скоригована до: ${adjusted_date_str}, наступна дата: ${next_date_str}`;
+    } catch (error) {
+        console.error(error);
+        alert('Помилка: ' + error.message);
+    }
+});
