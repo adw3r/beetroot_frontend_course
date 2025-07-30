@@ -38,7 +38,7 @@ ageCalculatorElement.querySelector('button').addEventListener('click', () => {
         } else {
             result = 'senior';
         }
-        ageCalculatorElement.querySelector('div.result').textContent = `Result: ${result}`;
+        ageCalculatorElement.querySelector('div.result').textContent = `You are (teen, mature, ...): ${result}`;
     } catch (error) {
         console.log(error);
         alert('Wrong input!');
@@ -59,7 +59,7 @@ specialSymbolElement.querySelector('button').addEventListener('click', () => {
             return;
         }
         const result = symbols[digit];
-        specialSymbolElement.querySelector('div.result').textContent = `Result: ${result}`;
+        specialSymbolElement.querySelector('div.result').textContent = `Special char: ${result}`;
     } catch (error) {
         console.log(error);
         alert('Wrong input!');
@@ -84,7 +84,7 @@ rangeSumElement.querySelector('button').addEventListener('click', () => {
         for (let i = sum_range_1 + 1; i <= sum_range_2; i++) {
             result += i
         }
-        rangeSumElement.querySelector('div.result').textContent = `Result: ${result}`;
+        rangeSumElement.querySelector('div.result').textContent = `Range sum: ${result}`;
     } catch (error) {
         console.log(error);
         alert('Wrong input!');
@@ -115,7 +115,7 @@ gcd_block.querySelector('button').addEventListener('click', () => {
         const result = gcd(gcd_input_1, gcd_input_2);
         gcd_block.querySelector('div.result').textContent = `GCD: ${result}`;
 
-        rangeSumElement.querySelector('div.result').textContent = `Result: ${result}`;
+        rangeSumElement.querySelector('div.result').textContent = `Greatest common digest: ${result}`;
     } catch (error) {
         console.log(error);
         alert('Wrong input!');
@@ -148,3 +148,37 @@ divisorsBlock.querySelector('button').addEventListener('click', () => {
         alert('Error occurred!');
     }
 });
+
+// Запитай у користувача п’ятирозрядне число і визначи, чи є воно паліндромом.
+const palindrome_block = document.getElementById('palindrome_block');
+palindrome_block.querySelector('button').addEventListener('click', () => {
+    console.log('clicked palindrome_block button');
+    try {
+        let palindromeInput = palindrome_block.querySelector('#palindrome').value;
+        
+        if (!checkIsNumber(palindromeInput)) {
+            return;
+        }
+
+        palindromeInput = Math.abs(+palindromeInput); // гарантуємо позитивне число
+        const str = palindromeInput.toString();
+
+        if (str.length !== 5) {
+            alert('Int must be 5 digits long!');
+            return;
+        }
+
+        const reversed = str.split('').reverse().join('');
+        const isPalindrome = str === reversed;
+
+        let result = isPalindrome
+            ? `${str} — is a palindrome!`
+            : `${str} — not a palindrome!`;
+
+        palindrome_block.querySelector('div.result').textContent = `Result: ${result}`;
+    } catch (error) {
+        console.log(error);
+        alert('Error occurred!');
+    }
+});
+

@@ -29,7 +29,7 @@
             <button class="btn btn-primary btn-sm d-block" type="button">
                 calculate
             </button>
-            <div class="result">Result:</div>
+            <div class="result">You are (teen, mature, ...):</div>
         </div>
         <div class="d-flex flex-column gap-3" id="special_symbol">
             <label class="d-flex gap-2 flex-column">
@@ -40,7 +40,7 @@
             <button class="btn btn-primary btn-sm d-block" type="button">
                 calculate
             </button>
-            <div class="result">Result:</div>
+            <div class="result">Special char:</div>
         </div>
         <div class="d-flex flex-column gap-3" id="range_sum">
             <div class="d-flex gap-2">
@@ -58,7 +58,7 @@
             <button class="btn btn-primary btn-sm d-block" type="button">
                 calculate
             </button>
-            <div class="result">Result:</div>
+            <div class="result">Range sum:</div>
         </div>
         <div class="d-flex flex-column gap-3" id="gcd_block">
             <div class="d-flex gap-2">
@@ -76,13 +76,26 @@
             <button class="btn btn-primary btn-sm d-block" type="button">
                 calculate
             </button>
-            <div class="result">Result:</div>
+            <div class="result">Greatest common digest:</div>
         </div>
         <div class="d-flex flex-column gap-3" id="divisors_block">
             <div class="d-flex gap-2">
                 <label class="d-flex gap-2 flex-column flex-grow-1">
-                    <span>What is a digit?</span>
+                    <span>Get all divisors of a number:</span>
                     <input class="form-control" id="divisor" name="range" pattern="[0-9]+" placeholder="1"
+                           required type="number">
+                </label>
+            </div>
+            <button class="btn btn-primary btn-sm d-block" type="button">
+                calculate
+            </button>
+            <div class="result">Divisors:</div>
+        </div>
+        <div class="d-flex flex-column gap-3" id="palindrome_block">
+            <div class="d-flex gap-2">
+                <label class="d-flex gap-2 flex-column flex-grow-1">
+                    <span>Is a palindrome?</span>
+                    <input class="form-control" id="palindrome" name="range" pattern="[0-9]+" placeholder="1"
                            required type="number">
                 </label>
             </div>
