@@ -171,9 +171,7 @@ palindrome_block.querySelector('button').addEventListener('click', () => {
         const reversed = str.split('').reverse().join('');
         const isPalindrome = str === reversed;
 
-        let result = isPalindrome
-            ? `${str} — is a palindrome!`
-            : `${str} — not a palindrome!`;
+        let result = isPalindrome ? `${str} — is a palindrome!` : `${str} — not a palindrome!`;
 
         palindrome_block.querySelector('div.result').textContent = `Result: ${result}`;
     } catch (error) {
@@ -213,10 +211,7 @@ discount_amnt_block.querySelector('button').addEventListener('click', () => {
 
         const discountedTotal = payment * (1 - discount / 100);
 
-        discount_amnt_block.querySelector('div.result').textContent =
-            discount > 0
-                ? `Discount ${discount}%. Payment amount: ${discountedTotal.toFixed(2)} uah`
-                : `Discount is not applied. Payment amount: ${payment.toFixed(2)} uah`;
+        discount_amnt_block.querySelector('div.result').textContent = discount > 0 ? `Discount ${discount}%. Payment amount: ${discountedTotal.toFixed(2)} uah` : `Discount is not applied. Payment amount: ${payment.toFixed(2)} uah`;
     } catch (error) {
         console.log(error);
         alert('Error occurred!');
@@ -254,12 +249,7 @@ numbers_count_block.querySelector('button').addEventListener('click', () => {
             if (input % 2 === 0) even++; else odd++;
         }
 
-        numbers_count_block.querySelector('div.result').textContent = 'Result: ' +
-            `Positive numbers: ${positives}` + ' ' +
-            `Negative numbers: ${negatives}` + ' ' +
-            `Zeros numbers: ${zeros}` + ' ' +
-            `Even numbers: ${even}` + ' ' +
-            `Odd numbers: ${odd}`
+        numbers_count_block.querySelector('div.result').textContent = 'Result: ' + `Positive numbers: ${positives}` + ' ' + `Negative numbers: ${negatives}` + ' ' + `Zeros numbers: ${zeros}` + ' ' + `Even numbers: ${even}` + ' ' + `Odd numbers: ${odd}`
     } catch (error) {
         console.log(error);
         alert('Error occurred!');
@@ -268,15 +258,7 @@ numbers_count_block.querySelector('button').addEventListener('click', () => {
 
 // Зацикли відображення днів тижня таким чином: 
 // «День тижня. Хочеш побачити наступний день? » і так до тих пір, поки користувач натискає OK.
-const days = [
-    'Monday',
-    'Tuesday',
-    'Wednesday',
-    'Thursday',
-    'Friday',
-    'Saturday',
-    'Sunday'
-];
+const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 const next_day_block = document.getElementById('next_day');
 let today = new Date();
 let index = today.getDay() - 1;
@@ -304,8 +286,50 @@ next_day_block.addEventListener('click', () => {
             counter++
         }
 
-        next_day_block.querySelector('div.result').textContent =
-            `The next day in ${counter} days would be: ${days[index]}`
+        next_day_block.querySelector('div.result').textContent = `The next day in ${counter} days would be: ${days[index]}`
+    } catch (error) {
+        console.log(error);
+        alert('Error occurred!');
+    }
+});
+
+
+// Запитай у користувача 10 чисел і порахуй, скільки він ввів додатніх, від’ємних і нулів. 
+// При цьому також порахуй, скільки з них парних і непарних. Виведи статистику на екран. 
+// Враховуй, що достатньо однієї змінної (не 10) для введення чисел користувачем.
+const guess_number = document.getElementById('guess_number');
+guess_number.querySelector('button').addEventListener('click', () => {
+    console.log('clicked guess_number button');
+    try {
+        let min = 0;
+        let max = 100;
+        let attempts = 0;
+
+        let guess = Math.floor((min + max) / 2);
+        while (1) {
+            guess = Math.floor((min + max) / 2);
+            attempts++;
+
+            const answer = prompt(`Is your number > ${guess}, < ${guess} or == ${guess}?`);
+
+            if (answer === '==') {
+                alert(`I guessed correctly! The number is ${guess}. Attempts by the computer: ${attempts}`);
+                break;
+            } else if (answer === '>') {
+                min = guess + 1;
+            } else if (answer === '<') {
+                max = guess - 1;
+            } else {
+                alert("Please enter only ‘>’, ‘<’ or ‘==’.'");
+                attempts--;
+            }
+
+            if (min > max) {
+                alert('It seems that something went wrong. You changed your answer or the number you entered is not within the range.');
+                break;
+            }
+        }
+        guess_number.querySelector('div.result').textContent = 'Result: ' + guess
     } catch (error) {
         console.log(error);
         alert('Error occurred!');
