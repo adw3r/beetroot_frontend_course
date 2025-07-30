@@ -34,7 +34,7 @@
         <hr>
         <div class="d-flex flex-column gap-3  " id="special_symbol">
             <label class="d-flex gap-2 flex-column">
-                <span>What is a digit?</span>
+                <span>What is a keyboard digit?</span>
                 <input class="form-control" id="digit" name="digit" pattern="[0-9]+" placeholder="1"
                        required type="text">
             </label>
@@ -48,12 +48,12 @@
             <div class="d-flex gap-2">
                 <label class="d-flex gap-2 flex-column flex-grow-1">
                     <span>What is a first digit?</span>
-                    <input class="form-control" id="sum_range_1" name="sum_range_1" pattern="[0-9]+" placeholder="1"
+                    <input class="form-control" id="sum_range_1" name="sum_range_1" placeholder="1"
                            required type="number">
                 </label>
                 <label class="d-flex gap-2 flex-column flex-grow-1">
                     <span>What is a second digit?</span>
-                    <input class="form-control" id="sum_range_2" name="sum_range_2" pattern="[0-9]+" placeholder="1"
+                    <input class="form-control" id="sum_range_2" name="sum_range_2" placeholder="10"
                            required type="number">
                 </label>
             </div>
@@ -67,12 +67,12 @@
             <div class="d-flex gap-2">
                 <label class="d-flex gap-2 flex-column flex-grow-1">
                     <span>What is a first digit?</span>
-                    <input class="form-control" id="gcd_input_1" name="gcd_input_1" pattern="[0-9]+" placeholder="1"
+                    <input class="form-control" id="gcd_input_1" name="gcd_input_1" placeholder="1"
                            required type="number">
                 </label>
                 <label class="d-flex gap-2 flex-column flex-grow-1">
                     <span>What is a second digit?</span>
-                    <input class="form-control" id="gcd_input_2" name="gcd_input_2" pattern="[0-9]+" placeholder="1"
+                    <input class="form-control" id="gcd_input_2" name="gcd_input_2" placeholder="10"
                            required type="number">
                 </label>
             </div>
@@ -86,7 +86,7 @@
             <div class="d-flex gap-2">
                 <label class="d-flex gap-2 flex-column flex-grow-1">
                     <span>Get all divisors of a number:</span>
-                    <input class="form-control" id="divisor" name="divisor" pattern="[0-9]+" placeholder="1"
+                    <input class="form-control" id="divisor" name="divisor" placeholder="100"
                            required type="number">
                 </label>
             </div>
@@ -100,7 +100,7 @@
             <div class="d-flex gap-2">
                 <label class="d-flex gap-2 flex-column flex-grow-1">
                     <span>Is a palindrome?</span>
-                    <input class="form-control" id="palindrome" name="palindrome" pattern="[0-9]+" placeholder="1"
+                    <input class="form-control" id="palindrome" name="palindrome" placeholder="11111"
                            required type="number">
                 </label>
             </div>
@@ -118,6 +118,14 @@
                            required type="number">
                 </label>
             </div>
+            <button class="btn btn-primary btn-sm d-block" type="button">
+                calculate
+            </button>
+            <div class="result">Result:</div>
+        </div>
+        <hr>
+        <div class="d-flex flex-column gap-3" id="numbers_count_block">
+            <span>numbers_count_block?</span>
             <button class="btn btn-primary btn-sm d-block" type="button">
                 calculate
             </button>

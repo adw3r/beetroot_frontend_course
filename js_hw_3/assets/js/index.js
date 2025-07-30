@@ -226,3 +226,50 @@ discount_amnt_block.querySelector('button').addEventListener('click', () => {
 // Запитай у користувача 10 чисел і порахуй, скільки він ввів додатніх, від’ємних і нулів. 
 // При цьому також порахуй, скільки з них парних і непарних. Виведи статистику на екран. 
 // Враховуй, що достатньо однієї змінної (не 10) для введення чисел користувачем.
+const numbers_count_block = document.getElementById('numbers_count_block');
+numbers_count_block.querySelector('button').addEventListener('click', () => {
+    console.log('clicked numbers_count_block button');
+    try {
+        let positives = 0;
+        let negatives = 0;
+        let zeros = 0;
+        let even = 0;
+        let odd = 0;
+
+        for (let i = 0; i < 10; i++) {
+            let input = prompt(`Введіть число #${i + 1}:`);
+
+            if (input === null) {
+                alert('Ввід скасовано!');
+                break;
+            }
+
+            const num = +input;
+
+            if (isNaN(num)) {
+                alert('Це не число. Спробуйте ще раз.');
+                i--; // повторити ту саму ітерацію
+                continue;
+            }
+
+            // Плюс / мінус / нуль
+            if (num > 0) positives++;
+            else if (num < 0) negatives++;
+            else zeros++;
+
+            // Парність (нуль вважаємо парним)
+            if (num % 2 === 0) even++;
+            else odd++;
+        }
+
+        numbers_count_block.querySelector('div.result').textContent = 'Result: ' +
+            `Positive numbers: ${positives}` + ' ' +
+            `Negative numbers: ${negatives}` + ' ' +
+            `Zeros numbers: ${zeros}` + ' ' +
+            `Even numbers: ${even}` + ' ' +
+            `Odd numbers: ${odd}`
+    } catch (error) {
+        console.log(error);
+        alert('Error occurred!');
+    }
+});
