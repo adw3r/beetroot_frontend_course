@@ -98,13 +98,30 @@ what_is_bigger_el.querySelector('button').addEventListener('click', () => {
     try {
         let arg1 = what_is_bigger_el.querySelector('.arg1').value;
         let arg2 = what_is_bigger_el.querySelector('.arg2').value;
-        
+
         if (!checkIsNumber(arg1) || !checkIsNumber(arg2)) {
             alert('Please enter a number!');
             return
         }
         let res = whatIsBigger(arg1, arg2);
         what_is_bigger_el.querySelector('div.result').textContent = `Res: ${res}`;
+    } catch (error) {
+        console.log(error);
+        alert('Wrong input!');
+    }
+})
+
+const factorial_block = document.getElementById('factorial_block');
+factorial_block.querySelector('button').addEventListener('click', () => {
+    try {
+        let arg1 = factorial_block.querySelector('.arg1').value;
+
+        if (!checkIsNumber(arg1)) {
+            alert('Please enter a number!');
+            return
+        }
+        let res = factorial(arg1);
+        factorial_block.querySelector('div.result').textContent = `Res: ${res}`;
     } catch (error) {
         console.log(error);
         alert('Wrong input!');
