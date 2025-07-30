@@ -127,3 +127,26 @@ factorial_block.querySelector('button').addEventListener('click', () => {
         alert('Wrong input!');
     }
 })
+
+const concat_nums = document.getElementById('concat_nums');
+concat_nums.querySelector('button').addEventListener('click', () => {
+    try {
+        let arg1 = concat_nums.querySelector('.arg1').value;
+        let arg2 = concat_nums.querySelector('.arg2').value;
+        let arg3 = concat_nums.querySelector('.arg3').value;
+
+        if (
+            !checkIsNumber(arg1) ||
+            !checkIsNumber(arg2) ||
+            !checkIsNumber(arg3)
+        ) {
+            alert('Please enter a number!');
+            return
+        }
+        let res = concat(arg1, arg2, arg3);
+        concat_nums.querySelector('div.result').textContent = `Res: ${res}`;
+    } catch (error) {
+        console.log(error);
+        alert('Wrong input!');
+    }
+})
