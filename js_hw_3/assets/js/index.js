@@ -238,15 +238,20 @@ numbers_count_block.querySelector('button').addEventListener('click', () => {
 
         for (let i = 0; i < 10; i++) {
             let input = prompt(`Enter a number #${i + 1}:`);
+
             if (input === null) {
                 alert('Input canceled!');
                 break;
+            } else input = +input
+
+            if (isNaN(input)) {
+                alert('That is not a number. Try again.');
+                i--;
+                continue
             }
-            input = +input;
-            
-            if (isNaN(input)) {alert('That is not a number. Try again.');i--;continue}
-            if (input > 0) positives++;else if (input < 0) negatives++;else zeros++;
-            if (input % 2 === 0) even++;else odd++;
+
+            if (input > 0) positives++; else if (input < 0) negatives++; else zeros++;
+            if (input % 2 === 0) even++; else odd++;
         }
 
         numbers_count_block.querySelector('div.result').textContent = 'Result: ' +
@@ -255,6 +260,52 @@ numbers_count_block.querySelector('button').addEventListener('click', () => {
             `Zeros numbers: ${zeros}` + ' ' +
             `Even numbers: ${even}` + ' ' +
             `Odd numbers: ${odd}`
+    } catch (error) {
+        console.log(error);
+        alert('Error occurred!');
+    }
+});
+
+// Зацикли відображення днів тижня таким чином: 
+// «День тижня. Хочеш побачити наступний день? » і так до тих пір, поки користувач натискає OK.
+const days = [
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+    'Sunday'
+];
+const next_day_block = document.getElementById('next_day');
+let today = new Date();
+let index = today.getDay() - 1;
+let answer = days[index];
+next_day_block.querySelector('div.result').textContent = 'Today is: ' + answer
+
+next_day_block.addEventListener('click', () => {
+    console.log('clicked next_day');
+    try {
+        today = new Date();
+        index = today.getDay() - 1;
+        answer = days[index];
+        let counter = 0;
+
+        next_day_block.querySelector('div.result').textContent = 'Result: ' + answer
+
+        while (1) {
+            if (index === today.getDay() - 1) {
+                answer = confirm(`Today is ${days[index]}. Want to see next day?`);
+            } else {
+                answer = confirm(`It would be ${days[index]}. Want to see next day?`);
+            }
+            if (!answer) break;
+            index = (index + 1) % days.length; // Переходимо до наступного дня по колу
+            counter++
+        }
+
+        next_day_block.querySelector('div.result').textContent =
+            `The next day in ${counter} days would be: ${days[index]}`
     } catch (error) {
         console.log(error);
         alert('Error occurred!');
