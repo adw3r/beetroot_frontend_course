@@ -196,6 +196,9 @@ prime_block.querySelector('button').addEventListener('click', () => {
         }
         let res = getPrimesInRange(arg1, arg2);
         console.log(res)
+        if (res.length === 0) {
+            res = 'There are no primes in this range';
+        }
         prime_block.querySelector('div.result').textContent = `Primes: ${res}`;
     } catch (error) {
         console.log(error);
