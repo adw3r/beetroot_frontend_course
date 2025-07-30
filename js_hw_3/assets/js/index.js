@@ -249,11 +249,11 @@ numbers_count_block.querySelector('button').addEventListener('click', () => {
             if (input % 2 === 0) even++; else odd++;
         }
 
-        numbers_count_block.querySelector('div.result').textContent = 
-            'Result: ' + `Positive numbers: ${positives}` + ' ' + 
-            `Negative numbers: ${negatives}` + ' ' + 
-            `Zeros numbers: ${zeros}` + ' ' + 
-            `Even numbers: ${even}` + ' ' + 
+        numbers_count_block.querySelector('div.result').textContent =
+            'Result: ' + `Positive numbers: ${positives}` + ' ' +
+            `Negative numbers: ${negatives}` + ' ' +
+            `Zeros numbers: ${zeros}` + ' ' +
+            `Even numbers: ${even}` + ' ' +
             `Odd numbers: ${odd}`
     } catch (error) {
         console.log(error);
@@ -384,36 +384,61 @@ const render_multiplication_table = () => {
 
 // Запитай дату (день, місяць, рік) і виведи наступну за нею дату. 
 // Враховуй можливість переходу на наступний місяць, рік, а також високосний рік.
-const next_date_block = document.getElementById('next_date_block')
+const next_date_block = document.getElementById('next_date_block_math')
+// Установка текущей даты вручную (можно оставить пустым, если нельзя использовать Date)
 const now = new Date();
 const current_date = `${String(now.getDate()).padStart(2, '0')}.${String(now.getMonth() + 1).padStart(2, '0')}.${now.getFullYear()}`;
 next_date_block.querySelector('input').placeholder = current_date;
 next_date_block.querySelector('input').value = current_date;
 
-// Обработчик клика
+// Повертає кількість днів у місяці з урахуванням високосного року
+function getDaysInMonth(month, year) {
+    const daysPerMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    // Перевірка на високосний рік
+    if (month === 2 && ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0))) {
+        return 29;
+    }
+    return daysPerMonth[month - 1];
+}
+
 next_date_block.querySelector('button').addEventListener('click', () => {
     try {
-        let input = next_date_block.querySelector('input').value.trim();
+        let input = next_date_block.querySelector('#date_math').value.trim();
         const [dayStr, monthStr, yearStr] = input.split(".");
-        const day = parseInt(dayStr, 10);
-        const month = parseInt(monthStr, 10);
-        const year = parseInt(yearStr, 10);
+        let day = parseInt(dayStr, 10);
+        let month = parseInt(monthStr, 10);
+        let year = parseInt(yearStr, 10);
 
-        if (isNaN(day) || isNaN(month) || isNaN(year)) {
+        if (isNaN(day) || isNaN(month) || isNaN(year) || day < 1 || month < 1 || month > 12) {
             throw new Error("Неправильний формат дати");
         }
 
-        // Создаём дату: даже если она невалидна (например, 31.02), браузер сам скорректирует
-        let parsed_date = new Date(year, month - 1, day);
+        const maxDay = getDaysInMonth(month, year);
+        if (day > maxDay) {
+            day = maxDay; // скоригована дата
+        }
 
-        // Вывод ближайшей реальной даты
-        const adjusted_date_str = `${String(parsed_date.getDate()).padStart(2, '0')}.${String(parsed_date.getMonth() + 1).padStart(2, '0')}.${parsed_date.getFullYear()}`;
+        // Вираховуємо наступну дату
+        day += 1;
+        if (day > getDaysInMonth(month, year)) {
+            day = 1;
+            month += 1;
+            if (month > 12) {
+                month = 1;
+                year += 1;
+            }
+        }
 
-        // Прибавляем 1 день
-        parsed_date.setDate(parsed_date.getDate() + 1);
-        const next_date_str = `${String(parsed_date.getDate()).padStart(2, '0')}.${String(parsed_date.getMonth() + 1).padStart(2, '0')}.${parsed_date.getFullYear()}`;
+        const adjusted_day = String(Math.min(parseInt(dayStr), getDaysInMonth(monthStr, year))).padStart(2, '0');
+        const adjusted_month = String(monthStr).padStart(2, '0');
+        const adjusted_year = yearStr;
 
-        next_date_block.querySelector('div.result').textContent = `Введена дата скоригована до: ${adjusted_date_str}, наступна дата: ${next_date_str}`;
+        const next_day = String(day).padStart(2, '0');
+        const next_month = String(month).padStart(2, '0');
+        const next_year = String(year);
+
+        next_date_block.querySelector('div.result').textContent =
+            `Введена дата скоригована до: ${adjusted_day}.${adjusted_month}.${adjusted_year}, наступна дата: ${next_day}.${next_month}.${next_year}`;
     } catch (error) {
         console.error(error);
         alert('Помилка: ' + error.message);
