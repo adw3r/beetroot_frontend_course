@@ -155,7 +155,7 @@ palindrome_block.querySelector('button').addEventListener('click', () => {
     console.log('clicked palindrome_block button');
     try {
         let palindromeInput = palindrome_block.querySelector('#palindrome').value;
-        
+
         if (!checkIsNumber(palindromeInput)) {
             return;
         }
@@ -176,6 +176,47 @@ palindrome_block.querySelector('button').addEventListener('click', () => {
             : `${str} — not a palindrome!`;
 
         palindrome_block.querySelector('div.result').textContent = `Result: ${result}`;
+    } catch (error) {
+        console.log(error);
+        alert('Error occurred!');
+    }
+});
+
+
+// 1. Запитай у користувача суму покупки і виведи суму до оплати зі знижкою:
+//     1. від 200 до 300 - знижка буде 3%;
+//     2. від 300 до 500 - 5%;
+//     3. від 500 і вище - 7%.
+const discount_amnt_block = document.getElementById('discount_amnt_block');
+discount_amnt_block.querySelector('button').addEventListener('click', () => {
+    console.log('clicked discount_amnt_block button');
+    try {
+        let payment = discount_amnt_block.querySelector('#payment').value;
+
+        if (!checkIsNumber(payment)) {
+            return;
+        }
+        payment = +payment; // гарантуємо позитивне число
+        if (payment <= 0) {
+            alert('Сума має бути більшою за 0!');
+            return;
+        }
+
+        let discount = 0;
+        if (payment >= 500) {
+            discount = 7;
+        } else if (payment >= 300) {
+            discount = 5;
+        } else if (payment >= 200) {
+            discount = 3;
+        }
+
+        const discountedTotal = payment * (1 - discount / 100);
+
+        discount_amnt_block.querySelector('div.result').textContent =
+            discount > 0
+                ? `Discount ${discount}%. Payment amount: ${discountedTotal.toFixed(2)} uah`
+                : `Discount is not applied. Payment amount: ${payment.toFixed(2)} uah`;
     } catch (error) {
         console.log(error);
         alert('Error occurred!');
