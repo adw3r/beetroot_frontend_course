@@ -237,29 +237,16 @@ numbers_count_block.querySelector('button').addEventListener('click', () => {
         let odd = 0;
 
         for (let i = 0; i < 10; i++) {
-            let input = prompt(`Введіть число #${i + 1}:`);
-
+            let input = prompt(`Enter a number #${i + 1}:`);
             if (input === null) {
-                alert('Ввід скасовано!');
+                alert('Input canceled!');
                 break;
             }
-
-            const num = +input;
-
-            if (isNaN(num)) {
-                alert('Це не число. Спробуйте ще раз.');
-                i--; // повторити ту саму ітерацію
-                continue;
-            }
-
-            // Плюс / мінус / нуль
-            if (num > 0) positives++;
-            else if (num < 0) negatives++;
-            else zeros++;
-
-            // Парність (нуль вважаємо парним)
-            if (num % 2 === 0) even++;
-            else odd++;
+            input = +input;
+            
+            if (isNaN(input)) {alert('That is not a number. Try again.');i--;continue}
+            if (input > 0) positives++;else if (input < 0) negatives++;else zeros++;
+            if (input % 2 === 0) even++;else odd++;
         }
 
         numbers_count_block.querySelector('div.result').textContent = 'Result: ' +
