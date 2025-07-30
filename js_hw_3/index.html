@@ -13,25 +13,26 @@
           integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" rel="stylesheet">
     <style>
         .container {
-            max-width: 500px;
+            max-width: 700px;
         }
     </style>
 </head>
 <body>
 <div class="page-wrapper">
-    <main class="container my-5 gap-5 d-flex flex-column ">
-        <div class="d-flex flex-column gap-3" id="age_calculator">
+    <main class="container my-3 gap-2 d-flex flex-column ">
+        <div class="d-flex flex-column gap-3  " id="age_calculator">
             <label class="d-flex gap-2 flex-column">
                 <span>What is your age?</span>
                 <input class="form-control" id="age_input" name="age_input" pattern="[0-9]+" placeholder="69"
                        required type="text">
             </label>
-            <button class="btn btn-primary btn-sm d-block" type="button">
+            <button class="btn btn-primary btn-sm d-block " type="button">
                 calculate
             </button>
             <div class="result">You are (teen, mature, ...):</div>
         </div>
-        <div class="d-flex flex-column gap-3" id="special_symbol">
+        <hr>
+        <div class="d-flex flex-column gap-3  " id="special_symbol">
             <label class="d-flex gap-2 flex-column">
                 <span>What is a digit?</span>
                 <input class="form-control" id="digit" name="digit" pattern="[0-9]+" placeholder="1"
@@ -42,7 +43,8 @@
             </button>
             <div class="result">Special char:</div>
         </div>
-        <div class="d-flex flex-column gap-3" id="range_sum">
+        <hr>
+        <div class="d-flex flex-column gap-3 " id="range_sum">
             <div class="d-flex gap-2">
                 <label class="d-flex gap-2 flex-column flex-grow-1">
                     <span>What is a first digit?</span>
@@ -55,12 +57,13 @@
                            required type="number">
                 </label>
             </div>
-            <button class="btn btn-primary btn-sm d-block" type="button">
+            <button class="btn btn-primary btn-sm d-block " type="button">
                 calculate
             </button>
             <div class="result">Range sum:</div>
         </div>
-        <div class="d-flex flex-column gap-3" id="gcd_block">
+        <hr>
+        <div class="d-flex flex-column gap-3 " id="gcd_block">
             <div class="d-flex gap-2">
                 <label class="d-flex gap-2 flex-column flex-grow-1">
                     <span>What is a first digit?</span>
@@ -78,6 +81,7 @@
             </button>
             <div class="result">Greatest common digest:</div>
         </div>
+        <hr>
         <div class="d-flex flex-column gap-3" id="divisors_block">
             <div class="d-flex gap-2">
                 <label class="d-flex gap-2 flex-column flex-grow-1">
@@ -91,6 +95,7 @@
             </button>
             <div class="result">Divisors:</div>
         </div>
+        <hr>
         <div class="d-flex flex-column gap-3" id="palindrome_block">
             <div class="d-flex gap-2">
                 <label class="d-flex gap-2 flex-column flex-grow-1">
@@ -104,6 +109,7 @@
             </button>
             <div class="result">Result:</div>
         </div>
+        <hr>
         <div class="d-flex flex-column gap-3" id="discount_amnt_block">
             <div class="d-flex gap-2">
                 <label class="d-flex gap-2 flex-column flex-grow-1">
