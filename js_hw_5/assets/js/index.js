@@ -75,7 +75,7 @@ const createCarObject = (
     fuelConsumption,
     drivers
 ) => {
-    const CarObj = {
+    return {
         manufacturer: manufacturer,
         model: model,
         year: year,
@@ -114,7 +114,6 @@ const createCarObject = (
             };
         }
     }
-    return CarObj;
 }
 
 class Time {
@@ -181,7 +180,7 @@ class Time {
 }
 
 const createTimeObject = (hours, minutes, seconds) => {
-    const TimeObj = {
+    return {
         hours: hours,
         minutes: minutes,
         seconds: seconds,
@@ -209,10 +208,9 @@ const createTimeObject = (hours, minutes, seconds) => {
             this._minutes = ((this._minutes % 60) + 60) % 60;
 
             this._hours = ((this._hours % 24) + 24) % 24;
+            return this;
         }
-    }
-    TimeObj._normalize();
-    return TimeObj;
+    }._normalize()
 }
 
 
@@ -276,7 +274,7 @@ class Fraction {
 }
 
 const createFractionObject = (numerator, denominator) => {
-    const FractionObj = {
+    return {
         numerator: numerator,
         denominator: denominator,
         gcd(a, b) {
@@ -327,5 +325,4 @@ const createFractionObject = (numerator, denominator) => {
             return `${this.numerator}/${this.denominator}`;
         }
     }
-    return FractionObj;
 }
