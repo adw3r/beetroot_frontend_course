@@ -69,7 +69,7 @@ const createProductsList = (products = []) => {
 };
 
 
-const products2 = createProductsList([
+const productsObject = createProductsList([
     createProduct({name: 'Apple', quantity: 10, status: 'pending', price: 100}),
     createProduct({name: 'Orange', quantity: 30, status: 'pending', price: 300}),
     createProduct({name: 'Pineapple', quantity: 30, status: 'done', price: 300}),
@@ -77,31 +77,31 @@ const products2 = createProductsList([
 ]);
 
 console.log('1. Вивід: непридбані спочатку, потім придбані:');
-console.log(products2.showProductsSorted((a, b) => {
+console.log(productsObject.showProductsSorted((a, b) => {
     if (a.status === 'pending' && b.status === 'done') return -1;
     if (a.status === 'done' && b.status === 'pending') return 1;
     return 0;
 }));
 
 console.log('2. Позначити "Apple" як куплений:');
-products2.setStatusForProduct('done', 'Apple');
-console.log(products2.products);
+productsObject.setStatusForProduct('done', 'Apple');
+console.log(productsObject.products);
 
 console.log('3. Видалити "Apple" зі списку:');
-products2.filterProducts(product => product.name !== 'Apple');
-console.log(products2.products);
+productsObject.filterProducts(product => product.name !== 'Apple');
+console.log(productsObject.products);
 
 console.log('4. Додати ще 30 Orange:');
-products2.addProduct(createProduct({
+productsObject.addProduct(createProduct({
     name: 'Orange', quantity: 30, status: 'pending', price: 300
 }));
-console.log(products2.products);
+console.log(productsObject.products);
 
 console.log('5. Загальна сума:');
-console.log(products2.totalPrice());
+console.log(productsObject.totalPrice());
 
 console.log('6. Загальна сума придбаних:');
-console.log(products2.totalPriceWithStatus('done'));
+console.log(productsObject.totalPriceWithStatus('done'));
 
 console.log('7. Сортування за totalPrice по спаданню:');
-console.log(products2.sortByTotalPrice('desc'));
+console.log(productsObject.sortByTotalPrice('desc'));
