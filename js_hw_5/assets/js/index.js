@@ -76,13 +76,13 @@ const createCarObject = (
     drivers
 ) => {
     return {
-        manufacturer: manufacturer,
-        model: model,
-        year: year,
-        averageSpeed: averageSpeed,
-        fuelCapacity: fuelCapacity,
-        fuelConsumption: fuelConsumption,
-        drivers: drivers,
+        manufacturer,
+        model,
+        year,
+        averageSpeed,
+        fuelCapacity,
+        fuelConsumption,
+        drivers,
         addDriver(driver) {
             this.drivers.push(driver);
         },
@@ -181,9 +181,9 @@ class Time {
 
 const createTimeObject = (hours, minutes, seconds) => {
     return {
-        hours: hours,
-        minutes: minutes,
-        seconds: seconds,
+        hours,
+        minutes,
+        seconds,
         addSeconds(s) {
             this.seconds += s
             this._normalize();
@@ -280,18 +280,17 @@ class Fraction {
 }
 
 const createFractionObject = (numerator, denominator) => {
+    const gcd = (a, b) => b === 0 ? a : gcd(b, a % b);
+
     return {
-        numerator: numerator,
-        denominator: denominator,
-        gcd(a, b) {
-            return b === 0 ? a : Fraction.gcd(b, a % b);
-        },
+        numerator,
+        denominator,
 
         reduce() {
-            const gcd = Fraction.gcd(Math.abs(this.numerator), Math.abs(this.denominator));
-            this.numerator /= gcd;
-            this.denominator /= gcd;
-            if (this.denominator < 0) { // знак переносимо в чисельник
+            const divisor = gcd(Math.abs(this.numerator), Math.abs(this.denominator));
+            this.numerator /= divisor;
+            this.denominator /= divisor;
+            if (this.denominator < 0) {
                 this.numerator *= -1;
                 this.denominator *= -1;
             }
@@ -301,35 +300,35 @@ const createFractionObject = (numerator, denominator) => {
         add(other) {
             const num = this.numerator * other.denominator + other.numerator * this.denominator;
             const den = this.denominator * other.denominator;
-            return new Fraction(num, den);
+            return createFractionObject(num, den).reduce();
         },
 
         subtract(other) {
             const num = this.numerator * other.denominator - other.numerator * this.denominator;
             const den = this.denominator * other.denominator;
-            return new Fraction(num, den);
+            return createFractionObject(num, den).reduce();
         },
 
         multiply(other) {
-            return new Fraction(
+            return createFractionObject(
                 this.numerator * other.numerator,
                 this.denominator * other.denominator
-            );
+            ).reduce();
         },
 
         divide(other) {
             if (other.numerator === 0) {
                 throw new Error("Division by zero.");
             }
-            return new Fraction(
+            return createFractionObject(
                 this.numerator * other.denominator,
                 this.denominator * other.numerator
-            );
+            ).reduce();
         },
 
         toString() {
             return `${this.numerator}/${this.denominator}`;
         }
-    }
-}
+    };
+};
 
