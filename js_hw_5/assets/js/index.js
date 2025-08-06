@@ -76,13 +76,13 @@ const createCarObject = (
     drivers
 ) => {
     const CarObj = {
-        manufacturer: '',
-        model: '',
-        year: '',
-        averageSpeed: '',
-        fuelCapacity: '',
-        fuelConsumption: '',
-        drivers: [''],
+        manufacturer: manufacturer,
+        model: model,
+        year: year,
+        averageSpeed: averageSpeed,
+        fuelCapacity: fuelCapacity,
+        fuelConsumption: fuelConsumption,
+        drivers: drivers,
         addDriver(driver) {
             this.drivers.push(driver);
         },
@@ -114,13 +114,6 @@ const createCarObject = (
             };
         }
     }
-    CarObj.manufacturer = manufacturer;
-    CarObj.model = model;
-    CarObj.year = year;
-    CarObj.averageSpeed = averageSpeed;
-    CarObj.fuelCapacity = fuelCapacity;
-    CarObj.fuelConsumption = fuelConsumption;
-    CarObj.drivers = drivers;
     return CarObj;
 }
 
@@ -189,9 +182,9 @@ class Time {
 
 const createTimeObject = (hours, minutes, seconds) => {
     const TimeObj = {
-        hours: 0,
-        minutes: 0,
-        seconds: 0,
+        hours: hours,
+        minutes: minutes,
+        seconds: seconds,
         addSeconds(s) {
             this.seconds += s
             this._normalize();
@@ -218,9 +211,6 @@ const createTimeObject = (hours, minutes, seconds) => {
             this._hours = ((this._hours % 24) + 24) % 24;
         }
     }
-    TimeObj.hours = hours;
-    TimeObj.minutes = minutes;
-    TimeObj.seconds = seconds;
     TimeObj._normalize();
     return TimeObj;
 }
@@ -287,8 +277,8 @@ class Fraction {
 
 const createFractionObject = (numerator, denominator) => {
     const FractionObj = {
-        numerator: 0,
-        denominator: 0,
+        numerator: numerator,
+        denominator: denominator,
         gcd(a, b) {
             return b === 0 ? a : Fraction.gcd(b, a % b);
         },
@@ -337,7 +327,5 @@ const createFractionObject = (numerator, denominator) => {
             return `${this.numerator}/${this.denominator}`;
         }
     }
-    FractionObj.numerator = numerator;
-    FractionObj.denominator = denominator;
     return FractionObj;
 }
