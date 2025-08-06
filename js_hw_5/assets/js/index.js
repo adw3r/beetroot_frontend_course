@@ -201,17 +201,23 @@ const createTimeObject = (hours, minutes, seconds) => {
             return `${pad(this.hours)}:${pad(this.minutes)}:${pad(this.seconds)}`;
         },
         _normalize() {
-            this._minutes += Math.floor(this._seconds / 60);
-            this._seconds = ((this._seconds % 60) + 60) % 60;
+            this.minutes += Math.floor(this.seconds / 60);
+            this.seconds = ((this.seconds % 60) + 60) % 60;
 
-            this._hours += Math.floor(this._minutes / 60);
-            this._minutes = ((this._minutes % 60) + 60) % 60;
+            this.hours += Math.floor(this.minutes / 60);
+            this.minutes = ((this.minutes % 60) + 60) % 60;
 
-            this._hours = ((this._hours % 24) + 24) % 24;
+            this.hours = ((this.hours % 24) + 24) % 24;
             return this;
         }
     }._normalize()
 }
+
+let TimeInstance = createTimeObject(23, 59, 59);
+console.log(TimeInstance.display());
+TimeInstance.addSeconds(1);
+TimeInstance.addSeconds(1);
+console.log(TimeInstance.display());
 
 
 class Fraction {
@@ -326,3 +332,4 @@ const createFractionObject = (numerator, denominator) => {
         }
     }
 }
+
