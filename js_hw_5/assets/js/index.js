@@ -73,7 +73,7 @@ const createCarObject = (
     averageSpeed,
     fuelCapacity,
     fuelConsumption,
-    drivers
+    drivers = []
 ) => {
     return {
         manufacturer,
@@ -83,38 +83,50 @@ const createCarObject = (
         fuelCapacity,
         fuelConsumption,
         drivers,
+
         addDriver(driver) {
-            this.drivers.push(driver);
+            if (!this.drivers.includes(driver)) {
+                this.drivers.push(driver);
+            }
         },
-        getInfo() {
-            return `
-        Manufacturer: ${this.manufacturer}, 
-        Model: ${this.model}, 
-        Year: ${this.year}, 
-        Average speed: ${this.averageSpeed}, 
-        Fuel capacity: ${this.fuelCapacity}, 
-        `
-        },
+
         checkDriver(driver) {
             return this.drivers.includes(driver);
         },
-        calculateTrip(distance) {
-            const drivingTime = distance / this.averageSpeed;
-            const breaks = Math.floor(drivingTime / 4); // кожні 4 години — 1 година перерви
-            const totalTime = drivingTime + breaks;
 
+        getInfo() {
+            return `
+                Manufacturer: ${this.manufacturer}
+                Model: ${this.model}
+                Year: ${this.year}
+                Average speed: ${this.averageSpeed} km/h
+                Fuel capacity: ${this.fuelCapacity} L
+                Fuel consumption: ${this.fuelConsumption} L/100km
+                Drivers: ${this.drivers.join(", ") || "None"}
+            `.trim();
+        },
+
+        calculateTrip(distance) {
+            if (this.averageSpeed === 0) {
+                throw new Error("Average speed can't be 0.");
+            }
+
+            const drivingTime = distance / this.averageSpeed;
+            const breaks = Math.floor(drivingTime / 4); // 1 break per 4h
+            const totalTime = drivingTime + breaks;
             const fuelNeeded = (this.fuelConsumption / 100) * distance;
 
             return {
-                distance: distance,
-                drivingTime: drivingTime.toFixed(2),
+                distance,
+                drivingTime: +drivingTime.toFixed(2),
                 breaks,
-                totalTime: totalTime.toFixed(2),
-                fuelNeeded: fuelNeeded.toFixed(2)
+                totalTime: +totalTime.toFixed(2),
+                fuelNeeded: +fuelNeeded.toFixed(2)
             };
         }
-    }
-}
+    };
+};
+Ò
 
 class Time {
     constructor(hours = 0, minutes = 0, seconds = 0) {
@@ -332,3 +344,13 @@ const createFractionObject = (numerator, denominator) => {
     };
 };
 
+const a = createFractionObject(1, 2);
+const b = createFractionObject(1, 3);
+
+console.log("a =", a.toString()); // 1/2
+console.log("b =", b.toString()); // 1/3
+
+console.log("a + b =", a.add(b).toString());       // 5/6
+console.log("a - b =", a.subtract(b).toString());  // 1/6
+console.log("a * b =", a.multiply(b).toString());  // 1/6
+console.log("a / b =", a.divide(b).toString());    // 3/2
