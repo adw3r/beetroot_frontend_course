@@ -11,31 +11,32 @@
 <div class="container my-4">
     <h1 class="mb-4">Product List Manager</h1>
     <!-- Add Product Form -->
-    <form id="addProductForm" class="row g-3 mb-4 align-items-stretch">
+    <form class="row g-sm-3 g-0 mb-4 align-items-stretch justify-content-between" id="addProductForm">
         <div class="col-md-3">
-            <input type="text" class="form-control h-100" id="productName" placeholder="Name" required>
+            <input class="form-control h-100" id="productName" placeholder="Name" required type="text">
         </div>
-        <div class="col-md-2">
-            <input type="number" class="form-control h-100" id="productQuantity" placeholder="Quantity" min="1" required>
+        <div class="col-auto">
+            <input class="form-control h-100" id="productQuantity" min="1" placeholder="Quantity" required
+                   type="number">
         </div>
-        <div class="col-md-2">
+        <div class="col-auto">
             <select class="form-select h-100" id="productStatus" required>
                 <option value="pending">Pending</option>
                 <option value="done">Done</option>
             </select>
         </div>
         <div class="col-md-2">
-            <input type="number" class="form-control h-100" id="productPrice" placeholder="Price" min="0" required>
+            <input class="form-control h-100" id="productPrice" min="0" placeholder="Price" required type="number">
         </div>
-        <div class="col-md-2 d-flex h-100">
-            <button type="submit" class="btn btn-success h-100">Add Product</button>
+        <div class="col-auto d-flex h-100">
+            <button class="btn btn-success h-100" type="submit">Add Product</button>
         </div>
     </form>
 
     <!-- Filter and Sort Controls -->
     <div class="row mb-3 g-2 align-items-center">
         <div class="col-md-3">
-            <input type="text" class="form-control" id="filterName" placeholder="Filter by name">
+            <input class="form-control" id="filterName" placeholder="Filter by name" type="text">
         </div>
         <div class="col-md-3">
             <select class="form-select" id="filterStatus">
