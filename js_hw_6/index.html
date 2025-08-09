@@ -11,24 +11,24 @@
 <div class="container my-4">
     <h1 class="mb-4">Product List Manager</h1>
     <!-- Add Product Form -->
-    <form class="row g-3 mb-4" id="addProductForm">
-        <div class="col-md-3">
+    <form class="row g-3 mb-4 justify-content-between align-items-center" id="addProductForm">
+        <label class="col-md-3">
             <input class="form-control" id="productName" placeholder="Name" required type="text">
-        </div>
-        <div class="col-md-2">
+        </label>
+        <label class="col-md-2">
             <input class="form-control" id="productQuantity" min="1" placeholder="Quantity" required type="number">
-        </div>
-        <div class="col-md-2">
+        </label>
+        <label class="col-md-2">
             <select class="form-select" id="productStatus" required>
                 <option value="pending">Pending</option>
                 <option value="done">Done</option>
             </select>
-        </div>
-        <div class="col-md-2">
+        </label>
+        <label class="col-md-2">
             <input class="form-control" id="productPrice" min="0" placeholder="Price" required type="number">
-        </div>
-        <div class="col-md-2">
-            <button class="btn btn-success w-100" type="submit">Add Product</button>
+        </label>
+        <div class="col-md-2 h-100">
+            <button class="btn btn-success btn-sm h-100 w-100" type="submit">Add Product</button>
         </div>
     </form>
 

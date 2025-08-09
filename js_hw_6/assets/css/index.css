@@ -11880,7 +11880,7 @@ img {
 }
 
 .container {
-  width: min(90%, 1200px);
+  width: min(90%, 900px);
   margin: 0 auto;
 }
 
@@ -11898,14 +11898,6 @@ body {
 }
 .page-wrapper main {
   flex-grow: 1;
-}
-
-.input_container {
-  max-width: 300px;
-}
-
-.container {
-  max-width: 700px;
 }
 
 /*# sourceMappingURL=index.css.map */
