@@ -12,8 +12,7 @@ const createProductsList = (products = []) => ({
     products,
 
     showProductsSorted(sortCallback) {
-        // Return a sorted copy, do not mutate original
-        return this.products.slice().sort(sortCallback);
+        return this.products.sort(sortCallback);
     },
 
     filterProducts(callback) {
@@ -39,28 +38,38 @@ const createProductsList = (products = []) => ({
     },
 
     totalPrice() {
-        return this.products.reduce((sum, product) => sum + product.totalPrice(), 0);
+        let result = 0;
+        this.products.forEach(product => {
+            result += product.totalPrice();
+        })
+        return result;
     },
 
     totalPriceWithStatus(status) {
-        return this.products.reduce((sum, product) =>
-            product.status === status ? sum + product.totalPrice() : sum, 0
-        );
+        let result = 0;
+        this.products.forEach(product => {
+            if (product.status === status) {
+                result += product.totalPrice();
+            }
+        })
+        return result;
     },
 
     sortByTotalPrice(order = 'asc') {
-        return this.products.slice().sort((a, b) => {
-            const diff = a.totalPrice() - b.totalPrice();
+        return this.products.sort((a, b) => {
+            const diff = a.totalPrice - b.totalPrice;
             return order === 'asc' ? diff : -diff;
         });
     }
-});
+    };
+};
+
 
 const productsObject = createProductsList([
-    createProduct({ name: 'Apple', quantity: 10, status: 'pending', price: 100 }),
-    createProduct({ name: 'Orange', quantity: 30, status: 'pending', price: 300 }),
-    createProduct({ name: 'Pineapple', quantity: 30, status: 'done', price: 300 }),
-    createProduct({ name: 'Banana', quantity: 20, status: 'pending', price: 200 }),
+    createProduct({name: 'Apple', quantity: 10, status: 'pending', price: 100}),
+    createProduct({name: 'Orange', quantity: 30, status: 'pending', price: 300}),
+    createProduct({name: 'Pineapple', quantity: 30, status: 'done', price: 300}),
+    createProduct({name: 'Banana', quantity: 20, status: 'pending', price: 200}),
 ]);
 
 console.log('1. Вивід: непридбані спочатку, потім придбані:');
