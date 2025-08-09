@@ -181,6 +181,4 @@ sortByTotalPriceBtn.addEventListener('click', () => {
     refresh();
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    refresh();
-});
+refresh();
